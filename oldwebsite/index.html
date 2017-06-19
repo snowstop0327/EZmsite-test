@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首頁</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#ff752b">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link href="http://m.ezprice.com.tw/images/ezprice-logo.png" rel="icon" type="image/png">
+    <link rel="apple-touch-icon" href="images/app-icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/app-icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/app-icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/app-icon/apple-icon-144x144.png">
+    <!-- <link rel="stylesheet" href="stylesheets/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <!--     <link rel="stylesheet" href="stylesheets/slidebars.min.css">
+    <link rel="stylesheet" href="stylesheets/font-awesome.min.css"> -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+    <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    .head-content .search-scroll-fix {
+        display: block;
+    }
+    
+    .head-content {
+        display: none;
+    }
+    
+    #sb-site {
+        margin-top: 135px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0 15px 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.4&appId=205059872856036";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    window.onload = function(){
+        setTimeout(function(){
+            window.scrollTo(0, 1);
+        }, 100);
+    }
+        // jQuery resize event
+    $(window).resize(function() {
+      window.scrollTo(0, 1);
+    });
+    </script>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top sb-slide" role="navigation">
+        <!-- Left Control -->
+        <div class="sb-toggle-left navbar-left">
+            <div class="navicon-line"></div>
+            <div class="navicon-line"></div>
+            <div class="navicon-line"></div>
+        </div>
+        <div class="index-scroll-fix container-fluid">
+            <div class="input-search form-control">
+                <div class="select-area">
+                    <select class="select-box">
+                        <option value="all">商品</option>
+                        <option value="book">找書</option>
+                    </select>
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <i class="fa fa-search fa-lg"></i>
+                <input type="text" id="srhkw2" value="" class="input-area" placeholder="輸入商品或型號">
+            </div>
+        </div>
+        <div class="index-content">
+            <a href="big-homePage" class="big-logo sprite">ezprice</a>
+            <!-- <div class="select-area">
+          <button type="button" class="tab-button" data-toggle="modal" data-target="#tab-list-modal">分類</button>
+          <button type="button" class="tab-button price-button" data-toggle="modal" data-target="#tab-list-modal2">價格範圍</button>
+          <button type="button" class="tab-button price-button" data-toggle="modal" data-target="#tab-list-modal3">品牌</button>
+        </div> -->
+        </div>
+        <div class="head-content container-fluid clearfix">
+            <div class="search-scroll-fix clearfix">
+                <!-- <a href="homePage" class="logo sprite">ezprice</a> -->
+                <div class="input-search form-control">
+                    <div class="select-area">
+                        <select class="select-box">
+                            <option value="all">商品</option>
+                            <option value="book">找書</option>
+                        </select>
+                        <i class="fa fa-caret-down"></i>
+                    </div>
+                    <i class="sprite-search-logo sprite"></i>
+                    <!--<img src="/images/ezprice-logo.png" alt="logo" class="ezprice-icon">-->
+                    <i class="fa fa-search fa-lg" onclick="$('#search_act').submit();" aria-hidden="true"></i>
+                    <form id="search_act" method="get" action="/price_list.php">
+                        <input type="text" id="srhkw1" value="" name="kw" class="input-area" placeholder="輸入商品或型號" autocomplete="off">
+                        <input type="hidden" id="crossover" name="crossover" value="">
+                        <input type="submit" style="display:none">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row search-input-content hiddenBox">
+            <div class="col-xs-12">
+                <ul class="nav nav-pills nav-pills-bg">
+                    <li role="presentation" class="left active">
+                        <a href="#keyword" aria-controls="keyword" role="tab" data-toggle="tab">熱搜關鍵字</a>
+                    </li>
+                    <li role="presentation" class="right">
+                        <a href="#search" aria-controls="search" role="tab" data-toggle="tab">最近搜尋</a>
+                        <!-- hidden links -->
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="keyword">
+                        <ul class="search-section clearfix">
+                            <li class="search-title clearfix">
+                                <a href="ihadeyou.php" class="suggest-link">
+                                    <span class="num">1</span>
+                                    <span class="suggest">隨身碟 r2d2</span>
+                                </a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="http://testlink.com/flag" class="suggest-link">
+                                    <span class="num">2</span>
+                                    <span class="suggest">PS4</span>
+                                </a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="http://testlink.com/flag" class="suggest-link">
+                                    <span class="num">3</span>
+                                    <span class="suggest">經典 淨白霜 dermisa 50g 淡斑</span>
+                                </a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="http://testlink.com/flag2" class="suggest-link">
+                                    <span class="num">4</span>
+                                    <span class="suggest">長夾 拉鍊 皮</span>
+                                </a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="http://testlink.com/flag3" class="suggest-link">
+                                    <span class="num">5</span>
+                                    <span class="suggest">拼圖 r2-d2 星際 大戰</span>
+                                </a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="http://testlink.com/flag4" class="suggest-link">
+                                    <span class="num">6</span>
+                                    <span class="suggest">fancl 化妝水 清爽</span>
+                                </a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="http://testlink.com/flag5" class="suggest-link">
+                                    <span class="num">7</span>
+                                    <span class="suggest">膠原飲 有機 木耳</span>
+                                </a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="http://testlink.com/flag6" class="suggest-link">
+                                    <span class="num">8</span>
+                                    <span class="suggest">超濾 進階 淨型</span>
+                                </a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="http://testlink.com/flag7" class="suggest-link">
+                                    <span class="num">9</span>
+                                    <span class="suggest">大眾 池泡湯</span>
+                                </a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="http://testlink.com/flag8" class="suggest-link">
+                                    <span class="num">10</span>
+                                    <span class="suggest">負離子吹風機</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="search">
+                        <ul class="search-section clearfix">
+                            <li class="search-title clearfix">
+                                <a href="http://testlink.com/gg" class="searched-link">
+                                    <span class="searched-word">隨身碟 r2d2</span>
+                                </a>
+                                <a href="http://testlink.com/gg2" class="fa-trash-color"><i class="fa fa-trash fa-lg"></i></a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="http://testlink.com/gg3" class="searched-link">
+                                    <span class="searched-word">PS4</span>
+                                </a>
+                                <a href="http://testlink.com" class="fa-trash-color"><i class="fa fa-trash fa-lg"></i></a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="http://testlink.com/gg4" class="searched-link">
+                                    <span class="searched-word">經典 淨白霜 dermisa 50g 淡斑</span>
+                                </a>
+                                <a href="http://testlink.com/gg6" class="fa-trash-color"><i class="fa fa-trash fa-lg"></i></a>
+                            </li>
+                            <li>
+                                <a href="http://testlink.com/delete" class="delete">
+                                    <span>刪除全部</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-bg">
+    </div>
+    <!-- Main content -->
+    <div id="sb-site" class="container-fluid main-content" role="main">
+        <div class="row">
+            <div class="col-xs-12 outclear">
+                <div class="ezguide-section">
+                    <div id="ezguide" class="carousel slide ezguide-carousel" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <figure class="item item-pad clearfix active">
+                              <div class="ezguide-img">
+                                <img alt="【必看】冰箱挑選指南，掌握這些要點！挑出令人羨慕的好冰箱！" src="http://cms.ezprice.com.tw/guide/wp-content/uploads/2016/05/12121212-650x340.png">
+                              </div>        
+                              <figcaption class="ezguide-topic">
+                              <h4>【必看】冰箱挑選指南，掌握這些要點！挑出令人羨慕的好冰箱！</h4>
+                                <span class="author">2016-05-23 by C編</span>
+                              </figcaption>
+                              <a href="http://guide.ezprice.com.tw/11558/?utm_source=ezsg&amp;utm_medium=lgmwb" class="clearfix link-block"></a>
+                            </figure>
+                            <figure class="item item-pad clearfix">
+                              <div class="ezguide-img">
+                                <img alt="【必看】冰箱挑選指南，掌握這些要點！挑出令人羨慕的好冰箱！" src="http://cms.ezprice.com.tw/guide/wp-content/uploads/2016/05/12121212-650x340.png">
+                              </div>        
+                              <figcaption class="ezguide-topic">
+                              <h4>【必看】冰箱挑選指南，掌握這些要點！挑出令人羨慕的好冰箱！</h4>
+                                <span class="author">2016-05-23 by C編</span>
+                              </figcaption>
+                              <a href="http://guide.ezprice.com.tw/11558/?utm_source=ezsg&amp;utm_medium=lgmwb" class="clearfix link-block"></a>
+                            </figure>
+                            <figure class="item item-pad clearfix">
+                              <div class="ezguide-img">
+                                <img alt="【抗敏洗衣機推薦】過敏人怎麼挑洗衣機？該挑什麼功能？一篇全解惑" src="http://cms.ezprice.com.tw/guide/wp-content/uploads/2016/05/ㄎ-650x340.png">
+                              </div>  
+                              <figcaption class="ezguide-topic">
+                              <h4>【抗敏洗衣機推薦】過敏人怎麼挑洗衣機？該挑什麼功能？一篇全解惑</h4>
+                                <span class="author">2016-05-25 by C編</span>
+                              </figcaption>
+                              <a href="http://guide.ezprice.com.tw/11610/?utm_source=ezsg&amp;utm_medium=lgmwb" class="clearfix link-block"></a>      
+                            </figure>
+                        </div>
+                        <a data-slide="prev" href="#ezguide" class="left carousel-control"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                        <a data-slide="next" href="#ezguide" class="right carousel-control"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 outclear">
+                <div class="click-btn-section clearfix">
+                    <ul class="nav nav-tabs" role="tablist" id="tablist">
+                        <li role="presentation" class="active">
+                            <a class="click-btn" href="#pricedown-section" aria-controls="pricedown-section" role="tab" data-toggle="tab">
+                                <span>
+                    降價
+                    <i class="fa fa-long-arrow-down"></i>
+                    30%
+                  </span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a class="click-btn" href="#brand-section" aria-controls="discount-section" role="tab" data-toggle="tab">
+                                <span>熱搜品牌</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a class="click-btn" href="#hotsort-section" aria-controls="hotsort-section" role="tab" data-toggle="tab">
+                                <span>熱搜分類</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a class="click-btn" href="#bestchoice-section" aria-controls="bestchoice-section" role="tab" data-toggle="tab">
+                                <span>精選:衛生紙</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content col-xs-12 outclear">
+                <div role="tabpanel" class="pricedown-section tab-pane active" id="pricedown-section">
+                    <ul class="otherpd-list clearfix">
+                        <li class="item">
+                            <div class="item-img">
+                                <img src="http://img.ezprice.com.tw/ezpd/061/48061/48061_s.jpg" alt="pd-img" class="pd-img">
+                                <span class="sales">5折</span>
+                            </div>
+                            <p>Apple iPhone 6S 16G 智慧型手機</p>
+                            <span>$18,900</span>
+                            <small>$22,000</small>
+                            <a href="http://testlink.com/iphone" class="link-block">more info</a>
+                        </li>
+                        <li class="item">
+                            <div class="item-img">
+                                <img src="http://img.ezprice.com.tw/ezpd/245/41245/41245_s.jpg" alt="pd-img" class="pd-img">
+                                <span class="sales">4.5折</span>
+                            </div>
+                            <p>Sony PS4-主機</p>
+                            <span>$12,480</span>
+                            <small>$22,000</small>
+                            <a href="http://testlink.com/ps4" class="link-block">more info</a>
+                        </li>
+                        <li class="item">
+                            <div class="item-img">
+                                <img src="http://img.ezprice.com.tw/ezpd/646/1646/1646_s.jpg" alt="pd-img" class="pd-img">
+                                <span class="sales">7折</span>
+                            </div>
+                            <p>SONY RX1 全片幅F2.0大光圈類單眼相機</p>
+                            <span>$18,900</span>
+                            <small>$22,000</small>
+                            <a href="http://testlink.com/photo" class="link-block">more info</a>
+                        </li>
+                        <li class="item">
+                            <div class="item-img">
+                                <img src="http://img.ezprice.com.tw/ezpd/676/50676/50676_s.jpg" alt="pd-img" class="pd-img">
+                                <span class="sales">6折</span>
+                            </div>
+                            <p>AIRMATE 艾美特 智能溫控陶瓷電暖器HP111319Rs</p>
+                            <span>$18,900</span>
+                            <small>$22,000</small>
+                            <a href="http://testlink.com/hot" class="link-block">more info</a>
+                        </li>
+                        <li class="item">
+                            <div class="item-img">
+                                <img src="http://img.ezprice.com.tw/ezpd/631/50631/50631_s.jpg" alt="pd-img" class="pd-img">
+                                <span class="sales">8折</span>
+                            </div>
+                            <p>AIRMATE 艾美特 智能溫控陶瓷電暖器HP111319R</p>
+                            <span>$18,900</span>
+                            <small>$22,000</small>
+                            <a href="http://testlink.com/hot2" class="link-block">more info</a>
+                        </li>
+                        <li class="item">
+                            <div class="item-img">
+                                <img src="http://img.ezprice.com.tw/ezpd/432/44432/44432_s.jpg" alt="pd-img" class="pd-img">
+                                <span class="sales">3.3折</span>
+                            </div>
+                            <p>AIRMATE 艾美特 智能溫控陶瓷電暖器HP111319R</p>
+                            <span>$18,900</span>
+                            <small>$22,000</small>
+                            <a href="http://testlink.com/hot3" class="link-block">more info</a>
+                        </li>
+                    </ul>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="brand-section">
+                    <!-- <h3>
+            所有平台優惠大補帖
+            <a href="http://testlink.com" class="more-link">所有店家<i class="fa fa-chevron-circle-right"></i></a>
+            </h3> -->
+                    <div class="hotsort-section">
+                        <ul class="hotsort-list clearfix">
+                            <li>
+                                <img src="images/b1.png" alt="brand" class="pd-img" />
+                                <a href="http://testlink.com/brand01" class="link-block">more</a>
+                            </li>
+                            <li>
+                                <img src="images/b2.png" alt="brand" class="pd-img" />
+                                <a href="http://testlink.com/brand01" class="link-block">more</a>
+                            </li>
+                            <li>
+                                <img src="images/b1.png" alt="brand" class="pd-img" />
+                                <a href="http://testlink.com/brand01" class="link-block">more</a>
+                            </li>
+                            <li>
+                                <img src="images/b2.png" alt="brand" class="pd-img" />
+                                <a href="http://testlink.com/brand01" class="link-block">more</a>
+                            </li>
+                            <li>
+                                <img src="images/b1.png" alt="brand" class="pd-img" />
+                                <a href="http://testlink.com/brand01" class="link-block">more</a>
+                            </li>
+                            <li>
+                                <img src="images/b3.png" alt="brand" class="pd-img" />
+                                <a href="http://testlink.com/brand01" class="link-block">more</a>
+                            </li>
+                            <li>
+                                <img src="images/b2.png" alt="brand" class="pd-img" />
+                                <a href="http://testlink.com/brand01" class="link-block">more</a>
+                            </li>
+                            <li>
+                                沒有照片的品牌名稱
+                                <a href="http://testlink.com/brand01" class="link-block">more</a>
+                            </li>
+                            <li>
+                                <img src="images/b3.png" alt="brand" class="pd-img" />
+                                <a href="http://testlink.com/brand00" class="link-block">more</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <div role="tabpanel" class="discount-section tab-pane" id="discount-section">
+            <h3>
+            所有平台優惠大補帖
+            <a href="http://testlink.com" class="more-link">所有店家<i class="fa fa-chevron-circle-right"></i></a>
+            </h3>
+            <ul class="store-list clearfix">
+              <li>
+                <a href="http://testlink.com">
+                  <div class="store-content">
+                    <div class="store-img">
+                      <img src="images/shop.png" alt="shop">
+                    </div>
+                    <div class="store-acts">
+                      <span>
+                        活動
+                        <em>5</em>
+                        個
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="http://testlink.com">
+                  <div class="store-content">
+                    <div class="store-img">
+                      <img src="images/shop2.png" alt="shop">
+                    </div>
+                    <div class="store-acts">
+                      <span>
+                        活動
+                        <em>5</em>
+                        個
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="http://testlink.com">
+                  <div class="store-content">
+                    <div class="store-img">
+                      <img src="images/shop3.png" alt="shop">
+                    </div>
+                    <div class="store-acts">
+                      <span>
+                        活動
+                        <em>5</em>
+                        個
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="http://testlink.com">
+                  <div class="store-content">
+                    <div class="store-img">
+                      <img src="images/shop4.png" alt="shop">
+                    </div>
+                    <div class="store-acts">
+                      <span>
+                        活動
+                        <em>5</em>
+                        個
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="http://testlink.com">
+                  <div class="store-content">
+                    <div class="store-img">
+                      <img src="images/shop5.png" alt="shop">
+                    </div>
+                    <div class="store-acts">
+                      <span>
+                        活動
+                        <em>5</em>
+                        個
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="http://testlink.com">
+                  <div class="store-content">
+                    <div class="store-img">
+                      <img src="images/shop6.png" alt="shop">
+                    </div>
+                    <div class="store-acts">
+                      <span>
+                        活動
+                        <em>5</em>
+                        個
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div> -->
+                <div role="tabpanel" class="hotsort-section tab-pane" id="hotsort-section">
+                    <h3>
+            熱搜分類
+            <a href="http://testlink.com/all-list" class="more-link">所有分類<i class="fa fa-chevron-circle-right"></i></a>
+            </h3>
+                    <ul class="hotsort-list clearfix">
+                        <li class="hotsort-box">
+                            <span>筆記型電腦</span> (29,389)
+                            <a href="http://testlink.com/tab3" class="link-block">more info</a>
+                        </li>
+                        <li class="hotsort-box">
+                            <span>筆記型電腦</span> (29,389)
+                            <a href="http://testlink.com/tab3" class="link-block">more info</a>
+                        </li>
+                        <li class="hotsort-box">
+                            <span>筆記型電腦</span> (29,389)
+                            <a href="http://testlink.com/tab3" class="link-block">more info</a>
+                        </li>
+                        <li class="hotsort-box">
+                            <span>筆記型電腦</span> (29,389)
+                            <a href="http://testlink.com/tab3" class="link-block">more info</a>
+                        </li>
+                        <li class="hotsort-box">
+                            <span>智慧型手機</span> (29,389)
+                            <a href="http://testlink.com/tab3" class="link-block">more info</a>
+                        </li>
+                        <li class="hotsort-box">
+                            <span>筆記型電腦</span> (29,389)
+                            <a href="http://testlink.com/tab3" class="link-block">more info</a>
+                        </li>
+                        <li class="hotsort-box">
+                            <span>筆記型電腦</span> (29,389)
+                            <a href="http://testlink.com/tab3" class="link-block">more info</a>
+                        </li>
+                        <li class="hotsort-box">
+                            <span>筆記型電腦</span> (29,389)
+                            <a href="http://testlink.com/tab3" class="link-block">more info</a>
+                        </li>
+                        <li class="hotsort-box">
+                            <span>筆記型電腦</span> (29,389)
+                            <a href="http://testlink.com/tab3" class="link-block">more info</a>
+                        </li>
+                    </ul>
+                </div>
+                <div role="tabpanel" class="bestchoice-section tab-pane" id="bestchoice-section">
+                    <h3>
+            精選：衛生紙
+            <span>0.6元</span>
+            /抽
+            </h3>
+                    <ul class="otherpd-list clearfix">
+                        <li class="item">
+                            <div class="item-img">
+                                <img src="http://img.ezprice.com.tw/ezpd/013/51013/51013_s.jpg" alt="pd-img" class="pd-img">
+                            </div>
+                            <p>Yahoo超級商城</p>
+                            <span class="price">$300</span>
+                            <span class="average">平均0.67元/抽</span>
+                            <a href="http://testlink.com/tab04" class="link-block">more info</a>
+                        </li>
+                        <li class="item">
+                            <div class="item-img">
+                                <img src="http://img.ezprice.com.tw/ezpd/040/51040/51040_s.jpg" alt="pd-img" class="pd-img">
+                            </div>
+                            <p>Yahoo超級商城</p>
+                            <span class="price">$300</span>
+                            <span class="average">平均0.67元/抽</span>
+                            <a href="http://testlink.com/tab04" class="link-block">more info</a>
+                        </li>
+                        <li class="item">
+                            <div class="item-img">
+                                <img src="http://img.ezprice.com.tw/ezpd/966/8966/8966_s.jpg" alt="pd-img" class="pd-img">
+                            </div>
+                            <p>udn買東西</p>
+                            <span class="price">$300</span>
+                            <span class="average">平均0.67元/抽</span>
+                            <a href="http://testlink.com/tab04" class="link-block">more info</a>
+                        </li>
+                        <li class="item">
+                            <div class="item-img">
+                                <img src="http://img.ezprice.com.tw/ezpd/619/38619/38619_s.jpg" alt="pd-img" class="pd-img">
+                            </div>
+                            <p>Yahoo超級商城</p>
+                            <span class="price">$300</span>
+                            <span class="average">平均0.67元/抽</span>
+                            <a href="http://testlink.com/tab04" class="link-block">more info</a>
+                        </li>
+                        <li class="item">
+                            <div class="item-img">
+                                <img src="http://img.ezprice.com.tw/ezpd/036/51036/51036_s.jpg" alt="pd-img" class="pd-img">
+                            </div>
+                            <p>udn買東西</p>
+                            <span class="price">$300</span>
+                            <span class="average">平均0.67元/抽</span>
+                            <a href="http://testlink.com/tab04" class="link-block">more info</a>
+                        </li>
+                        <li class="item">
+                            <div class="item-img">
+                                <img src="http://img.ezprice.com.tw/ezpd/989/50989/50989_s.jpg" alt="pd-img" class="pd-img">
+                            </div>
+                            <p>Yahoo超級商城</p>
+                            <span class="price">$300</span>
+                            <span class="average">平均0.67元/抽</span>
+                            <a href="http://testlink.com/tab04" class="link-block">more info</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 outclear">
+                <div class="hotbrand-section">
+                    <h3>
+            熱搜關鍵字
+            <a href="http://testlink.com/more" class="more-link">更多<i class="fa fa-chevron-circle-right"></i></a>
+            </h3>
+                    <div class="hotsort-section">
+                        <ul class="hotsort-list clearfix">
+                            <li><a href="keyword-name">關鍵字名稱</a></li>
+                            <li><a href="keyword-name">關鍵字名稱</a></li>
+                            <li><a href="keyword-name">關鍵字名稱</a></li>
+                            <li><a href="keyword-name">關鍵字名稱</a></li>
+                            <li><a href="keyword-name">關鍵字名稱</a></li>
+                            <li><a href="keyword-name">關鍵字名稱</a></li>
+                            <li><a href="keyword-name">關鍵字名稱</a></li>
+                            <li><a href="keyword-name">關鍵字名稱</a></li>
+                            <li><a href="keyword-name">關鍵字名稱</a></li>
+                            <!-- ok -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 outclear">
+                <div class="other-section">
+                    <h3 class="other-title">其他服務</h3>
+                    <ul class="clearfix">
+                        <li>
+                            <i class="sprite sprite-01"></i>
+                            <a href="http://testlink.com/icon-1" class="link-block">公關室</a>
+                        </li>
+                        <li>
+                            <i class="sprite sprite-02"></i>
+                            <a href="http://testlink.com/icon-2" class="link-block">電商大數據</a>
+                        </li>
+                        <li>
+                            <i class="sprite sprite-03"></i>
+                            <a href="http://testlink.com/icon-3" class="link-block">價格監控</a>
+                        </li>
+                        <li>
+                            <i class="sprite sprite-04"></i>
+                            <a href="http://testlink.com/icon-4" class="link-block">商品真心話</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+      <footer class="container-fluid text-center">
+        <!-- <div class="fb-like" data-layout="button_count"></div> -->
+        <!-- <a href="https://www.facebook.com/EZprice.tw/?fref=ts">最新降價資訊！立即加入粉絲團</a> -->
+        <!-- ok -->
+        <ul>
+            <li><a href="http://testlink.com/herzo">廠商合作</a></li>
+            <!-- hidden link -->
+            <li><a href="http://testlink.com/contactUs">聯絡我們</a></li>
+            <li><a href="http://testlink.com/PC">電腦版</a></li>
+        </ul>
+        <span class="copyright">© 2015 EZprice Co., Ltd. All rights reserved.</span>
+      </footer>
+    <!-- Slidebars -->
+    <div class="sb-slidebar sb-left sb-style-push sb-width-custom" data-sb-width="300px">
+        <nav>
+            <ul class="sb-menu">
+                <li>
+                    <div class="notlogin-area">
+                        <a href="http://testlink.com/regist" class="btn btn-default btn-register">註冊</a>
+                        <a href="http://testlink.com/login" class="btn btn-login">登入</a>
+                    </div>
+                    <a href="user_profile.html" class="login-area clearfix">
+                        <!-- ok -->
+                        <span class="user-img">
+                <img src="http://i.imgur.com/NbWreex.jpg" alt="user-img">
+              </span>
+                        <span class="user-name">Jennifer Chen</span>
+                    </a>
+                </li>
+                <li class="sb-close"><a href="http://testlink.com/sliderBar01" class="list">首頁</a></li>
+                <li class="sb-close"><a href="http://testlink.com/sliderBar01" class="list">商品分類</a></li>
+                <li class="sb-close"><a href="http://testlink.com/sliderBar01" class="list">平台好康</a></li>
+                <li class="sb-close line">&nbsp;</li>
+                <li class="sb-close"><a href="http://testlink.com/sliderBar01" class="list">我的收藏</a></li>
+                <li class="sb-close"><a href="http://testlink.com/sliderBar01" class="list">帳號維護</a></li>
+                <li class="sb-close line">&nbsp;</li>
+                <!-- <li class="sb-close"><a href="http://testlink.com" class="list">VIP會員獨享功能</a></li> -->
+                <li class="sb-close">
+                    <a href="http://testlink.com/sendi">
+                        <i class="fa fa-bullhorn fa-lg"></i> 會員限定！
+                        <br> 收藏商品，降價立刻通知！
+                        <br>
+                        <br> 立刻安裝↓↓↓
+                    </a>
+                    <div class="download-area">
+                        <a href="http://testlink.com/download01" class="download"><img src="images/download_appstore.png" alt="download-img"></a>
+                        <a href="http://testlink.com/download02" class="download"><img src="images/download_googleplay.png" alt="download-img"></a>
+                    </div>
+                </li>
+                <li class="logout"><a href="http://testlink.com/logout" class="btn btn-login">登出</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- 分類tab-list-modal -->
+    <div class="modal fade" id="tab-list-modal" tabindex="-1" role="dialog" aria-labelledby="filter-modalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">選擇分類</h4>
+                </div>
+                <div class="tab-list-modal modal-body">
+                    <ul class="clearfix" id="accordion">
+                        <li class="panel">
+                            <a class="classify-filter" data-toggle="collapse" data-parent="#accordion" href="#classify-list" aria-expanded="true" aria-controls="classify-list">
+                                <!-- ok -->
+                                <span>3C電腦類</span>
+                            </a>
+                            <ul class="classify-list collapse in" id="classify-list" aria-expanded="true">
+                                <li class="current">
+                                    <a href="http://testlink.com/hide01">
+                                        <span>
+                        筆記型電腦
+                        <span class="count">(230)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/hide02">
+                                        <span>
+                        平板電腦
+                        <span class="count">(2)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/hide03">
+                                        <span>
+                        LCD液晶螢幕
+                        <span class="count">(23)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/hide04">
+                                        <span>
+                        滑鼠鍵盤
+                        <span class="count">(234)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="panel">
+                            <a class="classify-filter collapsed" data-toggle="collapse" data-parent="#accordion" href="#classify-list2" aria-expanded="false" aria-controls="classify-list2">
+                                <span>視聽家電</span>
+                            </a>
+                            <ul class="classify-list collapse" id="classify-list2" aria-expanded="false" style="height: 0px;">
+                                <li>
+                                    <a href="http://testlink.com/ccc">
+                                        <span>
+                        筆記型電腦
+                        <span class="count">(230)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/cc2">
+                                        <span>
+                        平板電腦
+                        <span class="count">(2)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/ccc">
+                                        <span>
+                        LCD液晶螢幕
+                        <span class="count">(23)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/ccc">
+                                        <span>
+                        滑鼠鍵盤
+                        <span class="count">(234)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="panel">
+                            <a class="classify-filter collapsed" data-toggle="collapse" data-parent="#accordion" href="#classify-list3" aria-expanded="false" aria-controls="classify-list3">
+                                <!-- ok -->
+                                <span>手機相機</span>
+                            </a>
+                            <ul class="collapse classify-list" id="classify-list3" aria-expanded="false">
+                                <li>
+                                    <a href="http://testlink.com/bbb">
+                                        <span>
+                        筆記型電腦
+                        <span class="count">(230)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/bbb">
+                                        <span>
+                        平板電腦
+                        <span class="count">(2)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/bbb">
+                                        <span>
+                        LCD液晶螢幕
+                        <span class="count">(23)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/bbb">
+                                        <span>
+                        滑鼠鍵盤
+                        <span class="count">(234)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="panel">
+                            <a class="classify-filter collapsed" data-toggle="collapse" data-parent="#accordion" href="#classify-list4" aria-expanded="false" aria-controls="classify-list4">
+                                <!-- ok -->
+                                <span>美容小家電</span>
+                            </a>
+                            <ul class="collapse classify-list" id="classify-list4" aria-expanded="false">
+                                <li>
+                                    <a href="http://testlink.com/aaa">
+                                        <span>
+                        筆記型電腦
+                        <span class="count">(230)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/aaa">
+                                        <span>
+                        平板電腦
+                        <span class="count">(2)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/aaa">
+                                        <span>
+                        LCD液晶螢幕
+                        <span class="count">(23)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/aaa">
+                                        <span>
+                        滑鼠鍵盤
+                        <span class="count">(234)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="panel">
+                            <a class="classify-filter collapsed" data-toggle="collapse" data-parent="#accordion" href="#classify-list5" aria-expanded="false" aria-controls="classify-list5">
+                                <!-- hidden-link -->
+                                <span>美妝保養</span>
+                            </a>
+                            <ul class="collapse classify-list" id="classify-list5" aria-expanded="false">
+                                <li>
+                                    <a href="http://testlink.com/qqq">
+                                        <span>
+                        筆記型電腦
+                        <span class="count">(230)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/qqq">
+                                        <span>
+                        平板電腦
+                        <span class="count">(2)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/qqq">
+                                        <span>
+                        LCD液晶螢幕
+                        <span class="count">(23)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/qqq">
+                                        <span>
+                        滑鼠鍵盤
+                        <span class="count">(234)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="panel">
+                            <a class="classify-filter collapsed" data-toggle="collapse" data-parent="#accordion" href="#classify-list6" aria-expanded="false" aria-controls="classify-list6">
+                                <span>養身保健</span>
+                            </a>
+                            <ul class="collapse classify-list" id="classify-list6" aria-expanded="false">
+                                <li>
+                                    <a href="http://testlink.com/ddd">
+                                        <span>
+                        筆記型電腦
+                        <span class="count">(230)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/ddd">
+                                        <span>
+                        平板電腦
+                        <span class="count">(2)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/ddd">
+                                        <span>
+                        LCD液晶螢幕
+                        <span class="count">(23)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://testlink.com/ddd">
+                                        <span>
+                        滑鼠鍵盤
+                        <span class="count">(234)</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 價格範圍tab-list-modal -->
+    <div class="modal fade" id="tab-list-modal2" tabindex="-1" role="dialog" aria-labelledby="filter-modalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">選擇價格範圍</h4>
+                </div>
+                <div class="tab-list2 tab-list-modal modal-body" style="margin: 0; display: block;">
+                    <h4>價格範圍(NT$)</h4>
+                    <ul class="clearfix">
+                        <li class="current">
+                            <a href="http://testlink.com/price"><span>~NT$ 999元</span></a>
+                        </li>
+                        <li>
+                            <a href="http://testlink.com/price"><span>NT$ 1,000~NT$ 2,999</span></a>
+                        </li>
+                        <li>
+                            <a href="http://testlink.com/price"><span>NT$ 3,000~NT$ 5,999</span></a>
+                        </li>
+                        <li>
+                            <a href="http://testlink.com/price"><span>NT$ 6,000~</span></a>
+                        </li>
+                    </ul>
+                    <div class="setprice-range">
+                        <h4>自訂價格範圍(NT$)</h4>
+                        <div class="setprice-input">
+                            <input type="number" placeholder="最低價" class="low-input" style="width: 39%;">元～
+                            <input type="number" placeholder="最高價" class="high-input" style="width: 39%;">元
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 品牌tab-list-modal3 -->
+    <div class="modal fade" id="tab-list-modal3" tabindex="-1" role="dialog" aria-labelledby="filter-modalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">選擇品牌</h4>
+                </div>
+                <div class="filter-modal-list modal-body">
+                    <ul class="clearfix">
+                        <li class="current">
+                            <a href="http://testlink.com/brand-sel"><span>Apple</span></a>
+                        </li>
+                        <li>
+                            <a href="http://testlink.com/brand-sel"><span>BenQ</span></a>
+                        </li>
+                        <li>
+                            <a href="http://testlink.com/brand-sel"><span>Canon</span></a>
+                        </li>
+                        <li>
+                            <a href="http://testlink.com/brand-sel"><span>Dell</span></a>
+                        </li>
+                        <li>
+                            <a href="http://testlink.com/brand-sel"><span>奇美</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Back to top -->
+    <a href="#0" class="cd-top fa fa-chevron-up"></a>
+    <script src="http://use.fontawesome.com/a20778cb0f.js"></script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <!-- Slidebars -->
+    <script src="javascripts/slidebars.min.js"></script>
+    <script src="javascripts/cancelZoom.js"></script>
+    <script>
+    (function($) {
+        $(document).ready(function() {
+            // Initiate Slidebars
+            $.slidebars({
+                scrollLock: true // true or false
+            });
+        });
+    })(jQuery);
+    </script>
+    <!-- navbar JS-->
+    <script>
+    $(document).scroll(function(e) {
+        var scrollTop = $(document).scrollTop();
+        if (scrollTop > 50) {
+            $('.index-scroll-fix').hide();
+            $('.index-content').hide();
+            $('.ez-app').hide();
+            // $('.navbar-fixed-top').css('top', '0px');
+            // $('.main-content').css('margin-top', '205px');
+            $('.head-content').show();
+        } else {
+            $('.index-scroll-fix').show();
+            $('.index-content').show();
+            $('.ez-app').show();
+            // $('.navbar-fixed-top').css('top', '70px');
+            // $('.main-content').css('margin-top', '205px');
+            $('.head-content').hide();
+        }
+    });
+    $(function() {
+        $('#srhkw2').focusin(function(event) {
+            $('html, body').animate({
+                scrollTop: $("#srhkw2").offset().top
+            }, 600);
+        });
+        $('#srhkw1').focusout(function() {
+            $('.search-input-content').hide().css('position', 'absolute');
+            $('.overlay-bg').hide();
+        });
+        $('#srhkw1').focusin(function() {
+            $('.search-input-content').show().css('position', 'fixed');
+            $('.overlay-bg').show();
+        });
+        $('#srhkw1').click(function() {
+            $('.search-input-content').removeClass("hiddenBox");
+        });
+    });
+    </script>
+    <!-- Goto Top JS-->
+    <script>
+    jQuery(document).ready(function($) {
+        // browser window scroll (in pixels) after which the "back to top" link is shown
+        var offset = 200,
+            //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+            offset_opacity = 1200,
+            //duration of the top scrolling animation (in ms)
+            scroll_top_duration = 700,
+            //grab the "back to top" link
+            $back_to_top = $('.cd-top');
+        //hide or show the "back to top" link
+        $(window).scroll(function() {
+            ($(this).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible'): $back_to_top.removeClass('cd-is-visible cd-fade-out');
+            if ($(this).scrollTop() > offset_opacity) {
+                $back_to_top.addClass('cd-fade-out');
+            }
+        });
+        //smooth scroll to top
+        $back_to_top.on('click', function(event) {
+            event.preventDefault();
+            $('body,html').animate({
+                scrollTop: 0,
+            }, scroll_top_duration);
+        });
+    });
+    </script>
+    <!-- carousel swipe js -->
+    <script src="javascripts/carousel-swipe.js"></script>
+    <script type="text/javascript">
+    $("#ezguide,#platform").carousel({
+        swipe: 1,
+        interval: 5000
+    });
+    </script>
+    <!--jquery.mobile.js only for index.html -->
+    <script src="javascripts/jquery.mobile.custom.min.js"></script>
+    <script>
+    $(function() {
+        $(".tab-content").swiperight(function() {
+            var $tab = $('#tablist .active').prev();
+            if ($tab.length > 0)
+                $tab.find('a').tab('show');
+        });
+        $(".tab-content").swipeleft(function() {
+            var $tab = $('#tablist .active').next();
+            if ($tab.length > 0)
+                $tab.find('a').tab('show');
+        });
+    });
+    </script>
+    <!--to remove jquery mobile loading message -->
+    <script>
+    $(document).on("pageshow", "[data-role='page']", function() {
+        $('div.ui-loader').remove();
+    });
+    </script>
+</body>
+
+</html>

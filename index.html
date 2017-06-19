@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head itemscope itemtype="http://schema.org/WebSite" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# product: http://ogp.me/ns/product#">
+    <meta charset="UTF-8">
+    <title itemprop='name'>EZprice 價格| EZprice比價網</title>
+    <link rel="canonical" href="https://example.com/" itemprop="url">
+    <meta name="theme-color" content="#393f4e">
+    <!-- fb og -->
+    <meta property="fb:app_id" content="302184056577324" />
+    <meta property="og:type"   content="product.group" />
+    <meta property="og:url"    content="https://m.ezprice.com.tw/" />
+    <meta property="og:title"  content="Sample Group" />
+    <meta property="og:image"  content="https://fbstatic-a.akamaihd.net/images/devsite/attachment_blank.png" />
+    <!-- //fb og -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://m.ezprice.com.tw/images/ezprice-logo.png" rel="icon" type="image/png">
+    <link rel="stylesheet" href="css/m.ezprice.css">
+    <link rel="alternate" media="only screen and (min-width: 1024px)" href="https://ezprice.com.tw/">
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://m.ezprice.com.tw/",
+      "logo": "https://ezprice.com.tw/logo.png",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+886-2-2777-1278",
+        "contactType": "customer service"
+      }],
+      "sameAs": [
+        "https://www.facebook.com/EZprice.tw/",
+        "https://plus.google.com/+EZpricetw"
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container head-content">
+        <h1 class="site-logo"><a href="/">EZprice 比價網</a></h1>
+        <button class="icon icon-navicon-round nav-toggle"></button>
+        <div class="input-search" id="search-box">
+          <form id="search_act" class="container">
+            <input class="input-area" id="search-input" placeholder="想省? 來比價吧！" autocomplete="off" type="text" name="search_term_string" required/> 
+            <button type="submit" class="search-submit icon icon-android-search"></button>
+          </form>
+        </div>
+      </div>
+      <nav class="nav">
+        <ul class="nav-menu">
+          <li class="nav-items"><a href="#" title="首頁" alt="首頁">首頁</a></li>
+          <li class="nav-items"><a href="#" title="分類熱搜" alt="分類熱搜">分類熱搜</a></li>
+          <li class="nav-items"><a href="#" title="熱搜關鍵字" alt="熱搜關鍵字">熱搜關鍵字</a></li>
+          <li class="nav-items"><a href="#" title="會員中心" alt="會員中心">會員中心</a></li>
+          <li class="nav-items"><a href="#" title="下載APP" alt="下載APP">下載APP</a></li>
+          <li class="nav-items"><a href="#" title="隱私權/使用者條款" alt="隱私權/使用者條款">隱私權/使用者條款</a></li>
+          <li class="nav-buttons">
+            <a href="#" title="註冊" title="註冊">註冊</a>
+            <a href="#" title="登入" title="登入">登入</a>
+          </li>
+        </ul>
+        <div class="close-bg"></div>
+      </nav>
+      <div class="overlay-bg"></div>
+      <!-- 搜尋頁 -->
+      <div id="search-modal" class="search-modal collapse">
+        <!-- 搜尋頁-頭部 -->
+        <div class="search-head">
+          <button class="icon icon-android-arrow-back back-btn"></button>
+          <div class="input-search form-control" itemscope itemtype="http://schema.org/WebSite">
+            <meta itemprop="url" content="https://www.example.com/"/>
+            <form id="search_act" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+              <meta itemprop="target" content="https://query.example.com/search?q={search_term_string}"/>
+              <input class="input-area" id="testinput" placeholder="想省? 來比價吧！" autocomplete="off" itemprop="query-input" type="text" name="search_term_string" value="SONY 重低音" required/> 
+              <span class="clear-btn">✕</span>
+              <button type="submit" class="search-submit icon icon-android-search"></button>
+            </form>
+          </div>
+        </div>
+        <!-- 搜尋頁-tab選單 -->
+        <div class="container tab-bar">
+          <button class="tab-btn-left">熱搜關鍵字</button>
+          <button class="tab-btn-right active">最近搜尋</button>
+        </div>
+        <!-- 搜尋頁-熱搜關鍵字內容 -->
+        <div class="container tab-content hot-search collapse">
+          <ul>
+            <li><a href="#" title="可麗舒" alt="可麗舒"><span>1</span>可麗舒</a></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒"><span>2</span>可麗舒</a></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒"><span>3</span>可麗舒</a></li>
+          </ul>
+        </div>
+        <!-- 搜尋頁-最近搜尋內容 -->
+        <div class="container tab-content last-search collapse open">
+          <ul>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li class="delete-all"><a href="#" title="刪除全部" alt="刪除全部">刪除全部</a></li>
+          </ul>
+        </div>
+        <!-- 搜尋頁-input建議字內容 -->
+        <ul class="search-section collapse">
+          <!-- 建議關鍵字區 -->
+          <li class="history-title"><a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>xz</strong></a></li>
+          <li class="history-title"><a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>ps4</strong></a></li>
+          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>xperia</strong></a></li>
+          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>xz premium</strong></a></li>
+          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>xa</strong></a></li>
+          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>xzs</strong></a></li>
+          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
+          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
+          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
+          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
+          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
+          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
+          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
+          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
+
+        </ul>
+      </div>
+    </header>
+    <section class="section main-content">
+      <div class="container">
+        <!-- 輪播區塊 開始 -->
+        <div class="full-width news-slider">
+          <div class="sliders-stage">
+            <div class="collapse news-list open">
+              <a href="#" title="【優惠訊息】YAHOO超級商城折價券領取情報整理 2017/6/6更新" alt="【優惠訊息】YAHOO超級商城折價券領取情報整理 2017/6/6更新" class="clearfix">
+                <span class="news-img">
+                  <img src="https://img.ezprice.com.tw/guide/2017/06/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7-2017-06-07-%E4%B8%8A%E5%8D%8810.26.11-650x365.png" alt="【優惠訊息】YAHOO超級商城折價券領取情報整理 2017/6/6更新">
+                </span>
+                <span class="news-info">
+                  <h5>【優惠訊息】YAHOO超級商城折價券領取情報整理 2017/6/6更新</h5>
+                  <small>2017-06-07 by 手滑不是病 滑起來要人命</small>
+                </span>
+              </a>
+            </div>
+            <div class="collapse news-list">
+              <a href="#" title="【優惠訊息】YAHOO超級商城折價券領取情報整理 2017/6/6更新" alt="【優惠訊息】YAHOO超級商城折價券領取情報整理 2017/6/6更新" class="clearfix">
+                <span class="news-img">
+                  <img src="https://img.ezprice.com.tw/guide/2017/06/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7-2017-06-07-%E4%B8%8A%E5%8D%8810.26.11-650x365.png" alt="【優惠訊息】YAHOO超級商城折價券領取情報整理 2017/6/6更新">
+                </span>
+                <span class="news-info">
+                  <h5>【優惠訊息】YAHOO超級商城折價券領取情報整理 2017/6/6更新</h5>
+                  <small>2017-06-07 by 手滑不是病 滑起來要人命</small>
+                </span>
+              </a>
+            </div>
+            <div class="collapse news-list">
+              <a href="#" title="【優惠訊息】YAHOO超級商城折價券領取情報整理 2017/6/6更新" alt="【優惠訊息】YAHOO超級商城折價券領取情報整理 2017/6/6更新" class="clearfix">
+                <span class="news-img">
+                  <img src="https://img.ezprice.com.tw/guide/2017/06/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7-2017-06-07-%E4%B8%8A%E5%8D%8810.26.11-650x365.png" alt="【優惠訊息】YAHOO超級商城折價券領取情報整理 2017/6/6更新">
+                </span>
+                <span class="news-info">
+                  <h5>【優惠訊息】YAHOO超級商城折價券領取情報整理 2017/6/6更新</h5>
+                  <small>2017-06-07 by 手滑不是病 滑起來要人命</small>
+                </span>
+              </a>
+            </div>
+          </div>
+          <button class="icon icon-chevron-left prev"></button>
+          <button class="icon icon-chevron-right next"></button>
+        </div>
+        <!-- 輪播區塊 結束 -->
+        <!-- tabs區塊 開始 -->
+        <div class="tabs">
+          <div class="columns is-mobile is-gapless full-width tabs-btn-list">
+            <button class="column tabs-btn active" onclick="openLink(event, 'downPrice')">降價↡ 30%</button>
+            <button class="column tabs-btn" onclick="openLink(event, 'hotBrand')">熱搜品牌</button>
+            <button class="column tabs-btn" onclick="openLink(event, 'hotClass')">熱搜分類</button>
+            <button class="column tabs-btn" onclick="openLink(event, 'toiletPaper')">精選:衛生紙</button>
+          </div>
+          <div class="columns is-mobile is-multiline tabBox collapse open" id="downPrice">
+            <div class="columns is-mobile is-multiline tab-content-list">
+              <div class="column is-4 list-item">
+                <a href="#" title="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)" alt="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)">
+                  <span class="product-img"><img src="https://img.ezprice.com.tw/ezpd/558/2558/2558_s.jpg" alt="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)"></span>
+                  <h5 class="product-name">SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)</h5>
+                  <strong>$1,999</strong>
+                  <small>$2,200</small>
+                </a>
+              </div>
+              <div class="column is-4 list-item">
+                <a href="#" title="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)" alt="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)">
+                  <span class="product-img"><img src="https://img.ezprice.com.tw/ezpd/558/2558/2558_s.jpg" alt="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)"></span>
+                  <h5 class="product-name">SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)</h5>
+                  <strong>$1,999</strong>
+                  <small>$2,200</small>
+                </a>
+              </div>
+              <div class="column is-4 list-item">
+                <a href="#" title="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)" alt="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)">
+                  <span class="product-img"><img src="https://img.ezprice.com.tw/ezpd/558/2558/2558_s.jpg" alt="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)"></span>
+                  <h5 class="product-name">SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)</h5>
+                  <strong>$1,999</strong>
+                  <small>$2,200</small>
+                </a>
+              </div>
+              <div class="column is-4 list-item">
+                <a href="#" title="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)" alt="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)">
+                  <span class="product-img"><img src="https://img.ezprice.com.tw/ezpd/558/2558/2558_s.jpg" alt="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)"></span>
+                  <h5 class="product-name">SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)</h5>
+                  <strong>$1,999</strong>
+                  <small>$2,200</small>
+                </a>
+              </div>
+              <div class="column is-4 list-item">
+                <a href="#" title="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)" alt="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)">
+                  <span class="product-img"><img src="https://img.ezprice.com.tw/ezpd/558/2558/2558_s.jpg" alt="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)"></span>
+                  <h5 class="product-name">SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)</h5>
+                  <strong>$1,999</strong>
+                  <small>$2,200</small>
+                </a>
+              </div>
+              <div class="column is-4 list-item">
+                <a href="#" title="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)" alt="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)">
+                  <span class="product-img"><img src="https://img.ezprice.com.tw/ezpd/558/2558/2558_s.jpg" alt="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)"></span>
+                  <h5 class="product-name">SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)</h5>
+                  <strong>$1,999</strong>
+                  <small>$2,200</small>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="hotsort-list tabBox collapse" id="hotBrand">
+            <h3>熱搜品牌</h3>
+            <a href="#" class="more-link">所有熱搜品牌<i class="icon icon-chevron-right"></i></a>
+            <ul class="columns is-mobile is-multiline">
+              <li class="column is-4 list-item"><a href="#" alt="Amazon Baby" title="Amazon Baby">Amazon Baby</a></li>
+              <li class="column is-4 list-item"><a href="#" alt="Amazon Baby" title="Amazon Baby">Amazon Baby</a></li>
+              <li class="column is-4 list-item"><a href="#" alt="Amazon Baby" title="Amazon Baby">Amazon Baby</a></li>
+              <li class="column is-4 list-item"><a href="#" alt="Amazon Baby" title="Amazon Baby">Amazon Baby</a></li>
+              <li class="column is-4 list-item"><a href="#" alt="Amazon Baby" title="Amazon Baby">Amazon Baby</a></li>
+              <li class="column is-4 list-item"><a href="#" alt="Amazon Baby" title="Amazon Baby">Amazon Baby</a></li>
+              <li class="column is-4 list-item"><a href="#" alt="Amazon Baby" title="Amazon Baby">Amazon Baby</a></li>
+              <li class="column is-4 list-item"><a href="#" alt="Amazon Baby" title="Amazon Baby">Amazon Baby</a></li>
+              <li class="column is-4 list-item"><a href="#" alt="Amazon Baby" title="Amazon Baby">Amazon Baby</a></li>
+            </ul>
+          </div>
+          <div class="hotsort-list tabBox collapse" id="hotClass">
+            <h3>熱搜分類</h3>
+            <a href="#" class="more-link">所有熱搜分類<i class="icon icon-chevron-right"></i></a>
+            <ul class="columns is-mobile is-multiline">
+              <li class="column is-4 list-item"><a href="#">運動服(1)</a></li>
+              <li class="column is-4 list-item"><a href="#">影音、多媒體繪圖(222)</a></li>
+              <li class="column is-4 list-item"><a href="#">豆漿機(20)</a></li>
+              <li class="column is-4 list-item"><a href="#">電視視訊盒(22)</a></li>
+              <li class="column is-4 list-item"><a href="#">影音、多媒體繪圖(222)</a></li>
+              <li class="column is-4 list-item"><a href="#">豆漿機(20)</a></li>
+              <li class="column is-4 list-item"><a href="#">電視視訊盒(22)</a></li>
+              <li class="column is-4 list-item"><a href="#">影音、多媒體繪圖(222)</a></li>
+              <li class="column is-4 list-item"><a href="#">豆漿機(20)</a></li>
+            </ul>
+          </div>
+          <div class="columns is-mobile is-multiline tabBox collapse" id="toiletPaper">
+            <h3>精選:衛生紙</h3>
+            <div class="columns is-mobile is-multiline tab-content-list">
+              <div class="column is-4 list-item">
+                <a href="#" alt="Livi優活擦手紙(200張*20包)" title="Livi優活擦手紙(200張*20包)">
+                  <span class="product-img"><img src="https://img.ezprice.com.tw/ezpd/387/50387/50387_s.jpg" alt="Livi優活擦手紙(200張*20包)"></span>
+                  <h5>Livi優活擦手紙(200張*20包)</h5>
+                  <strong>$599</strong>
+                </a>
+              </div>
+              <div class="column is-4 list-item">
+                <a href="#" alt="Livi優活擦手紙(200張*20包)" title="Livi優活擦手紙(200張*20包)">
+                  <span class="product-img"><img src="https://img.ezprice.com.tw/ezpd/387/50387/50387_s.jpg" alt="Livi優活擦手紙(200張*20包)"></span>
+                  <h5>Livi優活擦手紙(200張*20包)</h5>
+                  <strong>$599</strong>
+                </a>
+              </div>
+              <div class="column is-4 list-item">
+                <a href="#" alt="Livi優活擦手紙(200張*20包)" title="Livi優活擦手紙(200張*20包)">
+                  <span class="product-img"><img src="https://img.ezprice.com.tw/ezpd/387/50387/50387_s.jpg" alt="Livi優活擦手紙(200張*20包)"></span>
+                  <h5>Livi優活擦手紙(200張*20包)</h5>
+                  <strong>$599</strong>
+                </a>
+              </div>
+              <div class="column is-4 list-item">
+                <a href="#" alt="Livi優活擦手紙(200張*20包)" title="Livi優活擦手紙(200張*20包)">
+                  <span class="product-img"><img src="https://img.ezprice.com.tw/ezpd/387/50387/50387_s.jpg" alt="Livi優活擦手紙(200張*20包)"></span>
+                  <h5>Livi優活擦手紙(200張*20包)</h5>
+                  <strong>$599</strong>
+                </a>
+              </div>
+              <div class="column is-4 list-item">
+                <a href="#" alt="Livi優活擦手紙(200張*20包)" title="Livi優活擦手紙(200張*20包)">
+                  <span class="product-img"><img src="https://img.ezprice.com.tw/ezpd/387/50387/50387_s.jpg" alt="Livi優活擦手紙(200張*20包)"></span>
+                  <h5>Livi優活擦手紙(200張*20包)</h5>
+                  <strong>$599</strong>
+                </a>
+              </div>
+              <div class="column is-4 list-item">
+                <a href="#" alt="Livi優活擦手紙(200張*20包)" title="Livi優活擦手紙(200張*20包)">
+                  <span class="product-img"><img src="https://img.ezprice.com.tw/ezpd/387/50387/50387_s.jpg" alt="Livi優活擦手紙(200張*20包)"></span>
+                  <h5>Livi優活擦手紙(200張*20包)</h5>
+                  <strong>$599</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- tabs區塊 結束 -->
+        <!-- 其他服務區塊 開始 -->
+        <div class="box-list">
+          <h3>其他服務</h3>
+          <div class="columns is-mobile service-list">
+            <a href="#" target="_blank" class="column"><span class="icon icon-bullhorn">公關室</span> </a>
+            <a href="#" target="_blank" class="column"><span class="icon icon-chart">電商大數據</span> </a>
+            <a href="#" target="_blank" class="column"><span class="icon icon-apple">ios<br/>比價找便宜</span> </a>
+            <a href="#" target="_blank" class="column"><span class="icon icon-android">android<br/>比價找便宜</span> </a>
+          </div>
+        </div>
+        <!-- 其他服務區塊 結束 -->
+      </div>
+    </section>
+    <footer class="footer">
+      <ul>
+        <li><a href="/contact.php" title="廠商合作" alt="廠商合作">廠商合作</a></li>
+        <li><a href="/contact.php" title="聯絡我們" alt="聯絡我們">聯絡我們</a></li>
+        <li><a href="//ezprice.com.tw/s/sony%20%E9%87%8D%E4%BD%8E%E9%9F%B3/price/?kw=sony%20%E9%87%8D%E4%BD%8E%E9%9F%B3&amp;e=101" title="電腦版" alt="電腦版">電腦版</a></li>
+      </ul>
+      <span class="copyright">© 2017 EZprice Co., Ltd. All rights reserved.</span>
+    </footer>
+    <button class="icon icon-chevron-up go-top"></button>
+  </body>
+  <script src="js/jQuery.min.js"></script>
+  <script src="js/mEZprice.js"></script>
+  <script>
+    function openLink(evt, tabBoxName) {
+      var i, x, tabButton;
+      x = document.getElementsByClassName("tabBox");
+      for (i = 0; i < x.length; i++) {
+          x[i].className = x[i].className.replace(" open", "");
+      }
+      tabButton = document.getElementsByClassName("tabs-btn");
+      for (i = 0; i < x.length; i++) {
+          tabButton[i].className = tabButton[i].className.replace(" active", "");
+      }
+      document.getElementById(tabBoxName).className += " open";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+</html>

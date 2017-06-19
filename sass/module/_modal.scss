@@ -1,0 +1,340 @@
+body.modal-open {
+    overflow: hidden;
+    height: 100%;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1200; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+    &.open {
+      display: block;
+    }
+
+    li.panel {
+      position: relative;
+      text-align: left;
+      &.iner-list > ul {
+        border-top: 1px solid $gray-lighter;
+      }
+      .classify-filter {
+        padding: 0.6rem 0.3rem 0.6rem 2rem;
+        color: $gray-dark;
+        // font-weight: bold;
+        background: $gray-lighter;
+        display: block;
+        border-bottom: 1px solid $gray-light;
+      }
+      .btn-display {
+        position: absolute;
+        width: 50px;
+        height: 40px;
+        padding: 0;
+        background: none;
+        float: right;
+        top: 0;
+        right: 0;
+        outline: none;
+        z-index: 3;
+        
+        &:after {
+          font-family: "ez-msite";
+          content: "\6c";
+          font-size: 15px;
+          transition: 0.3s all ease-in-out;
+          display: block;
+        }
+        &.more {
+          &:after {
+            transform:rotate(180deg);
+            color: #9B9B9B;
+          }
+        }
+      }
+    }
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: $white;
+    margin: 0.75rem;
+    padding: 0;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    width: auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+
+    .modal-header {
+        color: $gray-darker;
+        padding: 0.85rem;
+        margin: 0;
+        border-bottom: 1px solid $gray-light;
+        font-size: 1.1rem;
+        font-weight: normal;
+        text-align: center;
+
+    }
+    .btn-select {
+      position: absolute;
+      font-size: 0.9em;
+      color: $gray;
+      background: none;
+      left: 0;
+      top: 0;
+      width: 44px;
+      height: 50px;
+      padding: 0;
+      &:nth-child(2) {
+        left: 44px;
+      }
+      
+    }
+
+    .modal-body {
+      text-align: left;
+        padding: 0;
+        overflow-y: scroll;
+        height: 70vh;
+
+        li > a {
+            display: block;
+            padding: 1rem 0.9rem;
+            border-bottom: 1px solid $gray-light;
+            text-decoration: none;
+            color: $gray;
+            font-size: 14px;
+
+            > span {
+                padding: 0 10px;
+                font-weight: bold;
+                color: $gray-darker;
+            }
+            &.current {
+              font-weight: bold;
+              color: $orange;
+
+              &:after {
+                float: right;
+                font-family: "ez-msite";
+                content: "\66"; 
+                color: $orange;
+                font-size: 16px; 
+              }
+
+              > span {
+                color: $orange;
+              }
+            }
+        }
+        .no-select {
+          background: $gray-lighter;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          vertical-align: middle;
+          padding-top: calc(50% - 20px);
+          font-size: 20px;
+          color: rgba($gray,0.6);
+        }
+
+        .set-price {
+          h6 {
+            margin: 0;
+            color: #777;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 7px 12px;
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #c1c1c1;
+          }
+          form {
+            padding: 0.5rem 1rem;
+            color: $gray;
+            border-bottom: 1px solid $gray-light;
+
+            input[type="number"] {
+              width: 25%;
+              margin: 0 5px 0 0;
+              padding: 7px;
+              color: #999;
+              background-color: #e8e8e8;
+              border: none;
+              border-radius: 3px;
+            }
+            .btn-default {
+                color: #333;
+                background-color: #fff;
+                border-color: #ccc;
+            }
+          }
+          ul > li > a {
+            padding: 0.6rem 0.9rem; 
+          }
+        }
+    }
+
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: $gray;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.collapse {
+    display: none;
+}
+
+.collapse.open {
+    display: block !important;
+}
+
+.collapse.flex-box {
+  display: flex;
+}
+
+// .modal-title {
+//     padding: 2px 16px;
+//     background-color: #5cb85c;
+//     color: white;
+// }
+
+.modal-footer {
+    padding: 2px 16px;
+    display: flex;
+    background: none;
+    color: $orange;
+    border-top: 1px solid #eee;
+
+    button {
+      border:none;
+      background: none;
+    }
+}
+
+@media screen and (max-width: 320px) {
+  .modal-content {
+    .modal-body {
+        height: 60vh;
+    }
+  }
+}
+
+.checkbox {
+  padding: 10px 12px 10px 40px;
+  border-bottom: 1px solid #e5e5e5;
+  margin: 0;
+  color: #777;
+  label {
+    position: relative;
+    display: block;
+    padding-left: 3px;
+    &:before {
+      border-radius: 3px;
+    }
+    &:after {
+      display: inline-block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 0;
+      top: 0;
+      margin-left: -20px;
+      padding-left: 4px;
+      padding-top: 4px;
+      font-size: 11px;
+      color: #555555;
+    }
+  }
+  input[type="checkbox"]:checked + label::before{
+    background-color: #ff752b;
+    border-color: #ff752b;
+  }
+  input[type="checkbox"]:checked + label::after{
+    font-family: "ez-msite";
+    content: "\66";
+    color: $white;
+  }
+}
+
+input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox] + label:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.panel > ul.classify-list > .checkbox {
+  padding: 10px 12px 10px 55px;
+}
+
+
+
+ 

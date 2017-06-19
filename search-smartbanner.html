@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebSite" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# product: http://ogp.me/ns/product#">
+  <head>
+    <meta charset="UTF-8">
+    <title itemprop='name'>EZprice搜尋頁 價格| EZprice比價網</title>
+    <link rel="canonical" href="https://example.com/" itemprop="url">
+    <!-- fb og -->
+    <meta property="fb:app_id" content="302184056577324" />
+    <meta property="og:type"   content="product.group" />
+    <meta property="og:url"    content="https://m.ezprice.com.tw/" />
+    <meta property="og:title"  content="Sample Group" />
+    <meta property="og:image"  content="https://fbstatic-a.akamaihd.net/images/devsite/attachment_blank.png" />
+    <!-- //fb og -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://m.ezprice.com.tw/images/ezprice-logo.png" rel="icon" type="image/png">
+    <link rel="stylesheet" href="css/m.ezprice2.css">
+    <link rel="alternate" media="only screen and (min-width: 1024px)" href="https://ezprice.com.tw/">
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://m.ezprice.com.tw/",
+      "logo": "https://ezprice.com.tw/logo.png",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+886-2-2777-1278",
+        "contactType": "customer service"
+      }],
+      "sameAs": [
+        "https://www.facebook.com/EZprice.tw/",
+        "https://plus.google.com/+EZpricetw"
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container head-content">
+        <h1 class="icon icon-ez-logo site-logo">
+        <strong>EZprice 比價網</strong>
+        SONY 重低音(商品關鍵字)
+        </h1>
+        <button class="icon icon-navicon-round nav-toggle"></button>
+        <div class="input-search form-control" itemscope itemtype="http://schema.org/WebSite">
+          <meta itemprop="url" content="https://www.example.com/"/>
+          <form id="search_act" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+            <meta itemprop="target" content="https://query.example.com/search?q={search_term_string}"/>
+            <input class="input-area" placeholder="想省? 來比價吧！" autocomplete="off" itemprop="query-input" type="text" name="search_term_string" required/> 
+            <!-- <input type="hidden" name="crossover" id="crossover" value=""> -->
+            <input type="submit" class="submit">
+          </form>
+        </div>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn" class="icon icon-arrow-swap filter-btn">排序</button>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <h6 class="modal-header">想要排序的方式</h6>
+            <button class="close">✕</button>
+            <ul class="modal-body">
+              <li><a href="#" title="123" alt="123" class="fa fa-sort-amount-asc"><span>價格</span>從低到高</a></li>
+              <li><a href="#" title="123" alt="123" class="fa fa-sort-amount-desc"><span>價格</span>從高到低</a></li>
+              <li><a href="#" title="123" alt="123" class="fa fa-sort-amount-desc current"><span>相關度</span>從高到低</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <nav class="nav">
+        <ul class="nav-menu">
+          <li class="nav-items"><a href="#" title="首頁" alt="首頁">首頁</a></li>
+          <li class="nav-items"><a href="#" title="分類熱搜" alt="分類熱搜">分類熱搜</a></li>
+          <li class="nav-items"><a href="#" title="熱搜關鍵字" alt="熱搜關鍵字">熱搜關鍵字</a></li>
+          <li class="nav-items"><a href="#" title="會員中心" alt="會員中心">會員中心</a></li>
+          <li class="nav-items"><a href="#" title="下載APP" alt="下載APP">下載APP</a></li>
+          <li class="nav-items"><a href="#" title="隱私權/使用者條款" alt="隱私權/使用者條款">隱私權/使用者條款</a></li>
+          <li class="nav-buttons">
+            <a href="#" title="註冊" title="註冊">註冊</a>
+            <a href="#" title="登入" title="登入">登入</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="search-filter"><!-- 篩選條件區 -->
+        <ul class="columns is-mobile is-gapless">
+          <li class="column tab-items"><!-- 大類別按鈕01 -->
+            <button class="icon icon-folder-open tab-items-btn">分類</button>
+            <div class="modal">
+              <div class="modal-content">
+                <h5 class="modal-header">分類篩選</h5>
+                <button class="close">✕</button>
+                <ul class="modal-body">
+                  <!-- 分類大選項1 -->
+                  <li class="panel">
+                    <a href="#" title="123" alt="123" class="classify-filter">3C電腦週邊(46)</a>
+                    <ul class="classify-list collapse open">
+                      <li class="checkbox"><!-- 分類子選項 -->
+                        <input type="checkbox" id="checkbox01">
+                        <label for="checkbox01"> 藍牙週邊(18)  </label>
+                      </li>
+                      <li class="checkbox"><!-- 分類子選項 -->
+                        <input type="checkbox" id="checkbox02">
+                        <label for="checkbox02"> 喇叭(2)  </label>
+                      </li>
+                      <li class="checkbox"><!-- 分類子選項 -->
+                        <input type="checkbox" id="checkbox03">
+                        <label for="checkbox03"> 耳機(26)  </label>
+                      </li>
+                      <li class="iner-list panel"><!-- 分類中選項 -->
+                        <a href="#" title="123" alt="123" class="classify-filter">3C電腦週邊(46)</a>
+                        <ul class="collapse classify-list">
+                          <li class="checkbox"><!-- 分類子選項 -->
+                            <input type="checkbox" id="checkbox001">
+                            <label for="checkbox001">鎖住美味(22)</label>
+                          </li>
+                          <li class="checkbox"><!-- 分類子選項 -->
+                            <input type="checkbox" id="checkbox002">
+                            <label for="checkbox002">鎖住美味(22)</label>
+                          </li>
+                          <li class="checkbox"><!-- 分類子選項 -->
+                            <input type="checkbox" id="checkbox003">
+                            <label for="checkbox003">鎖住美味(22)</label>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- 分類大選項2 -->
+                  <li class="panel">
+                    <a href="#" title="視聽家電(12)" alt="視聽家電(12)" class="classify-filter collapsed">視聽家電(12)</a>
+                    <!-- 分類中選項 -->
+                    <ul class="collapse classify-list">
+                      <!-- 分類子選項 -->
+                      <li class="checkbox">
+                        <input type="checkbox" id="checkbox04">
+                        <label for="checkbox04"> 藍牙週邊(18)  </label>
+                      </li>
+                      <!-- 分類子選項 -->
+                      <li class="checkbox">
+                        <input type="checkbox" id="checkbox05">
+                        <label for="checkbox05"> 喇叭(2)  </label>
+                      </li>
+                      <!-- 分類子選項 -->
+                      <li class="checkbox">
+                        <input type="checkbox" id="checkbox06">
+                        <label for="checkbox06"> 耳機(26)  </label>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="modal-footer">
+                  <button class="column">清除</button>
+                  <button class="column">取消</button>
+                  <button class="column">確認</button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="column tab-items"><!-- 大類別按鈕02 -->
+            <button class="icon icon-usd tab-items-btn">價格範圍</button>
+            <div class="modal">
+              <div class="modal-content">
+                <h5 class="modal-header">價格範圍</h5>
+                <button class="close">✕</button>
+                <ul class="modal-body">
+                  <li class="set-price">
+                    <h6>自訂價格範圍(NT$)</h6>
+                    <form id="filter-price">
+                      <input type="number" placeholder="最低價" name="lp" id="lp" class="low-input" value="">元～
+                      <input type="number" placeholder="最高價" name="hp" id="hp" class="high-input" value="">
+                      <input type="submit" class="btn btn-default" value="搜尋">
+                    </form>
+                  </li>
+                  <li class="set-price">
+                    <h6>價格範圍(NT$)</h6>
+                    <ul>
+                      <li><a href="#" title="123" alt="123">NT ~ 3,065 </a></li>
+                      <li><a href="#" title="123" alt="123">NT 3,066 ~ 5,240</a></li>
+                      <li><a href="#" title="123" alt="123">NT 5,241 ~ 7,415</a></li>
+                      <li><a href="#" title="123" alt="123">NT 7,416 ~ </a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="column tab-items">
+            <button class="icon icon-tags tab-items-btn">品牌</button>
+            <div class="modal">
+              <div class="modal-content">
+                <h5 class="modal-header">品牌篩選</h5>
+                <button class="close">✕</button>
+                <ul class="modal-body">
+                  <li class="checkbox">
+                    <input type="checkbox" value="261" id="brand-checkbox-0" class="filter-brand">
+                    <label for="brand-checkbox-0"> SONY 新力 (4) </label>
+                  </li>
+                </ul>
+                <div class="modal-footer">
+                  <button class="column">清除</button>
+                  <button class="column">取消</button>
+                  <button class="column">確認</button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="column tab-items"><!-- 大類別按鈕04 -->
+            <button class="icon icon-front-store tab-items-btn">店家</button>
+            <div class="modal">
+              <div class="modal-content">
+                <h5 class="modal-header">店家篩選</h5>
+                <button class="close">✕</button>
+                <ul class="modal-body">
+                  <li class="checkbox">
+                    <input type="checkbox" value="9" id="shop-checkbox-0" class="filter-merchant">
+                    <label for="shop-checkbox-0"> 燦坤 (3) </label>
+                  </li>
+                </ul>
+                <div class="modal-footer">
+                  <button class="column">清除</button>
+                  <button class="column">取消</button>
+                  <button class="column">確認</button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="search-input-content collapse"><!-- 搜尋下拉區 -->
+        <ul class="tab-bar">   
+          <li class="left"><a href="#" title="熱搜關鍵字" alt="熱搜關鍵字">熱搜關鍵字</a></li>
+          <li class="right active"><a href="#" title="最近搜尋" alt="最近搜尋">最近搜尋</a></li>
+        </ul> 
+        <div class="tab-content hot-search collapse">
+          <ul>
+            <li><a href="#" title="可麗舒" alt="可麗舒"><span>1</span>可麗舒</a></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒"><span>2</span>可麗舒</a></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒"><span>3</span>可麗舒</a></li>
+          </ul>
+        </div>
+        <div class="tab-content last-search collapse">
+          <ul>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li class="delete-all"><a href="#" title="刪除全部" alt="刪除全部">刪除全部</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="search-section collapse"><!-- 建議關鍵字區 -->
+        <li class="history-title"><a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY 重低音</a></li>
+        <li class="search-insert"><a href="#" title="123" alt="123">SONY 重低音</a></li>
+        <li class="search-insert"><a href="#" title="123" alt="123">SONY 重低音</a></li>
+        <li class="search-insert"><a href="#" title="123" alt="123">SONY 重低音</a></li>
+        <li class="search-insert"><a href="#" title="123" alt="123">SONY 重低音</a></li>
+      </ul>
+      <div class="overlay-bg"></div>
+    </header>
+    <section class="section main-content">
+      <div class="container">
+        <h2><strong>sony 重低音</strong> 的價格比較結果</h2>
+        <ul class="active_filters">
+          <li class="clear-all-btn"><a href="#" title="清除全部" alt="清除全部">清除全部</a></li>
+          <li><a href="#" title="123" alt="123">NT 13,045 ~ 25,989</a></li>
+          <li><a href="#" title="123" alt="123">分類：筆記型電腦</a></li>
+          <li><a href="#" title="123" alt="123">品牌：SONY(新力)</a></li>
+          <li><a href="#" title="123" alt="123">店家：PChome 24H</a></li>
+        </ul>
+        <!-- 商品頁 -->
+        <div class="columns is-mobile is-gapless box linkout ads" itemscope itemtype="http://schema.org/Product"><!-- 贊助廣告 -->
+          <a href="#" title="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽" class="column is-3 product-img">
+            <img itemprop="image" src="https://img.ezprice.com.tw/ezpd/930/36930/36930_s.jpg" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽">
+            <span>贊助廣告</span>
+          </a>
+          <a title="SONY 索尼 XB450AP 重低音頭戴式耳機麥克風 紅" alt="SONY 索尼 XB450AP 重低音頭戴式耳機麥克風 紅" class="column is-5 product-content">
+            <h5 class="product-name" itemprop="name"><strong>SONY</strong> 索尼 XB450AP <strong>重低音</strong>頭戴式耳機麥克風 紅</h5>
+          </a>
+          <a href="#" title="123" alt="123" class="column price-info" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <span class="shop-name" itemprop="seller" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">百利市購物中心</span></span>
+            <meta itemprop="priceCurrency" content="TWD" />
+            <strong class="price" itemprop="price" content="1690">$1,690</strong>
+            <!-- <span class="discount-link">優惠</span> -->
+          </a>
+          <!-- <a href="yahoo.com.tw" class="discount-content">優惠內容～～～</a> -->
+        </div>
+        <div class="columns is-mobile is-gapless box product-page" itemscope itemtype="http://schema.org/Product">
+            <a href="#" title="123" alt="123" class="column is-3 product-img">
+              <img itemprop="image" src="https://img.ezprice.com.tw/ezpd/145/57145/57145_s.jpg" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽">
+            </a>
+            <a itemprop="url" href="#" title="SONY MDR-XB950BT 耳罩式耳機重低音.藍芽" alt="SONY MDR-XB950BT  耳罩式耳機重低音.藍芽" class="column is-5 product-content">
+              <h5 class="product-name" itemprop="name"><strong>SONY</strong> MDR-XB950BT  耳罩式耳機 <strong>重低音</strong>.藍芽</h5>
+              <meta itemprop="mpn" content="123">
+              <!-- <p class="shop-rank">評價<span>評價你的商品</span></p> -->
+              <p class="product-rank">耳機 熱搜 第<strong>12</strong>名</p>
+            </a>
+            <a href="#" title="123" alt="123" class="column price-info" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+              <meta itemprop="priceCurrency" content="TWD" />
+              <strong itemprop="price" content="1690">$1,690～</strong>
+              <span class="shop-info">49個店家</span>
+              <span class="all-price">全部價格</span>
+            </a>
+        </div>
+        <!-- 商品頁 -->
+        <!-- linkout -->
+        <div class="box-list">
+          <h3>直接前往賣場</h3>
+          <div class="columns is-mobile is-gapless box linkout" itemscope itemtype="http://schema.org/Product">
+            <a href="http://yam.com.tw" title="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽" class="column is-3 product-img">
+              <img itemprop="image" src="https://img2.e-payless.com.tw/content/images/thumbs/0084269_soy-xb450ap-_185.jpeg" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽">
+            </a>
+            <a href="http://sony.com.tw" title="SONY 索尼 XB450AP 重低音頭戴式耳機麥克風 紅" alt="SONY 索尼 XB450AP 重低音頭戴式耳機麥克風 紅" class="column is-5 product-content">
+              <h5 class="product-name" itemprop="name"><strong>SONY</strong> 索尼 XB450AP <strong>重低音</strong>頭戴式耳機麥克風 紅</h5>
+            </a>
+            <a href="http://google.com.tw" title="123" alt="123" class="column price-info" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+              <span class="shop-name" itemprop="seller" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">百利市購物中心</span></span>
+              <meta itemprop="priceCurrency" content="TWD" />
+              <link itemprop="availability" href="#">
+              <strong class="price" itemprop="price" content="1690">$1,690</strong>
+            </a>
+            <button class="discount-link">優惠</button>
+            <a href="yahoo.com.tw" class="discount-content" style="display: inline-block;">優惠內容～～～</a>
+          </div>
+        </div>
+        <ul class="columns is-mobile is-gapless pagination">
+          <li class="column prev-page"><a href="#" title="123" alt="123">上一頁</a></li>
+          <li class="column"><span>1</span>/8</li>
+          <li class="column next-page"><a href="#" title="123" alt="123">下一頁</a></li>
+        </ul>
+        <div class="box-list">
+          <h3>相關熱搜關鍵字</h3>
+          <ul class="columns is-multiline keywords-list clearfix">
+            <li class="column"><a href="#" title="sony 重低音" alt="sony 重低音">sony 重低音</a></li>
+            <li class="column"><a href="#" title="重低音 耳機 sony" alt="重低音 耳機 sony">重低音 耳機 sony</a></li>
+            <li class="column"><a href="#" title="sony重低音喇叭" alt="sony重低音喇叭">sony重低音喇叭</a></li>
+            <li class="column"><a href="#" title="sony 新力" alt="sony 新力">sony 新力</a></li>
+            <li class="column"><a href="#" title="sony 新力 電池" alt="sony 新力 電池">sony 新力 電池</a></li>
+            <li class="column"><a href="#" title="重低音" alt="重低音">重低音</a></li>
+            <li class="column"><a href="#" title="更多熱搜..." alt="更多熱搜...">更多熱搜...</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <ul>
+        <li><a href="/contact.php" title="廠商合作" alt="廠商合作">廠商合作</a></li>
+        <li><a href="/contact.php" title="聯絡我們" alt="聯絡我們">聯絡我們</a></li>
+        <li><a href="//ezprice.com.tw/s/sony%20%E9%87%8D%E4%BD%8E%E9%9F%B3/price/?kw=sony%20%E9%87%8D%E4%BD%8E%E9%9F%B3&amp;e=101" title="電腦版" alt="電腦版">電腦版</a></li>
+      </ul>
+      <span class="copyright">© 2017 EZprice Co., Ltd. All rights reserved.</span>
+    </footer>
+    <button class="icon icon-chevron-up go-top" style="visibility: visible;"></button>
+    <!-- smartbanner -->
+    <div class="smartbanner">
+      <button class="close-btn">✕</button>
+      <img src="img/logo_40@2x.png" alt="app-icon" class="icon-img">
+      <p>EZprice找便宜 APP<br>
+        來唷～便宜攏底佳！
+      </p>
+      <a href="#" class="download-btn">下載</a>
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById('myModal');
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      // When the user clicks the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      // When the user clicks on <button> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-tw" itemscope itemtype="http://schema.org/WebSite" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# product: http://ogp.me/ns/product#">
+  <head>
+    <meta charset="UTF-8">
+    <title itemprop='name'>EZprice搜尋頁 價格| EZprice比價網</title>
+    <link rel="canonical" href="https://example.com/" itemprop="url">
+    <meta name="theme-color" content="#393f4e">
+    <!-- fb og -->
+    <meta property="fb:app_id" content="302184056577324" />
+    <meta property="og:type"   content="product.group" />
+    <meta property="og:url"    content="https://m.ezprice.com.tw/" />
+    <meta property="og:title"  content="Sample Group" />
+    <meta property="og:image"  content="https://fbstatic-a.akamaihd.net/images/devsite/attachment_blank.png" />
+    <!-- //fb og -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://m.ezprice.com.tw/images/ezprice-logo.png" rel="icon" type="image/png">
+    <link rel="stylesheet" href="css/m.ezprice.css">
+    <link rel="alternate" media="only screen and (min-width: 1024px)" href="https://ezprice.com.tw/">
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://m.ezprice.com.tw/",
+      "logo": "https://ezprice.com.tw/logo.png",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+886-2-2777-1278",
+        "contactType": "customer service"
+      }],
+      "sameAs": [
+        "https://www.facebook.com/EZprice.tw/",
+        "https://plus.google.com/+EZpricetw"
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container head-content">
+        <h1 class="site-logo"><a href="/">EZprice 比價網</a></h1>
+        <button class="icon icon-navicon-round nav-toggle"></button>
+        <div class="input-search" id="search-box">
+          <form id="search_act" class="container">
+            <input class="input-area" id="search-input" placeholder="想省? 來比價吧！" autocomplete="off" type="text" name="search_term_string" required/> 
+            <button type="submit" class="search-submit icon icon-android-search"></button>
+          </form>
+        </div>
+        <!-- 排序選擇區 -->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <h6 class="modal-header">想要排序的方式</h6>
+            <button class="close">✕</button>
+            <ul class="modal-body">
+              <li><a href="#" title="123" alt="123" class="fa fa-sort-amount-asc"><span>價格</span>從低到高</a></li>
+              <li><a href="#" title="123" alt="123" class="fa fa-sort-amount-desc"><span>價格</span>從高到低</a></li>
+              <li><a href="#" title="123" alt="123" class="fa fa-sort-amount-desc current"><span>相關度</span>從高到低</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <nav class="nav">
+        <ul class="nav-menu">
+          <li class="nav-items"><a href="#" title="首頁" alt="首頁">首頁</a></li>
+          <li class="nav-items"><a href="#" title="分類熱搜" alt="分類熱搜">分類熱搜</a></li>
+          <li class="nav-items"><a href="#" title="熱搜關鍵字" alt="熱搜關鍵字">熱搜關鍵字</a></li>
+          <li class="nav-items"><a href="#" title="會員中心" alt="會員中心">會員中心</a></li>
+          <li class="nav-items"><a href="#" title="下載APP" alt="下載APP">下載APP</a></li>
+          <li class="nav-items"><a href="#" title="隱私權/使用者條款" alt="隱私權/使用者條款">隱私權/使用者條款</a></li>
+          <li class="nav-buttons">
+            <a href="#" title="註冊" title="註冊">註冊</a>
+            <a href="#" title="登入" title="登入">登入</a>
+          </li>
+        </ul>
+        <div class="close-bg"></div>
+      </nav>
+      <div class="overlay-bg"></div>
+      <!-- 條件選擇區 -->
+      <div class="container search-filter">
+        <ul class="columns is-mobile is-gapless">
+          <li class="column is-3 tab-items">
+            <button class="icon icon-filter filter-btn">篩選</button>
+          </li>
+          <li class="column tab-items">
+            <button id="myBtn" class="icon icon-arrow-swap sorting-btn">
+              <span>相關度</span>
+              <!-- <span>價格高到低</span> -->
+              <!-- <span>價格低到高</span> -->
+              <i class="icon icon-android-arrow-dropdown"></i>
+            </button>
+          </li>
+          <li class="column tab-items">
+            <span>去除配件</span>
+            <div class="matrial-switch">
+              <input type="checkbox" id="switch-01" class="input-switch" />
+              <label for="switch-01"></label>
+            </div>
+          </li>
+        </ul>
+        <!-- 篩選頁 -->
+        <div class="collapse filter-page" id="myFilter">
+          <div class="filter-box filter-head">
+            <button class="reset active-color">重置全部</button>
+            <h4 class="filter-title">進階篩選</h4>
+            <button class="close">✕</button>
+          </div>
+          <div class="filter-box set-price">
+            <h5>價格範圍(新台幣)</h5>
+            <form id="filter-price">
+              <input type="number" name="lp" id="lp" class="low-input" value="">元 ～ 
+              <input type="number" name="hp" id="hp" class="high-input" value="">元
+            </form>
+          </div>
+          <div class="filter-box switch-card">
+            <h5>福利品/展示品排除</h5>
+            <div class="matrial-switch">
+              <input type="checkbox" id="switch-02" class="input-switch" />
+              <label for="switch-02"></label>
+            </div>
+          </div>
+          <ul class="filter-box filter-list">
+            <li id="shop-select">
+              <h5>店家 (<span>0</span>)</h5>
+              <span>請選擇店家</span>
+              <div class="modal" id="modal2">
+                <div class="modal-content">
+                  <h6 class="modal-header">店家篩選</h6>
+                  <button class="close">✕</button>
+                  <ul class="modal-body">
+                    <li class="checkbox">
+                      <input type="checkbox" value="9" id="shop-checkbox-0" class="filter-merchant">
+                      <label for="shop-checkbox-0"> 燦坤 (3) </label>
+                    </li>
+                  </ul>
+                  <div class="modal-footer">
+                    <button class="column">確認</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li id="class-select">
+              <h5>分類 (<span>0</span>)</h5>
+              <span>請選擇分類</span>
+              <div class="modal" id="modal3">
+                <div class="modal-content">
+                  <button class="btn-select active-color">全選</button>
+                  <button class="btn-select">清除</button>
+                  <h6 class="modal-header">選擇分類</h6>
+                  <button class="close">✕</button>
+                  <ul class="modal-body">
+                    <!-- 分類大選項1 -->
+                    <li class="panel">
+                      <button class="btn-display"></button>
+                      <div class="checkbox classify-filter">
+                        <input type="checkbox" id="class01">
+                        <label for="class01">3C電腦週邊(46)</label>
+                      </div>
+                      <ul class="classify-list collapse open">
+                        <li class="checkbox"><!-- 分類子選項 -->
+                          <input type="checkbox" id="checkbox01">
+                          <label for="checkbox01"> 藍牙週邊(18)  </label>
+                        </li>
+                        <li class="checkbox"><!-- 分類子選項 -->
+                          <input type="checkbox" id="checkbox02">
+                          <label for="checkbox02"> 喇叭(2)  </label>
+                        </li>
+                        <li class="checkbox"><!-- 分類子選項 -->
+                          <input type="checkbox" id="checkbox03">
+                          <label for="checkbox03"> 耳機(26)  </label>
+                        </li>
+                      </ul>
+                    </li>
+                    <!-- 分類大選項2 -->
+                    <li class="panel">
+                      <button class="btn-display more"></button>
+                      <div class="checkbox classify-filter collapsed">
+                        <input type="checkbox" id="class02">
+                        <label for="class02">視聽家電(12)</label>
+                      </div>
+                      <ul class="classify-list collapse">
+                        <!-- 分類子選項 -->
+                        <li class="checkbox">
+                          <input type="checkbox" id="checkbox04">
+                          <label for="checkbox04"> 藍牙週邊(18)  </label>
+                        </li>
+                        <!-- 分類子選項 -->
+                        <li class="checkbox">
+                          <input type="checkbox" id="checkbox05">
+                          <label for="checkbox05"> 喇叭(2)  </label>
+                        </li>
+                        <!-- 分類子選項 -->
+                        <li class="checkbox">
+                          <input type="checkbox" id="checkbox06">
+                          <label for="checkbox06"> 耳機(26)  </label>
+                        </li>
+                      </ul>
+                    </li>
+                    <!-- 分類大選項3 -->
+                    <li class="panel">
+                      <button class="btn-display more"></button>
+                      <div class="checkbox classify-filter collapsed">
+                        <input type="checkbox" id="class03">
+                        <label for="class03">大大分類三三(12)</label>
+                      </div>
+                      <ul class="classify-list collapse">
+                        <!-- 分類子選項 -->
+                        <li class="checkbox">
+                          <input type="checkbox" id="checkbox04">
+                          <label for="checkbox04"> 藍牙週邊(18)  </label>
+                        </li>
+                        <!-- 分類子選項 -->
+                        <li class="checkbox">
+                          <input type="checkbox" id="checkbox05">
+                          <label for="checkbox05"> 喇叭(2)  </label>
+                        </li>
+                        <!-- 分類子選項 -->
+                        <li class="checkbox">
+                          <input type="checkbox" id="checkbox06">
+                          <label for="checkbox06"> 耳機(26)  </label>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <div class="modal-footer">
+                    <button class="column">確認</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <h5>品牌 (<span>0</span>)</h5>
+              <span>請選擇品牌</span> 
+              <div class="modal">
+                <div class="modal-content">
+                  <h6 class="modal-header">品牌篩選</h6>
+                  <button class="close">✕</button>
+                  <ul class="modal-body">
+                    <li class="no-select"><span>沒有項目</span></li>
+                  </ul>
+                  <div class="modal-footer">
+                    <button class="column">確認</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <button class="btn-submit-filter" type="submit">套用篩選</button>
+        </div>
+      </div>
+      <!-- 搜尋頁 -->
+      <div id="search-modal" class="search-modal collapse">
+        <!-- 搜尋頁-頭部 -->
+        <div class="search-head">
+          <button class="icon icon-android-arrow-back back-btn"></button>
+          <div class="input-search form-control" itemscope itemtype="http://schema.org/WebSite">
+            <meta itemprop="url" content="https://www.example.com/"/>
+            <form id="search_act" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+              <meta itemprop="target" content="https://query.example.com/search?q={search_term_string}"/>
+              <input class="input-area" id="testinput" placeholder="想省? 來比價吧！" autocomplete="off" itemprop="query-input" type="text" name="search_term_string" value="SONY 重低音" required/> 
+              <button class="clear-btn">✕</button>
+              <button type="submit" class="search-submit icon icon-android-search"></button>
+            </form>
+          </div>
+        </div>
+        <!-- 搜尋頁-tab選單 -->
+        <div class="container tab-bar">
+          <button class="tab-btn-left">熱搜關鍵字</button>
+          <button class="tab-btn-right active">最近搜尋</button>
+        </div>
+        <!-- 搜尋頁-熱搜關鍵字內容 -->
+        <div class="container tab-content hot-search collapse">
+          <ul>
+            <li><a href="#" title="可麗舒" alt="可麗舒"><span>1</span>可麗舒</a></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒"><span>2</span>可麗舒</a></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒"><span>3</span>可麗舒</a></li>
+          </ul>
+        </div>
+        <!-- 搜尋頁-最近搜尋內容 -->
+        <div class="container tab-content last-search collapse open">
+          <ul>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
+            <li class="delete-all"><a href="#" title="刪除全部" alt="刪除全部">刪除全部</a></li>
+          </ul>
+        </div>
+        <!-- 搜尋頁-input建議字內容 -->
+        <ul class="search-section collapse">
+          <!-- 建議關鍵字區 -->
+          <li class="history-title">
+            <a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>xz</strong>
+            </a>
+          </li>
+          <li class="history-title">
+            <a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>ps4</strong>
+            </a>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>xperia</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>xz premium</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>xa</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>xzs</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+
+        </ul>
+      </div>
+    </header>
+    <section class="section main-content">
+      <div class="container">
+        <h2><strong>Dyson v10 吸塵器 福利品</strong> 的價格比較結果</h2>
+
+        <div class="columns is-mobile is-gapless box product-page" itemscope itemtype="http://schema.org/Product">
+          <a itemprop="url" href="#" title="SONY MDR-XB950BT 耳罩式耳機重低音.藍芽" alt="SONY MDR-XB950BT  耳罩式耳機重低音.藍芽" class="columns is-mobile is-gapless">
+            <div class="column is-4 product-img">
+              <img itemprop="image" src="https://img.ezprice.com.tw/ezpd/145/57145/57145_s.jpg" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽" class="">
+            </div>
+            <div class="column product-info-box">
+              <h4 class="product-name" itemprop="name"><strong>SONY</strong> MDR-XB950BT  耳罩式耳機 <strong>重低音</strong>.藍芽</h4>
+              <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <meta itemprop="priceCurrency" content="TWD" />
+                <strong class="price" itemprop="price" content="1690">$1,690～</strong>
+                <meta itemprop="mpn" content="123">
+                <p class="product-rank">耳機 熱搜 第<i>12</i>名</p>
+                <span class="shop-info"><i>49</i>個店家</span>
+                <span href="#" class="all-price">更多比價結果</span>
+              </span>
+            </div>
+          </a>
+        </div>
+        <span class="fuzzy-title">結果太少了？下面是符合部分關鍵字的價格比較結果</span>
+        <div class="columns is-mobile is-gapless box product-page" itemscope itemtype="http://schema.org/Product">
+          <a itemprop="url" href="#" title="SONY MDR-XB950BT 耳罩式耳機重低音.藍芽" alt="SONY MDR-XB950BT  耳罩式耳機重低音.藍芽" class="columns is-mobile is-gapless">
+            <div class="column is-4 product-img">
+              <img itemprop="image" src="https://img.ezprice.com.tw/ezpd/145/57145/57145_s.jpg" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽" class="">
+            </div>
+            <div class="column product-info-box">
+              <h4 class="product-name" itemprop="name"><strong>SONY</strong> MDR-XB950BT  耳罩式耳機 <strong>重低音</strong>.藍芽</h4>
+              <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <meta itemprop="priceCurrency" content="TWD" />
+                <strong class="price" itemprop="price" content="1690">$1,690～</strong>
+                <meta itemprop="mpn" content="123">
+                <p class="product-rank">耳機 熱搜 第<i>12</i>名</p>
+                <span class="shop-info"><i>49</i>個店家</span>
+                <span href="#" class="all-price">更多比價結果</span>
+              </span>
+            </div>
+          </a>
+        </div>
+
+        <!-- linkout -->
+        <div class="box-list">
+          <h3>直接前往賣場</h3>
+          <div class="columns is-mobile box linkout" itemscope itemtype="http://schema.org/Product">
+            <a itemprop="url" href="#" title="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽" class="columns is-mobile">
+              <div class="column is-4 product-img">
+                <img itemprop="image" src="https://img.ezprice.com.tw/ezpd/930/36930/36930_s.jpg" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽">
+              </div>
+              <div class="icon icon-chevron-right column product-info-box">
+                <h4 class="product-name" itemprop="name"><strong>SONY</strong> 索尼 XB450AP <strong>重低音</strong>頭戴式耳機麥克風 紅</h4>
+                <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="TWD" />
+                  <strong class="price" itemprop="price" content="1690">$1,690</strong>
+                  <span class="shipping-costs">運費$70</span>
+                  <span class="shop-name" itemprop="seller" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">百利市購物中心</span></span>
+                </span>
+              </div>
+            </a>
+          </div>
+          <div class="columns is-mobile box linkout" itemscope itemtype="http://schema.org/Product">
+            <a itemprop="url" href="#" title="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽" class="columns is-mobile">
+              <div class="column is-4 product-img">
+                <img itemprop="image" src="https://img.ezprice.com.tw/ezpd/930/36930/36930_s.jpg" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽">
+              </div>
+              <div class="icon icon-chevron-right column product-info-box">
+                <h4 class="product-name" itemprop="name"><strong>SONY</strong> 索尼 XB450AP <strong>重低音</strong>頭戴式耳機麥克風 紅</h4>
+                <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="TWD" />
+                  <strong class="price" itemprop="price" content="1690">$1,690</strong>
+                  <span class="shipping-costs">運費$70</span>
+                  <span class="shop-name" itemprop="seller" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">百利市購物中心</span></span>
+                  <i class="icon icon-fasttruck fasttruck"></i>
+                </span>
+              </div>
+            </a>
+            <span class="discount-link">優惠</span>
+            <a href="yahoo.com.tw" class="discount-content">優惠內容～～～</a>
+          </div>
+          <div class="columns is-mobile box linkout" itemscope itemtype="http://schema.org/Product">
+            <a itemprop="url" href="#" title="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽" class="columns is-mobile">
+              <div class="column is-4 product-img">
+                <img itemprop="image" src="https://img.ezprice.com.tw/ezpd/930/36930/36930_s.jpg" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽">
+              </div>
+              <div class="icon icon-chevron-right column product-info-box">
+                <h4 class="product-name" itemprop="name"><strong>SONY</strong> 索尼 XB450AP <strong>重低音</strong>頭戴式耳機麥克風 紅</h4>
+                <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="TWD" />
+                  <strong class="price" itemprop="price" content="1690">$1,690</strong>
+                  <span class="shipping-costs">運費$70</span>
+                  <span class="shop-name" itemprop="seller" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">百利市購物中心</span></span>
+                  <!-- <i class="icon icon-fasttruck fasttruck"></i> -->
+                </span>
+              </div>
+            </a>
+            <span class="discount-link">優惠</span>
+            <a href="yahoo.com.tw" class="discount-content">優惠內容～～～</a>
+          </div>
+          <button class="icon icon-android-arrow-back loadMore">顯示更多商品<span class="result-text">目前顯示 <span>30</span> 筆結果</span></button>
+        </div>
+        <div class="box-list">
+          <h3 class="icon icon-crown"><strong>電玩主機</strong> 熱門排行榜</h3>
+          <div class="carousel-stage-outer">
+            <div class="carousel-stage" style="width: 500px;">
+              <div class="carousel-item" itemscope itemtype="http://schema.org/Product">
+                <a itemprop="url" href="#">
+                  <span class="ranking">TOP 1</span>
+                  <img itemprop="image" src="https://img.ezprice.com.tw/is/www.sanjing3c.com.tw/data/images_150/201611/NINTENDO01.jpg" alt="Nintendo 任天堂 迷你紅白機">
+                  <h4 class="product-name" itemprop="name">Nintendo 任天堂 迷你紅白機</h4>
+                  <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+                    <meta itemprop="priceCurrency" content="TWD" />
+                    <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
+                  </span>
+                </a>
+              </div>
+              <div class="carousel-item" itemscope itemtype="http://schema.org/Product">
+                <a itemprop="url" href="#">
+                  <span class="ranking">TOP 2</span>
+                  <img itemprop="image" src="https://img.ezprice.com.tw/is/www.sanjing3c.com.tw/data/images_150/201611/NINTENDO01.jpg" alt="Nintendo 任天堂 迷你紅白機">
+                  <h4 class="product-name" itemprop="name">Nintendo 任天堂 迷你紅白機</h4>
+                  <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+                    <meta itemprop="priceCurrency" content="TWD" />
+                    <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
+                  </span>
+                </a>
+              </div>
+              <div class="carousel-item" itemscope itemtype="http://schema.org/Product">
+                <a itemprop="url" href="#">
+                  <span class="ranking">TOP 3</span>
+                  <img itemprop="image" src="https://img.ezprice.com.tw/is/www.sanjing3c.com.tw/data/images_150/201611/NINTENDO01.jpg" alt="Nintendo 任天堂 迷你紅白機">
+                  <h4 class="product-name" itemprop="name">Nintendo 任天堂 迷你紅白機</h4>
+                  <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+                    <meta itemprop="priceCurrency" content="TWD" />
+                    <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box-list">
+          <h3>相關熱搜關鍵字</h3>
+          <ul class="columns is-multiline keywords-list clearfix">
+            <li class="column"><a href="#" title="sony 重低音" alt="sony 重低音">sony 重低音</a></li>
+            <li class="column"><a href="#" title="重低音 耳機 sony" alt="重低音 耳機 sony">重低音 耳機 sony</a></li>
+            <li class="column"><a href="#" title="sony重低音喇叭" alt="sony重低音喇叭">sony重低音喇叭</a></li>
+            <li class="column"><a href="#" title="sony 新力" alt="sony 新力">sony 新力</a></li>
+            <li class="column"><a href="#" title="sony 新力 電池" alt="sony 新力 電池">sony 新力 電池</a></li>
+            <li class="column"><a href="#" title="重低音" alt="重低音">重低音</a></li>
+            <li class="column"><a href="#" title="更多熱搜..." alt="更多熱搜...">更多熱搜...</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <ul>
+        <li><a href="/contact.php" title="廠商合作" alt="廠商合作">廠商合作</a></li>
+        <li><a href="/contact.php" title="聯絡我們" alt="聯絡我們">聯絡我們</a></li>
+        <li><a href="//ezprice.com.tw/s/sony%20%E9%87%8D%E4%BD%8E%E9%9F%B3/price/?kw=sony%20%E9%87%8D%E4%BD%8E%E9%9F%B3&amp;e=101" title="電腦版" alt="電腦版">電腦版</a></li>
+      </ul>
+      <span class="copyright">© 2017 EZprice Co., Ltd. All rights reserved.</span>
+    </footer>
+    <button class="icon icon-chevron-up go-top"></button>
+  </body>
+  <script src="js/jQuery.min.js"></script>
+  <script src="js/mEZprice.js"></script>
+</html>

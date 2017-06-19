@@ -1,0 +1,110 @@
+.container {
+  position: relative;
+  @include clearfix;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  .container.is-fluid {
+    margin: 0 20px;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+.section {
+  padding: 0px 10px 10px 10px;
+
+}
+
+button.go-top {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  border: none;
+  border-radius: 50%;
+  background: $orange;
+  color: $white;
+  right: 10px;
+  bottom: 70px;
+  box-sizing: border-box;
+  visibility: hidden;
+  transition: opacity .3s 0s, visibility 0s .3s;
+  z-index: 200;
+  padding: 0;
+
+  &.is-visible {
+    visibility: visible;
+    opacity: 1;
+    z-index: 210;
+  }
+
+  &.fade-out {
+    opacity: 0.5;
+  }
+}
+
+.smartbanner {
+  background: rgba(0,0,0,0.8);
+  width: 100%;
+  position: fixed;
+  bottom: -2px;
+  color: white;
+  z-index: 1000;
+  padding: 10px;
+  height: 60px;
+  box-sizing: border-box;
+
+  p, img, button {
+    float: left;
+  }
+
+  .close-btn {
+    vertical-align: top;
+    font-size: 16px;
+    color: $gray-light;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 30px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-left: -3px;
+  }
+  .icon-img {
+    width: 40px;
+    padding-right: 8px;
+  }
+  p {
+    display: inline-block;
+    font-size: 12px;
+    margin:3px 0 0 0;
+  }
+  .download-btn {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    color: $white;
+    border-radius: 3px;
+    background: $orange;
+    padding: 5px;
+    padding-bottom: 7px;
+    float: right;
+    margin: 4px 0 0 0;
+  }
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+

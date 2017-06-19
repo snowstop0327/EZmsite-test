@@ -1,0 +1,135 @@
+h2.credit-title{
+	font-size: 16px;
+	font-weight: bold;
+	color: $orange-light;
+}
+.box{
+	&.linkout{
+		position: relative;
+		>a.card-columns{
+			height: auto;
+		}
+	}
+	&.product-page{
+		>a.card-columns{
+			margin: 0;
+		}
+	}
+}
+.card-img{
+	img{
+		max-width: 100%;
+	}
+}
+.card-name{
+	margin: 3px 0 0 0;
+	font-size: 16px;
+	font-weight: bold;
+	color: $black;
+	word-break: break-all;
+	.bank-name{
+		display: block;
+		font-size: 14px;
+		font-weight: normal;
+		color: $gray-dark;
+	}
+	&.v2-name{
+		color: $red;
+	}
+}
+.card-tabs-content{
+	width: 100%;
+	margin: 0 0 10px 0;
+	ul.card-tabs{
+		margin: 0 10px 0.5rem 10px;
+		background-color: $white;
+		border: 1px solid $orange-light;
+		border-radius: 2px;
+		li{
+			padding: 0;
+			font-size: 12px;
+			border-right: 1px solid $orange-light;
+			text-align: center;
+			&:last-child{
+				border-right: none;
+			}
+			&:hover,&:visited{
+				background-color: $orange-light;
+				color: #fff;
+			}
+			&.current{
+				background-color: $orange-light;
+				color: #fff;
+			}
+			a{
+				display: block;
+				padding: 3px 0px;
+			}
+		}
+	}
+	.card-tabs-detail{
+		margin: 0 10px;
+		.card-tabs-item{
+			display: none;
+			color: $gray-dark;
+			font-size: 12px;
+			&:first-child{
+				display: block;
+			}
+			.card-gift,.card-attr{
+				>li{
+					margin: 5px 0 0 0;
+				}
+			}
+			.card-cond{
+				margin: 0;
+			}
+		}
+	}
+}
+a.btn-checkout{
+	position: relative;
+	display: block;
+	margin: 0 10px 10px 10px;
+	padding: 8px 0;
+	width: 100%;
+	border: 1px solid $orange;
+	border-radius: 2px;
+	text-align: center;
+	background-color: $white;
+	color: $orange;
+	&:hover{
+		background-color: $orange;
+		color: $white;
+	}
+	&:before{
+		position: absolute;
+	    right: 90px;
+	    top: 11px;
+	}
+	&.btn-v2{
+		background-color: $orange;
+		color: $white;
+	}
+}
+.hot-tag{
+	position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    padding: 2px 4px;
+    background-color: $red;
+    color: $white;
+    font-size: 12px;
+    border-radius: 2px;
+    font-family: Verdana;
+}
+.card-notice{
+	margin: 10px 0 0 0;
+	font-size: 12px;
+	color: $gray;
+	text-align: justify;
+	li{
+		margin: 5px 0 0 0;
+	}
+}

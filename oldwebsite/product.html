@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商品專頁</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+    <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    #sb-site {
+        margin-top: 4px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0 15px 10px;
+    }
+    .head-content {
+      margin: 0 0 0 50px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse sb-slide" role="navigation">
+        <!-- Left Control -->
+        <div class="sb-toggle-left navbar-left">
+            <div class="navicon-line"></div>
+            <div class="navicon-line"></div>
+            <div class="navicon-line"></div>
+        </div>
+        <div class="head-content container-fluid clearfix">
+            <div class="search-scroll-fix" style="display:block;">
+                <div class="input-search form-control">
+                    <div class="select-area">
+                        <select class="select-box">
+                            <option value="all">商品</option>
+                            <option value="book">找書</option>
+                        </select>
+                        <i class="fa fa-caret-down"></i>
+                    </div>
+                    <i class="sprite-search-logo sprite"></i>
+                    <i class="fa fa-search fa-lg" onclick="$('#search_act').submit();"></i>
+                    <form id="search_act" method="get" action="/price_list.php">
+                        <input type="text" id="srhkw1" value="" name="kw" class="input-area" autocomplete="off">
+                        <input type="hidden" name="crossover" id="crossover" value="">
+                        <input type="submit" style="display:none">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="container-fluid sb-slide" id="sticky-top">
+            <div class="row main-content">
+                <div class="col-xs-12">
+                    <ul class="srch-list pd-price-range" id="ezpd-info">
+                        <li class="scrollnon-pd clearfix">
+                            <div class="srch-pd-img">
+                                <img src="http://img.ezprice.com.tw/ezpd/283/50283/50283_s.jpg" alt="HITACHI日立 730公升ECO智慧真空變頻六門旗艦級冰箱RX730FJ" class="pd-img">
+                                <a href="#連結最便宜" class="link-block" target="_blank"></a>
+                            </div>
+                            <div class="srch-pd-content clearfix">
+                                <h1 class="pd-name">HITACHI日立 730公升ECO智慧真空變頻六門旗艦級冰箱RX730FJ</h1>
+                                <div class="rank-area clearfix">
+                                    <a href="/search.php?cid=121&st=3" class="pd-rank" onmousedown="_gaq.push(['_trackEvent', 'linkout-mini', 'pdrank', '121']);"><span>電冰箱 熱搜 第<em>25</em>名</span></a>
+                                </div>
+                                <div class="star-ranking">
+                                    商品評分
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i> (4.4)
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="foot-nav clearfix">
+                    <button type="button" class="shop-tab-filter" data-toggle="modal" data-target="#filter-modal" id="filter-merchant"><i class="fa fa-filter"></i>店家篩選</button>
+                    <span class="LeftLine"></span>
+                    <button class="price-tab-filter" id="price-filter" data-sort="1"><i class="fa fa-sort-amount-asc"></i>價格排序</button>
+                    <span class="LeftLine"></span>
+                    <a href="product_comment.html" class="comment-btn"><i class="fa fa-star-o"></i>來評分</a>
+                    <span class="LeftLine"></span>
+                    <a href="#連結最便宜" class="linkout-btn" target="_blank">前往最便宜</a>
+                </div>
+            </div>
+        </div>
+    <div class="container-fluid" data-page="product">
+        <div class="row search-input-content hiddenBox">
+            <div class="col-xs-12" id="suggest">
+                <ul class="search-section">
+                </ul>
+            </div>
+            <div class="col-xs-12" id="history">
+                <ul class="nav nav-pills nav-pills-bg">
+                    <li role="presentation" class="left">
+                        <a href="#keyword" aria-controls="keyword" role="tab" data-toggle="tab" aria-expanded="false">熱搜關鍵字</a>
+                    </li>
+                    <li role="presentation" class="right active">
+                        <a href="#search" aria-controls="search" role="tab" data-toggle="tab" aria-expanded="true">最近搜尋</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane" id="keyword">
+                        <ul class="search-section clearfix">
+                            <li class="search-title clearfix">
+                                <a href="/s/sampo%20%E5%86%B0%E7%AE%B1/price/#crossover_tag" class="suggest-link" onclick="_gaq.push(['_trackEvent', 'filter-mini', 'hotkw','sampo 冰箱']);">
+                                    <span class="num">1</span>
+                                    <span class="suggest">sampo 冰箱</span>
+                                </a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="/s/%E8%92%9F%E8%92%BB%20%E6%91%A9/price/#crossover_tag" class="suggest-link" onclick="_gaq.push(['_trackEvent', 'filter-mini', 'hotkw','蒟蒻 摩']);">
+                                    <span class="num">2</span>
+                                    <span class="suggest">蒟蒻 摩</span>
+                                </a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="/s/%E5%A4%A7%E5%90%8C%20240%20V%20%E9%9B%BB%E9%8D%8B%20%E4%B8%8D%E9%8A%B9%E9%8B%BC/price/#crossover_tag" class="suggest-link" onclick="_gaq.push(['_trackEvent', 'filter-mini', 'hotkw','大同 240 V 電鍋 不銹鋼']);">
+                                    <span class="num">3</span>
+                                    <span class="suggest">大同 240 V 電鍋 不銹鋼</span>
+                                </a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="/s/%E5%B8%AB%E5%82%85%20%E9%83%AD/price/#crossover_tag" class="suggest-link" onclick="_gaq.push(['_trackEvent', 'filter-mini', 'hotkw','師傅 郭']);">
+                                    <span class="num">4</span>
+                                    <span class="suggest">師傅 郭</span>
+                                </a>
+                            </li>
+                            <li class="search-title clearfix">
+                                <a href="/s/Dyson%20Pure%20Cool%20Link/price/#crossover_tag" class="suggest-link" onclick="_gaq.push(['_trackEvent', 'filter-mini', 'hotkw','Dyson Pure Cool Link']);">
+                                    <span class="num">5</span>
+                                    <span class="suggest">Dyson Pure Cool Link</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane active" id="search">
+                        <ul class="search-section clearfix">
+                            <li class="search-title clearfix"><a href="/s/%E7%86%8A%E5%AF%B6%E8%B2%9D/price/" class="searched-link" onclick="_gaq.push(['_trackEvent', 'filter-mini', 'hkw','熊寶貝']);" targe=""><span class="searched-word">熊寶貝</span></a><a href="javascript:void(0);" class="fa-trash-color"><i class="fa fa-trash fa-lg remove-history" data-history="熊寶貝" aria-hidden="true"></i></a></li>
+                            <li class="search-title clearfix"><a href="/s/iphone/price/" class="searched-link" onclick="_gaq.push(['_trackEvent', 'filter-mini', 'hkw','iphone']);" targe=""><span class="searched-word">iphone</span></a><a href="javascript:void(0);" class="fa-trash-color"><i class="fa fa-trash fa-lg remove-history" data-history="iphone" aria-hidden="true"></i></a></li>
+                            <li class="search-title clearfix"><a href="/s/iPhone%206s/price/" class="searched-link" onclick="_gaq.push(['_trackEvent', 'filter-mini', 'hkw','iPhone 6s']);" targe=""><span class="searched-word">iPhone 6s</span></a><a href="javascript:void(0);" class="fa-trash-color"><i class="fa fa-trash fa-lg remove-history" data-history="iPhone 6s" aria-hidden="true"></i></a></li>
+                            <li class="search-title clearfix"><a href="/s/%E8%83%BD%E5%AF%B6%E8%B2%9D%E8%A1%A3%E7%89%A9%E6%9F%94%E8%BB%9F%E7%B2%BE/price/" class="searched-link" onclick="_gaq.push(['_trackEvent', 'filter-mini', 'hkw','能寶貝衣物柔軟精']);" targe=""><span class="searched-word">能寶貝衣物柔軟精</span></a><a href="javascript:void(0);" class="fa-trash-color"><i class="fa fa-trash fa-lg remove-history" data-history="能寶貝衣物柔軟精" aria-hidden="true"></i></a></li>
+                            <li class="search-title clearfix"><a href="/s/%E7%84%A1%E7%B8%AB%20%E5%86%B0%E6%B6%BC%E8%A2%96%E5%A5%97%20%E6%B0%A3%E7%B6%B2/price/" class="searched-link" onclick="_gaq.push(['_trackEvent', 'filter-mini', 'hkw','無縫 冰涼袖套 氣網']);" targe=""><span class="searched-word">無縫 冰涼袖套 氣網</span></a><a href="javascript:void(0);" class="fa-trash-color"><i class="fa fa-trash fa-lg remove-history" data-history="無縫 冰涼袖套 氣網" aria-hidden="true"></i></a></li><a href="javascript:void(0);" class="delete" id="delete-all-hkw"><span>刪除全部</span></a></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-bg">
+    </div>
+    <input type="hidden" id="uid" value="">
+    <input type="hidden" id="token" value="">
+    <input type="hidden" id="pname" value="HITACHI日立 730公升ECO智慧真空變頻六門旗艦級冰箱RX730FJ">
+    <input type="hidden" id="category" value="電冰箱">
+    <input type="hidden" id="evalnum" value="0">
+    <input type="hidden" id="cid" value="121">
+    <input type="hidden" id="pid" value="50283">
+    <input type="hidden" id="page" value="1">
+    <input type="hidden" id="sort" value="1">
+    <input type="hidden" id="tab" value="">
+    <input type="hidden" id="comment-page" value="1">
+    <input type="hidden" id="comment-totalpage" value="0">
+    <div id="sb-site" class="container-fluid main-content" role="main">
+    <!-- 這裡有麵包 -->
+    <div class="seo-section col-xs-12">
+        <div class="board">
+            <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <a itemscope="" itemtype="http://schema.org/Thing" itemprop="item" href="/" title="EZprice比價網">
+                    <span itemprop="name">EZprice比價網</span>
+                 </a>
+                <meta itemprop="position" content="1">
+            </span>
+            <span>&gt;</span>
+            <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <a itemscope="" itemtype="http://schema.org/Thing" itemprop="item" href="//ezprice.com.tw/cate121-%E9%9B%BB%E5%86%B0%E7%AE%B1/" title="電冰箱">
+                    <span itemprop="name">電冰箱</span>
+                </a>
+                <meta itemprop="position" content="2">
+            </span>
+             <span>&gt;</span>
+            <span class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <a itemscope="" itemtype="http://schema.org/Thing" itemprop="item" href="//ezprice.com.tw/ezpd_compare/121/50283-HITACHI%E6%97%A5%E7%AB%8B%20730%E5%85%AC%E5%8D%87ECO%E6%99%BA%E6%85%A7%E7%9C%9F%E7%A9%BA%E8%AE%8A%E9%A0%BB%E5%85%AD%E9%96%80%E6%97%97%E8%89%A6%E7%B4%9A%E5%86%B0%E7%AE%B1RX730FJ.htm" title="HITACHI日立 730公升ECO智慧真空變頻六門旗艦級冰箱RX730FJ">
+                    <span itemprop="name">HITACHI日立 730公升ECO智慧真空變頻六門旗艦級冰箱RX730FJ</span>
+                </a>
+                <meta itemprop="position" content="3">
+            </span>    
+        </div>
+        <h2 class="srch-result">HITACHI日立 730公升ECO智慧真空變頻六門旗艦級冰箱RX730FJ</h2> 
+    </div>
+        <div class="row">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="tab-shop">
+                    <div class="col-xs-12 outclear" id="product-list">
+                        <!-- <div class="pd-filter clearfix">
+            <a href="javascript:void(0);" class="price-tab-filter" id="price-filter" data-sort="1">
+              價格
+              <i class="fa fa-sort-amount-asc"></i>
+              <i class="fa fa-sort-amount-desc"></i>
+            </a>
+            <button type="button" class="shop-tab-filter" data-toggle="modal" data-target="#filter-modal" id="filter-merchant">店家篩選</button>
+          </div> -->
+                        <ul class="srch-list product-list">
+                            <li class="srch-pd current clearfix">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTE4NyZnZGlkPTU3MTY1MDYmdXJsPWh0dHAlM0ElMkYlMkZ3d3cudS1tYWxsLmNvbS50dyUyRnBhZ2VzJTJGTW9iaWxlUHJvZC5hc3B4JTNGc2MlM0QwMTE1NTc1MSUyNnNpZCUzRDMxNDAyJTI2Y2lkJTNEMzM4MDcma3c9JUU2JTk3JUE1JUU3JUFCJThCSElUQUNISSslRTYlOTclQTUlRTYlOUMlQUMlRTklODAlQjIlRTUlOEYlQTMlRTYlOTclOTclRTglODklQTY3MzAlRTUlODUlQUMlRTUlOEQlODclRTUlODUlQUQlRTklOTYlODAlRTUlODYlQjAlRTclQUUlQjErUlg3MzBGSiZpbWc9aHR0cCUzQSUyRiUyRnd3dy51LW1hbGwuY29tLnR3JTJGUHJvZHVjdEltYWdlJTJGMDU3MTYlMkYwNTcxNjUwNiUyRjU3MTY1MDZfTS5qcGcmcGlkPTQxNzI0OSZwcmM9MTQ2MDIw&r=mini&adi=s1" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','187']);)">more info</a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        森森購物網手機版
+                                    </div>
+                                    <!-- <i class="mark-img"></i> -->
+                                    <span>贊助廣告</span>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                                      日立HITACHI 日本進口旗艦730公升六門冰箱 RX730FJ
+                                    </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span class="low-price">$146,020</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTcxJmdkaWQ9UDAwMDAyMDE0NDQ1MzEmdXJsPWh0dHAlM0ElMkYlMkZ3d3cubXlmb25lLmNvbS50dyUyRm1idXklMkZpbmRleC5waHAlM0ZhY3Rpb24lM0Rwcm9kdWN0X2RldGFpbCUyNnByb2Rfbm8lM0RQMDAwMDIwMTQ0NDUzMSZrdz0lRTIlOTglODUlRTUlOEElQTAlRTclQTIlQkMlRTglQjQlODglRTUlQTUlQkQlRTclQTYlQUUlRTIlOTglODVISVRBQ0hJKyVFNiU5NyVBNSVFNyVBQiU4QislRTYlOTclQTUlRTYlOUMlQUMlRTklODAlQjIlRTUlOEYlQTMlRTYlOTclOTclRTglODklQTY3MzAlRTUlODUlQUMlRTUlOEQlODclRTUlODUlQUQlRTklOTYlODAlRTUlODYlQjAlRTclQUUlQjErUlg3MzBGLi4uJmltZz1odHRwJTNBJTJGJTJGaW1hZ2U1Lm15Zm9uZS5jb20udHclMkZ3ZWJzaXRlX3R3bWYlMkZ1cGxvYWRzX3Byb2R1Y3QlMkZ3ZWJzaXRlXzEwODglMkYwMTQlMkY0MTklMkZFQ1AwMTA4ODAxNDQxOTcwXzFfNjE2Njc2Mi5qcGcmcGlkPTMxNTI2MCZwcmM9MTQ2MDAw&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','71']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        myfone手機購物
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">2.44</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      ★加碼贈好禮★HITACHI 日立 日本進口旗艦730公升六門冰箱 RX730F...
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span class="low-price">$146,000</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTE4OCZnZGlkPTU3MTY1MDYmdXJsPWh0dHAlM0ElMkYlMkZ3d3cuZXRtYWxsLmNvbS50dyUyRlBhZ2VzJTJGTW9iaWxlX1Byb2QuYXNweCUzRlByb2R1Y3RTS1UlM0Q1NzE2NTA2JTI2U3RvcmVJRCUzRDQ0MTYlMjZDYXRlZ29yeUlEJTNENjYyOCZrdz0lRTYlOTclQTUlRTclQUIlOEJISVRBQ0hJKyVFNiU5NyVBNSVFNiU5QyVBQyVFOSU4MCVCMiVFNSU4RiVBMyVFNiU5NyU5NyVFOCU4OSVBNjczMCVFNSU4NSVBQyVFNSU4RCU4NyVFNSU4NSVBRCVFOSU5NiU4MCVFNSU4NiVCMCVFNyVBRSVCMStSWDczMEZKJmltZz1odHRwJTNBJTJGJTJGd3d3LmV0bWFsbC5jb20udHclMkZQcm9kdWN0SW1hZ2UlMkY1NzE2NTA2JTJGNTcxNjUwNl9NLmpwZyZwaWQ9MjMxOTQ5JnByYz0xNDYwMjA=&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','188']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        東森購物網手機版
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">2.15</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      日立HITACHI 日本進口旗艦730公升六門冰箱 RX730FJ
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$146,020</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTkyJmdkaWQ9MjAxNjAxQU0xMzAwMDIwMjYmdXJsPWh0dHAlM0ElMkYlMkZ3d3cuYXNhcC5jb20udHclMkZpdGVtJTJGMjAxNjAxQU0xMzAwMDIwMjYma3c9JUUyJTk4JTg1JUU1JThBJUEwJUU3JUEyJUJDJUU4JUI0JTg4JUU1JUE1JUJEJUU3JUE2JUFFJUUyJTk4JTg1SElUQUNISSslRTYlOTclQTUlRTclQUIlOEIrJUU2JTk3JUE1JUU2JTlDJUFDJUU5JTgwJUIyJUU1JThGJUEzJUU2JTk3JTk3JUU4JTg5JUE2NzMwJUU1JTg1JUFDJUU1JThEJTg3JUU1JTg1JUFEJUU5JTk2JTgwJUU1JTg2JUIwJUU3JUFFJUIxK1JYNzMwRi4uLiZpbWc9aHR0cCUzQSUyRiUyRmltZzA0LXR3MS51aXRveGltZy5jb20lMkZBJTJGc2hvdyUyRkFXMDAwMDAxJTJGMjAxNiUyRjAxMTMlMkZBTTAwMDIwMjYlMkYyMDE2MDFBTTEzMDAwMjAyNl8xNDUyNjcwMDE2Njg4MjcwMDAzNDQ3NC5qcGclMjF0MzYweDM2MCZwaWQ9NDkzMDg3JnByYz0xNDY5NTc=&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','92']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        ASAP閃電購物網
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">3.19</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      ★加碼贈好禮★HITACHI 日立 日本進口旗艦730公升六門冰箱 RX730F...
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$146,957</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTkyJmdkaWQ9MjAxNjAxQU0xMzAwMDIwMjUmdXJsPWh0dHAlM0ElMkYlMkZ3d3cuYXNhcC5jb20udHclMkZpdGVtJTJGMjAxNjAxQU0xMzAwMDIwMjUma3c9JUUyJTk4JTg1JUU1JThBJUEwJUU3JUEyJUJDJUU4JUI0JTg4JUU1JUE1JUJEJUU3JUE2JUFFJUUyJTk4JTg1SElUQUNISSslRTYlOTclQTUlRTclQUIlOEIrJUU2JTk3JUE1JUU2JTlDJUFDJUU5JTgwJUIyJUU1JThGJUEzJUU2JTk3JTk3JUU4JTg5JUE2NzMwJUU1JTg1JUFDJUU1JThEJTg3JUU1JTg1JUFEJUU5JTk2JTgwJUU1JTg2JUIwJUU3JUFFJUIxK1JYNzMwRi4uLiZpbWc9aHR0cCUzQSUyRiUyRmltZzAxLXR3MS51aXRveGltZy5jb20lMkZBJTJGc2hvdyUyRkFXMDAwMDAxJTJGMjAxNiUyRjAxMTMlMkZBTTAwMDIwMjUlMkYyMDE2MDFBTTEzMDAwMjAyNV8xNDUyNjcwMDE2NjI4ODQzMDA3NzIxNC5qcGclMjF0MzYweDM2MCZwaWQ9NDkzMDg4JnByYz0xNDY5NTc=&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','92']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        ASAP閃電購物網
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">3.19</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      ★加碼贈好禮★HITACHI 日立 日本進口旗艦730公升六門冰箱 RX730F...
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$146,957</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTE4NyZnZGlkPTU3MjA2MjImdXJsPWh0dHAlM0ElMkYlMkZ3d3cudS1tYWxsLmNvbS50dyUyRnBhZ2VzJTJGTW9iaWxlUHJvZC5hc3B4JTNGc2MlM0QwMTE1OTk1MSUyNnNpZCUzRDMxNDAyJTI2Y2lkJTNEMzM4MDcma3c9JUUzJTgwJTkwJUU2JTk3JUE1JUU3JUFCJThCSElUQUNISSslRTMlODAlOTE3MzAlRTUlODUlQUMlRTUlOEQlODclRTclOTAlODklRTclOTIlODMlRTklOEYlQTElRTklOUQlQTIlRTglQUUlOEElRTklQTAlQkIlRTUlODUlQUQlRTklOTYlODAlRTklOUIlQkIlRTUlODYlQjAlRTclQUUlQjElRTMlODAlOEFSWDczMEZKJUUzJTgwJThCJUUzJTgwJThBUi0uLi4maW1nPWh0dHAlM0ElMkYlMkZ3d3cudS1tYWxsLmNvbS50dyUyRlByb2R1Y3RJbWFnZSUyRjA1NzIwJTJGMDU3MjA2MjIlMkY1NzIwNjIyX00uanBnJnBpZD03MjMwNCZwcmM9MTU1ODIw&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','187']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        森森購物網手機版
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">2.49</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      【日立HITACHI 】730公升琉璃鏡面變頻六門電冰箱《RX730FJ》《R-...
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$155,820</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTE4OCZnZGlkPTU3MjA2MjImdXJsPWh0dHAlM0ElMkYlMkZ3d3cuZXRtYWxsLmNvbS50dyUyRlBhZ2VzJTJGTW9iaWxlX1Byb2QuYXNweCUzRlByb2R1Y3RTS1UlM0Q1NzIwNjIyJTI2U3RvcmVJRCUzRDQ0MTYlMjZDYXRlZ29yeUlEJTNENjYyOCZrdz0lRTMlODAlOTAlRTYlOTclQTUlRTclQUIlOEJISVRBQ0hJKyVFMyU4MCU5MTczMCVFNSU4NSVBQyVFNSU4RCU4NyVFNyU5MCU4OSVFNyU5MiU4MyVFOSU4RiVBMSVFOSU5RCVBMiVFOCVBRSU4QSVFOSVBMCVCQiVFNSU4NSVBRCVFOSU5NiU4MCVFOSU5QiVCQiVFNSU4NiVCMCVFNyVBRSVCMSVFMyU4MCU4QVJYNzMwRkolRTMlODAlOEIlRTMlODAlOEFSLS4uLiZpbWc9aHR0cCUzQSUyRiUyRnd3dy5ldG1hbGwuY29tLnR3JTJGUHJvZHVjdEltYWdlJTJGNTcyMDYyMiUyRjU3MjA2MjJfTS5qcGcmcGlkPTI5NjU2JnByYz0xNTU4MjA=&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','188']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        東森購物網手機版
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">2.15</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      【日立HITACHI 】730公升琉璃鏡面變頻六門電冰箱《RX730FJ》《R-...
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$155,820</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTE2OCZnZGlkPTMxNzE5NTAzJnVybD1odHRwJTNBJTJGJTJGd3d3LnRyZWVtYWxsLmNvbS50dyUyRnNob3dyb29tJTJGSElUQUNISSVFNiU5NyVBNSVFNyVBQiU4Qi0lRTYlOTclQTUlRTYlOUMlQUMlRTUlOEUlOUYlRTglQTMlOUQlRTglQUUlOEElRTklQTAlQkI3MzBMJUU1JTg1JUFEJUU5JTk2JTgwJUU5JTlCJUJCJUU1JTg2JUIwJUU3JUFFJUIxJUU1JTg1JTg5JUU3JTg3JUE2JUU2JUEzJTk1Ulg3MzBGSi0zMTcxOTUwMy5odG1sJmt3PSVFMyU4MCU5MEhJVEFDSEklRTYlOTclQTUlRTclQUIlOEIlRTMlODAlOTElRTYlOTclQTUlRTYlOUMlQUMlRTUlOEUlOUYlRTglQTMlOUQlRTglQUUlOEElRTklQTAlQkI3MzBMJUUzJTgwJTgyJUU1JTg1JUFEJUU5JTk2JTgwJUU5JTlCJUJCJUU1JTg2JUIwJUU3JUFFJUIxJUVGJUJDJThGJUU1JTg1JTg5JUU3JTg3JUE2JUU2JUEzJTk1Ulg3MzBGSiZpbWc9aHR0cCUzQSUyRiUyRnd3dy50cmVlbWFsbC5jb20udHclMkZpbWFnZXMlMkY1NCUyRmltYWdlUUMyNzAzOTU1NF8xLmpwZyZwaWQ9MjgyNDk4JnByYz0xNTkwMDA=&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','168']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        Treemall
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">3.1</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      【HITACHI日立】日本原裝變頻730L。六門電冰箱／光燦棕RX730FJ
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$159,000</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTIyJmdkaWQ9VTAwODYyODI0MCZ1cmw9aHR0cCUzQSUyRiUyRnNob3BwaW5nLnVkbi5jb20lMkZtYWxsJTJGY3VzJTJGY2F0JTJGQ2MxYzAyLmRvJTNGZGNfY2F0ZWlkXzAlM0RHXzAyNV8wMTFfMDAyJTI2ZGNfY2FyZ3h1aWRfMCUzRFUwMDg2MjgyNDAma3c9SElUQUNISSVFNiU5NyVBNSVFNyVBQiU4Qis3MzAlRTUlODUlQUMlRTUlOEQlODdFQ08lRTYlOTklQkElRTYlODUlQTclRTclOUMlOUYlRTclQTklQkElRTglQUUlOEElRTklQTAlQkIlRTUlODUlQUQlRTklOTYlODAlRTYlOTclOTclRTglODklQTYlRTclQjQlOUElRTUlODYlQjAlRTclQUUlQjFSWDczMEZKJmltZz1odHRwJTNBJTJGJTJGaW1nLnVkbi5jb20lMkZpbWFnZSUyRnByb2R1Y3QlMkZTMDAwMTM2NyUyRkFQUFJPVkVEJTJGVTAwODYyODI0MCUyRjIwMTYwMTA4MTUxMzAwMzA0XzMwMC5qcGcmcGlkPTEzNjE2NDMmcHJjPTE1OTAwMA==&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','22']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        udn買東西
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">3.52</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      HITACHI日立 730公升ECO智慧真空變頻六門旗艦級冰箱RX730FJ
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$159,000</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTE2OCZnZGlkPTMxNzE5NDc3JnVybD1odHRwJTNBJTJGJTJGd3d3LnRyZWVtYWxsLmNvbS50dyUyRnNob3dyb29tJTJGSElUQUNISSVFNiU5NyVBNSVFNyVBQiU4Qi0lRTYlOTclQTUlRTYlOUMlQUMlRTUlOEUlOUYlRTglQTMlOUQlRTglQUUlOEElRTklQTAlQkI3MzBMJUU1JTg1JUFEJUU5JTk2JTgwJUU5JTlCJUJCJUU1JTg2JUIwJUU3JUFFJUIxJUU3JTkwJTg5JUU3JTkyJTgzJUU5JThGJUExUlg3MzBGSi0zMTcxOTQ3Ny5odG1sJmt3PSVFMyU4MCU5MEhJVEFDSEklRTYlOTclQTUlRTclQUIlOEIlRTMlODAlOTElRTYlOTclQTUlRTYlOUMlQUMlRTUlOEUlOUYlRTglQTMlOUQlRTglQUUlOEElRTklQTAlQkI3MzBMJUUzJTgwJTgyJUU1JTg1JUFEJUU5JTk2JTgwJUU5JTlCJUJCJUU1JTg2JUIwJUU3JUFFJUIxJUVGJUJDJThGJUU3JTkwJTg5JUU3JTkyJTgzJUU5JThGJUExUlg3MzBGSiZpbWc9aHR0cCUzQSUyRiUyRnd3dy50cmVlbWFsbC5jb20udHclMkZpbWFnZXMlMkY0OCUyRmltYWdlUUMyNzAzOTU0OF8xLmpwZyZwaWQ9MjgyNDk5JnByYz0xNTkwMDA=&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','168']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        Treemall
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">3.1</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      【HITACHI日立】日本原裝變頻730L。六門電冰箱／琉璃鏡RX730FJ
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$159,000</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTExJmdkaWQ9NTAxMzg4OCZ1cmw9aHR0cCUzQSUyRiUyRnd3dy5nb2hhcHB5LmNvbS50dyUyRmVjMiUyRnByb2R1Y3QlM0ZwaWQlM0Q1MDEzODg4JTI2Y2lkJTNEMjgwMiUyNnNpZCUzRDIma3c9JUUyJTk4JTg1JUU5JUEwJTk4JUU1JTg4JUI4JUU1JTg2JThEJUU2JThBJTk4MzAwMCVFMiU5OCU4NUhJVEFDSEklRTYlOTclQTUlRTclQUIlOEI3MzAlRTUlODUlQUMlRTUlOEQlODdFQ08lRTYlOTklQkElRTYlODUlQTclRTclOUMlOUYlRTclQTklQkElRTglQUUlOEElRTklQTAlQkIlRTUlODUlQUQlRTklOTYlODAlRTYlOTclOTclRTglODklQTYlRTclQjQlOUElRTUlODYlQjAlRTclQUUlQjEuLi4maW1nPWh0dHAlM0ElMkYlMkZpbWcuZ29oYXBweS5jb20udHclMkZpbWFnZXMlMkZwcm9kdWN0JTJGMTY3JTJGNTAxMzg4OCUyRjUwMTM4ODhfMi5qcGclM0Y0MjUwNDAmcGlkPTMzOTExNDkmcHJjPTE1OTAwMA==&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','11']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        GOHAPPY
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">3.1</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      ★領券再折3000★HITACHI日立730公升ECO智慧真空變頻六門旗艦級冰箱...
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$159,000</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTExJmdkaWQ9NTAxNjQxOCZ1cmw9aHR0cCUzQSUyRiUyRnd3dy5nb2hhcHB5LmNvbS50dyUyRmVjMiUyRnByb2R1Y3QlM0ZwaWQlM0Q1MDE2NDE4JTI2Y2lkJTNEMjgwMiUyNnNpZCUzRDIma3c9JUU2JTk3JUE1JUU3JUFCJThCSElUQUNISSslRTYlOTclQTUlRTYlOUMlQUMlRTklODAlQjIlRTUlOEYlQTMlRTYlOTclOTclRTglODklQTY3MzAlRTUlODUlQUMlRTUlOEQlODclRTUlODUlQUQlRTklOTYlODAlRTUlODYlQjAlRTclQUUlQjErUlg3MzBGSiZpbWc9aHR0cCUzQSUyRiUyRmltZy5nb2hhcHB5LmNvbS50dyUyRmltYWdlcyUyRnByb2R1Y3QlMkYxNjclMkY1MDE2NDE4JTJGNTAxNjQxOF8yLmpwZyUzRjE4MzY4OSZwaWQ9MzI1NTM4NSZwcmM9MTU5MDAw&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','11']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        GOHAPPY
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">3.1</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      日立HITACHI 日本進口旗艦730公升六門冰箱 RX730FJ
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$159,000</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTcmZ2RpZD0zNzc1MzMzJnVybD1odHRwJTNBJTJGJTJGd3d3Lm1vbW9zaG9wLmNvbS50dyUyRmdvb2RzJTJGR29vZHNEZXRhaWwuanNwJTNGaV9jb2RlJTNEMzc3NTMzMyZrdz0lRTMlODAlOTAlRTUlQTUlQkQlRTclQTYlQUUlRTklODAlODElRTIlOTglODVISVRBQ0hJJUU2JTk3JUE1JUU3JUFCJThCJUUzJTgwJTkxNzMwTCVFNiU5NyVBNSVFOCVBMyVCRCVFOCVBRSU4QSVFOSVBMCVCQiVFNSU4NSVBRCVFOSU5NiU4MCVFNSU4NiVCMCVFNyVBRSVCMSUyOFJYNzMwRkolMjkmaW1nPWh0dHAlM0ElMkYlMkZ3d3cubW9tb3Nob3AuY29tLnR3JTJGZ29vZHNpbWclMkYwMDAzJTJGNzc1JTJGMzMzJTJGMzc3NTMzM19MLmpwZyUzRnQlM0QyMDE2MDYyNzAwMzAwMSZwaWQ9Mjk0MTkxNSZwcmM9MTU5MDAw&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','7']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        momo富邦購物館
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">3.67</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      【好禮送★HITACHI日立】730L日製變頻六門冰箱(RX730FJ)
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$159,000</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTExJmdkaWQ9NTI4ODIzNSZ1cmw9aHR0cCUzQSUyRiUyRnd3dy5nb2hhcHB5LmNvbS50dyUyRmVjMiUyRnByb2R1Y3QlM0ZwaWQlM0Q1Mjg4MjM1JTI2Y2lkJTNEMzExMzk5JTI2c2lkJTNEMTQ2Jmt3PSVFNiU5NyVBNSVFNyVBQiU4QitISVRBQ0hJKzczMEwrJUU1JTg1JUFEJUU5JTk2JTgwJUU1JTg2JUIwJUU3JUFFJUIxK1JYNzMwRkolMjhYJTI5JUU3JTkwJTg5JUU3JTkyJTgzJUU5JThGJUExJmltZz1odHRwJTNBJTJGJTJGaW1nLmdvaGFwcHkuY29tLnR3JTJGaW1hZ2VzJTJGcHJvZHVjdCUyRjE3NiUyRjUyODgyMzUlMkY1Mjg4MjM1XzIuanBnJTNGNjc1ODg2JnBpZD0zNDgwNzg5JnByYz0xNTkwMDA=&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','11']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        GOHAPPY
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">3.1</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      日立 HITACHI 730L 六門冰箱 RX730FJ(X)琉璃鏡
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$159,000</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTEyJmdkaWQ9UUJBUTAwLUE5MDA3OFVFWS0wMDAmdXJsPWh0dHAlM0ElMkYlMkZtYWxsLnBjaG9tZS5jb20udHclMkZwcm9kJTJGUUJBUTAwLUE5MDA3OFVFWS0wMDAlM0ZxJTNEJTJGUyUyRlFCQVEwMCZrdz0lRTYlOTclQTUlRTclQUIlOEJISVRBQ0hJKyVFNiU5NyVBNSVFNiU5QyVBQyVFOSU4MCVCMiVFNSU4RiVBMyVFNiU5NyU5NyVFOCU4OSVBNjczMCVFNSU4NSVBQyVFNSU4RCU4NyVFNSU4NSVBRCVFOSU5NiU4MCVFNSU4NiVCMCVFNyVBRSVCMStSWDczMEZKJmltZz1odHRwJTNBJTJGJTJGZWMxaW1nLnBjaG9tZS5jb20udHclMkZwaWMlMkZ2MSUyRmRhdGElMkZpdGVtJTJGMjAxNjA1JTJGUSUyRkIlMkZBJTJGUSUyRjAlMkYwJTJGUUJBUTAwLUE5MDA3OFVFWTAwMF81NzNhYzcwMjk1YzljLmpwZyZwaWQ9NDk1MzYyNCZwcmM9MTU5MDAw&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','12']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        PChome線上購物
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">3.9</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      日立HITACHI 日本進口旗艦730公升六門冰箱 RX730FJ
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$159,000</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                            <li class="srch-pd clearfix olink">
+                                <a href="http://ezprice.com.tw/linkout.php?var=c2lkPTE3JmdkaWQ9MTYwNjAwMTg5ODMxJnVybD1odHRwJTNBJTJGJTJGbWFydC5pYm9uLmNvbS50dyUyRm1hcnQlMkZydWkwMDUuZmFjZXMlM0ZJRCUzRDE2MDYwMDE4OTgzMSUyNmFtcCUzQmNhdGlkJTNEMjkyMzUma3c9SElUQUNISSVFNiU5NyVBNSVFNyVBQiU4QislRTYlOTclQTUlRTYlOUMlQUMlRTUlOEUlOUYlRTglQTMlOUQlRTglQUUlOEElRTklQTAlQkIrUlg3MzBGSiVFNSU4NSVBRCVFOSU5NiU4MCVFNyU5MCU4OSVFNyU5MiU4MyVFOSU5QiVCQiVFNSU4NiVCMCVFNyVBRSVCMSUyODczMEwlMjkmaW1nPWh0dHAlM0ElMkYlMkZtYXJ0Lmlib24uY29tLnR3JTJGbWR6X2ZpbGUlMkZpdGVtJTJGMTIlMkYxMSUyRjA5JTJGMTYwNiUyRjE2MDYwMDE4OTgzR192aWV3Ml8xNjA2MjMxODU0MjguanBnJnBpZD0xMjI5NTIyJnByYz0xNTkwMDA=&r=mini" target="_blank" class="link-block" onclick="_gaq.push(['_trackEvent', 'linkout-mini', 'pd','17']);"></a>
+                                <div class="shop-rank">
+                                    <div class="shop-name">
+                                        ibon mart
+                                    </div>
+                                    <div class="rank-area">
+                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                        <span class="points">2.81</span>
+                                    </div>
+                                </div>
+                                <div class="pd-details">
+                                    <h4 class="pd-name">
+                      HITACHI日立 日本原裝變頻 RX730FJ六門琉璃電冰箱(730L)
+                      </h4>
+                                </div>
+                                <div class="shop-price">
+                                    <span>$159,000</span>
+                                    <span class="low goto-market">前往賣場<i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 outclear">
+                        <a class="load-more-btn" href="">顯示更多</a>
+                        <a class="load-more-btn" href="">
+                            <img src="images/loading.gif"> 載入中...
+                        </a>
+                    </div>
+                    <div class="col-xs-12 outclear" id="rel-product">
+                        <h3 class="otherpd-title">
+            <span class="line">相關商品</span>
+          </h3>
+                        <ul class="otherpd-list clearfix">
+                            <li class="item">
+                                <div class="item-img">
+                                    <img src="http://img.ezprice.com.tw/ezpd/914/36914/36914_s.jpg" alt="Hitachi日立 六門典藏版冰箱 RSF9901D" class="pd-img" link-img="http://img.ezprice.com.tw/ezpd/914/36914/36914_s.jpg">
+                                </div>
+                                <div class="item-name">
+                                    <p>Hitachi日立 六門典藏版冰箱 RSF9901D</p>
+                                    <span>$149,000~</span>
+                                </div>
+                                <a href="http://m.ezprice.com.tw/ezpd_compare/121/36914-Hitachi%E6%97%A5%E7%AB%8B%20%E5%85%AD%E9%96%80%E5%85%B8%E8%97%8F%E7%89%88%E5%86%B0%E7%AE%B1%20RSF9901D.htm" class="link-block"></a>
+                            </li>
+                            <li class="item">
+                                <div class="item-img">
+                                    <img src="http://img.ezprice.com.tw/ezpd/291/50291/50291_s.jpg" alt="HITACHI日立670公升ECO智慧真空一級變頻六門冰箱RX670FJ" class="pd-img" link-img="http://img.ezprice.com.tw/ezpd/291/50291/50291_s.jpg">
+                                </div>
+                                <div class="item-name">
+                                    <p>HITACHI日立670公升ECO智慧真空一級變頻六門冰箱RX670FJ</p>
+                                    <span>$124,490~</span>
+                                </div>
+                                <a href="http://m.ezprice.com.tw/ezpd_compare/121/50291-HITACHI%E6%97%A5%E7%AB%8B670%E5%85%AC%E5%8D%87ECO%E6%99%BA%E6%85%A7%E7%9C%9F%E7%A9%BA%E4%B8%80%E7%B4%9A%E8%AE%8A%E9%A0%BB%E5%85%AD%E9%96%80%E5%86%B0%E7%AE%B1RX670FJ.htm" class="link-block"></a>
+                            </li>
+                            <li class="item">
+                                <div class="item-img">
+                                    <img src="http://img.ezprice.com.tw/ezpd/839/1839/1839_s.jpg" alt="HITACHI日立 670L變頻六門對開冰箱(RSF8800C)" class="pd-img" link-img="http://img.ezprice.com.tw/ezpd/839/1839/1839_s.jpg">
+                                </div>
+                                <div class="item-name">
+                                    <p>HITACHI日立 670L變頻六門對開冰箱(RSF8800C)</p>
+                                    <span>$108,145~</span>
+                                </div>
+                                <a href="http://m.ezprice.com.tw/ezpd_compare/121/1839-HITACHI%E6%97%A5%E7%AB%8B%20670L%E8%AE%8A%E9%A0%BB%E5%85%AD%E9%96%80%E5%B0%8D%E9%96%8B%E5%86%B0%E7%AE%B1%28RSF8800C%29.htm" class="link-block"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <div class="col-xs-12" id="guide-article">
+        <h3 class="ezguide-title">
+          <span class="line">
+            購物達人教你怎麼選
+            <a href="//guide.ezprice.com.tw/" class="more" target="_blank">更多<i class="fa fa-angle-right fa-lg"></i></a>
+          </span>
+        </h3>
+        <ul class="ezguide-list">
+          <li class="clearfix">
+            <a href="http://guide.ezprice.com.tw/article.php?a=213" class="clearfix">
+              <div class="ezguide-img">
+                <img alt="【2015年 SOGO 週年慶 vs 網路購物】比較優惠價格，讓你買到最划算的價格！ (忠孝館 / 復興館 / 新竹站前店)" src="http://cms.ezprice.com.tw/guide/wp-content/uploads/2015/11/sogo.png">
+              </div>
+              <div class="ezguide-topic">
+                <span>【2015年 SOGO 週年慶 vs 網路購物】比較優惠價格，讓你買到最划算的價格！ (忠孝館 / 復興館 / 新竹站前店)</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div> -->
+                    <div class="col-xs-12 outclear" id="suggest-kw-list">
+                        <h3 class="related-title">
+            <span class="line">相關熱搜關鍵字</span>
+          </h3>
+                        <ul class="related-list clearfix">
+                            <li><a href="/s/hitachi%20%E6%97%A5%E7%AB%8B/price/">hitachi 日立</a></li>
+                            <li><a href="/s/hitachi%E6%97%A5%E7%AB%8B/price/">hitachi日立</a></li>
+                            <li><a href="/s/%E6%97%A5%E7%AB%8B%20hitachi/price/">日立 hitachi</a></li>
+                            <li><a href="/s/%E6%97%A5%E7%AB%8B%20HITACHI%20RD/price/">日立 HITACHI RD</a></li>
+                            <li><a href="/s/HITACHI%20%E6%97%A5%E7%AB%8B%20UDP/price/">HITACHI 日立 UDP</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid text-center">
+        <!-- <div class="fb-like" data-layout="button_count"></div> -->
+        <!-- <a href="https://www.facebook.com/EZprice.tw/?fref=ts">最新降價資訊！立即加入粉絲團</a> -->
+        <!-- ok -->
+        <ul>
+            <li><a href="http://testlink.com/herzo">廠商合作</a></li>
+            <!-- hidden link -->
+            <li><a href="http://testlink.com/contactUs">聯絡我們</a></li>
+            <li><a href="http://testlink.com/PC">電腦版</a></li>
+        </ul>
+        <span class="copyright">© 2015 EZprice Co., Ltd. All rights reserved.</span>
+    </footer>
+    <!-- filter-modal -->
+    <div class="modal fade" id="filter-modal" tabindex="-1" role="dialog" aria-labelledby="filter-modalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">店家篩選</h4>
+                </div>
+                <div class="filter-modal-list modal-body">
+                    <ul class="clearfix" id="merchant-list">
+                        <li class="checkbox checkbox-ezlogo">
+                            <input type="checkbox" value="" id="checkbox1">
+                            <label for="checkbox1"> GOHAPPY (3) </label>
+                        </li>
+                        <li class="checkbox checkbox-ezlogo">
+                            <input type="checkbox" value="" id="checkbox2">
+                            <label for="checkbox2"> ASAP閃電購物網 (2) </label>
+                        </li>
+                        <li class="checkbox checkbox-ezlogo">
+                            <input type="checkbox" value="" id="checkbox3">
+                            <label for="checkbox3"> 森森購物網手機版 (2) </label>
+                        </li>
+                        <li class="checkbox checkbox-ezlogo">
+                            <input type="checkbox" value="" id="checkbox4">
+                            <label for="checkbox4"> 東森購物網手機版 (2) </label>
+                        </li>
+                        <li class="checkbox checkbox-ezlogo">
+                            <input type="checkbox" value="" id="checkbox5">
+                            <label for="checkbox5"> momo富邦購物館 (1) </label>
+                        </li>
+                        <li class="checkbox checkbox-ezlogo">
+                            <input type="checkbox" value="" id="checkbox6">
+                            <label for="checkbox6"> PChome線上購物 (1) </label>
+                        </li>
+                        <li class="checkbox checkbox-ezlogo">
+                            <input type="checkbox" value="" id="checkbox7">
+                            <label for="checkbox7"> ibon mart (1) </label>
+                        </li>
+                        <li class="checkbox checkbox-ezlogo">
+                            <input type="checkbox" value="" id="checkbox8">
+                            <label for="checkbox8"> udn買東西 (1) </label>
+                        </li>
+                        <li class="checkbox checkbox-ezlogo">
+                            <input type="checkbox" value="" id="checkbox9">
+                            <label for="checkbox9"> myfone手機購物 (1) </label>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal" id="change-merchant">確認</button>
+                </div> -->
+                <div class="row modal-foot">
+                    <button type="button" class="col-xs-4" id="reset-btn">清除</button>
+                    <button type="button" class="col-xs-4" data-dismiss="modal">取消</button>
+                    <button type="button" class="col-xs-4" data-dismiss="modal" id="change-merchant">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form id="tmp-filter-merchant-data" style="display"></form>
+    <div class="sb-slidebar sb-left sb-style-push sb-width-custom" data-sb-width="80vw">
+        <nav>
+            <ul class="sb-menu">
+                <li>
+                    <div class="notlogin-area">
+                        <a href="http://m.ezprice.com.tw/member/register.php" class="btn btn-default btn-register">註冊</a>
+                        <a href="http://m.ezprice.com.tw/member/login.php" class="btn btn-login">登入</a>
+                    </div>
+                </li>
+                <li class="sb-close"><a href="/" class="list">首頁</a></li>
+                <li class="sb-close line">&nbsp;</li>
+                <li class="sb-close"><a href="/catelist.php" class="list">分類熱搜</a></li>
+                <li class="sb-close line">&nbsp;</li>
+                <li class="sb-close"><a href="/hotkw.php" class="list">熱搜關鍵字</a></li>
+                <li class="sb-close line">&nbsp;</li>
+                <!--<li class="sb-close"><a href="/member/login.php" class="list">我的收藏</a></li>-->
+                <li class="sb-close"><a href="/member/login.php" class="list">帳號維護</a></li>
+                <li class="sb-close line">&nbsp;</li>
+                <li class="sb-close"><a href="http://ezprice.com.tw/ezapp/" class="list">下載APP</a></li>
+                <li class="sb-close line">&nbsp;</li>
+                <li class="sb-close"><a href="/privacy.php" class="list">隱私權/使用者條款</a></li>
+            </ul>
+        </nav>
+    </div>
+    <a href="#0" class="cd-top fa fa-chevron-up"></a>
+    <div class="loading">
+      <div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+      </div>
+      <span>loading...</span>
+    </div>
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://use.fontawesome.com/a20778cb0f.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <!-- Slidebars -->
+    <script src="javascripts/slidebars.js"></script>
+    <script src="javascripts/cancelZoom.js"></script>
+    <script>
+    (function($) {
+        $(document).ready(function() {
+            // Initiate Slidebars
+            $.slidebars({
+                scrollLock: true // true or false
+            });
+        });
+    })(jQuery);
+    </script>
+    <!-- navbar JS-->
+    <script>
+    $(document).scroll(function(e) {
+        var scrollTop = $(document).scrollTop();
+        if (scrollTop > 0) {
+            // $('.navbar').removeClass('navbar-static').addClass('navbar-fixed-top');
+            // $('.scrollnon-pd').css('display','none');
+            $('.search-input-content').css('position', 'fixed');
+        } else {
+            // $('.navbar').removeClass('navbar-fixed-top').addClass('navbar-static');
+            // $('.scrollfix-pd').css('display','none');
+            // $('.scrollnon-pd').css('display','block');
+        }
+    });
+    </script>
+    <!-- Goto Top JS-->
+    <script>
+    jQuery(document).ready(function($) {
+        // browser window scroll (in pixels) after which the "back to top" link is shown
+        var offset = 200,
+            //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+            offset_opacity = 1200,
+            //duration of the top scrolling animation (in ms)
+            scroll_top_duration = 700,
+            //grab the "back to top" link
+            $back_to_top = $('.cd-top');
+        //hide or show the "back to top" link
+        $(window).scroll(function() {
+            ($(this).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible'): $back_to_top.removeClass('cd-is-visible cd-fade-out');
+            if ($(this).scrollTop() > offset_opacity) {
+                $back_to_top.addClass('cd-fade-out');
+            }
+        });
+        //smooth scroll to top
+        $back_to_top.on('click', function(event) {
+            event.preventDefault();
+            $('body,html').animate({
+                scrollTop: 0,
+            }, scroll_top_duration);
+        });
+    });
+    </script>
+    <script>
+    $(function() {
+        // 點擊搜尋欄位出現分類tabs
+        $('#srhkw1').click(function() {
+            $('.search-input-content').removeClass("hiddenBox");
+            $('.search-input-content,.overlay-bg').show();
+        });
+        // 點擊下方背景隱藏分類tabs
+        $('.overlay-bg').click(function() {
+            $(this).hide();
+            $('.search-input-content').hide();    
+        });
+        // 下方背景出現時scroll鎖住
+        if ($('.overlay-bg').css('display','none')) {
+            $('body').css('overflow','initial');
+        } else {
+            $('body').css('overflow','none');
+        }
+        // 價格排序
+        $('#price-filter').click(function() {
+            $(this).toggleClass('orange-color');
+            $(this).find('i').toggleClass('fa-sort-amount-desc');
+        });
+        // checkbox點擊
+        $('#reset-btn').click(function() {
+            if ($('.checkbox > input').prop("checked", false)) {
+                $(this).prop("checked", true);
+            }
+        });
+        // demo loading效果
+        $('#change-merchant').click(function() {
+            $('.loading').show();
+        });
+        $('.loading').click(function() {
+            $(this).hide();
+        });
+    });
+    </script>
+    <!-- 優惠下拉 -->
+    <script>
+    $('#dicount-content').on('show.bs.collapse', function() {
+        $('#dicount-content').css('display', 'inline-block');
+    })
+    $('#dicount-content').on('hide.bs.collapse', function() {
+        $('#dicount-content').css('display', 'none');
+    })
+    $('#dicount-content2').on('show.bs.collapse', function() {
+        $('#dicount-content2').css('display', 'inline-block');
+    })
+    $('#dicount-content2').on('hide.bs.collapse', function() {
+        $('#dicount-content2').css('display', 'none');
+    })
+    </script>
+    <script>
+    $(function() {
+            var $window = $(window),
+                $stickyheader = $('#sticky-top'),
+                // 取得header的預設位置
+                headerOffsetTop = $stickyheader.offset().top;
+
+            // 監控視窗捲動事件
+            // (每次視窗觸發捲動事件時執行處理)
+            $window.on('scroll', function() {
+                // 檢查視窗捲動程度、
+                // 若超過header的預設位置則附加類別、
+                // 反之則刪除
+
+                if ($window.scrollTop() > headerOffsetTop) {
+                    $stickyheader.css('position','fixed');
+                    $stickyheader.find('.main-content').addClass('sticky')
+                    $('#sb-site').css('margin-top', '160px');
+
+                } else {
+                    $stickyheader.css('position','relative');
+                    $stickyheader.find('.main-content').removeClass('sticky');
+                    $('#sb-site').css('margin-top', '0');
+                }
+            });
+        
+    });
+    </script>
+    <script>
+        jQuery(document).ready(function($) {
+            
+        });
+    </script>
+</body>
+
+</html>
