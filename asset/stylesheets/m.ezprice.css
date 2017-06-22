@@ -379,8 +379,8 @@ div, ol, ul, li, button {
 
 @font-face {
   font-family: "ez-msite";
-  src: url("../fonts/ez-msite.eot");
-  src: url("../fonts/ez-msite.eot?#iefix") format("embedded-opentype"), url("../fonts/ez-msite.woff") format("woff"), url("../fonts/ez-msite.ttf") format("truetype"), url("../fonts/ez-msite.svg#ez-msite") format("svg");
+  src: url("fonts/ez-msite.eot");
+  src: url("fonts/ez-msite.eot?#iefix") format("embedded-opentype"), url("fonts/ez-msite.woff") format("woff"), url("fonts/ez-msite.ttf") format("truetype"), url("fonts/ez-msite.svg#ez-msite") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -602,7 +602,7 @@ div, ol, ul, li, button {
 @media screen and (min-width: 768px) {
   .container {
     margin: 0 auto;
-    max-width: 600px; }
+    max-width: 700px; }
   .container.is-fluid {
     margin: 0 20px;
     max-width: none; } }
@@ -1117,7 +1117,7 @@ button.go-top {
   right: 0;
   background-color: #e8e8e8; }
   .header .site-logo {
-    background: url(../img/logo.svg) no-repeat center;
+    background: url(../images/logo.svg) no-repeat center;
     text-indent: -10000px;
     overflow: hidden;
     width: 125px;
@@ -1143,26 +1143,92 @@ button.go-top {
     line-height: 50px; }
 
 .input-search {
-  margin: 0 10px;
-  padding: 10px 0;
-  color: #1e2430; }
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 10px;
+  color: #1e2430;
+  overflow: hidden; }
+  .input-search .select-area {
+    background: #f5f5f5;
+    position: relative;
+    color: #ff6706;
+    z-index: 2;
+    border: 1px solid #E2E2E2;
+    padding: 0 0 0 5px;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    width: 65px;
+    height: 36px;
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none; }
+    .input-search .select-area i {
+      position: absolute;
+      top: 9px;
+      right: 5px;
+      font-size: 0.9rem; }
+      .input-search .select-area i:before {
+        vertical-align: bottom; }
+  .input-search .select-box {
+    background: none;
+    height: 100%;
+    border: none;
+    padding: 2px 15px 2px 3px;
+    -webkit-appearance: none; }
+    .input-search .select-box:focus {
+      outline: none; }
+    .input-search .select-box:focus .icon {
+      color: white; }
   .input-search form {
-    position: relative; }
+    position: relative;
+    -webkit-box-flex: 2;
+    -webkit-flex-grow: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2; }
   .input-search input {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
     height: 36px;
     padding: 8px;
-    border-radius: 2px;
+    border-radius: 0 2px 2px 0;
+    border: 0;
+    position: relative;
+    color: #393f4e;
+    -webkit-transition: border ease-in-out 0.3s;
+    -o-transition: border ease-in-out 0.3s;
+    transition: border ease-in-out 0.3s;
     border: 1px solid #E2E2E2;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    position: relative;
-    color: #393f4e;
-    -webkit-transition: all ease-in-out 0.3s;
-    -o-transition: all ease-in-out 0.3s;
-    transition: all ease-in-out 0.3s; }
+    -webkit-appearance: none; }
     .input-search input::-webkit-input-placeholder {
       color: #9b9b9b; }
     .input-search input::-moz-placeholder {
@@ -1172,8 +1238,7 @@ button.go-top {
     .input-search input::placeholder {
       color: #9b9b9b; }
     .input-search input:focus {
-      outline: 0;
-      border-color: #ff6706; }
+      outline: 0; }
   .input-search .search-submit {
     background: #ff6706;
     width: 40px;
@@ -1313,7 +1378,7 @@ body.sticky.up .head-content > .input-search {
 
 body.sticky.up .search-filter {
   position: fixed !important;
-  max-width: 640px;
+  max-width: 720px;
   margin: 0 auto !important;
   top: 94px;
   left: 0;
@@ -1444,7 +1509,8 @@ body.sticky.up .search-filter {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    z-index: 1300; }
+    z-index: 1300;
+    background: #f5f5f5; }
     .search-modal .search-head .back-btn {
       width: 50px;
       height: 50px;
@@ -1531,9 +1597,15 @@ body.sticky.up .search-filter {
     margin-bottom: 2px;
     vertical-align: middle;
     line-height: 24px; }
-  .search-modal .tab-content.last-search li:last-child {
+  .search-modal .tab-content.last-search li.delete-all button {
+    color: #393f4e;
+    display: block;
+    padding: 10px;
+    width: 100%;
     text-align: right;
-    color: #7f8492; }
+    font-size: 14px;
+    position: inherit;
+    background: #fff; }
   .search-modal .search-section {
     position: fixed;
     z-index: 99;
@@ -2610,14 +2682,17 @@ ul.active_filters {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      width: 124px;
+      width: 125px;
       margin: 0 5px;
       text-align: center; }
       .carousel-stage-outer .carousel-stage .carousel-item a {
         color: inherit;
         text-align: left;
         display: block;
-        padding: 5px; }
+        padding: 5px;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; }
       .carousel-stage-outer .carousel-stage .carousel-item .ranking {
         display: block;
         padding: 5px 0;
@@ -2633,6 +2708,7 @@ ul.active_filters {
         font-size: 12px;
         font-weight: normal;
         color: #7f8492;
+        line-height: 1.4;
         height: 33.6px;
         overflow: hidden;
         text-align: justify;

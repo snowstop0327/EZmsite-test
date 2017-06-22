@@ -18,6 +18,10 @@ $fff: 14px;
 $line-height: 1.4;
 $lines-to-show: 2;
 
+//width
+$tablet-width: 700px;
+$desktop-width: 960px;
+
 @mixin mul-box {
 	display: block; /* Fallback for non-webkit */
 	display: -webkit-box;

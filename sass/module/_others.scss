@@ -6,7 +6,7 @@
 @media screen and (min-width: 768px) {
   .container {
     margin: 0 auto;
-    max-width: 600px;
+    max-width: $tablet-width;
   }
   .container.is-fluid {
     margin: 0 20px;
@@ -16,7 +16,7 @@
 
 @media screen and (min-width: 1024px) {
   .container {
-    max-width: 960px;
+    max-width: $desktop-width;
   }
 }
 

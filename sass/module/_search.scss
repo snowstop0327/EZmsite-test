@@ -16,6 +16,7 @@
 		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 		align-items: center;
 		z-index: 1300;
+		background: $gray-lighter;
 
 		.back-btn {
 			width: 50px;
@@ -130,9 +131,21 @@
 	    }
 	    &.last-search {
 	    	li {
-	    		&:last-child {
-					text-align: right;
-					color: $gray;
+	   //  		&:last-child {
+				// 	text-align: right;
+				// 	color: $gray;
+				// }
+				&.delete-all {
+					button {
+						color: #393f4e;
+					    display: block;
+					    padding: 10px;
+					    width: 100%;
+					    text-align: right;
+					    font-size: 14px;
+					    position: inherit;
+					    background: #fff;
+					}
 				}
 	    	}
 	    }

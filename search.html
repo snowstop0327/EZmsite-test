@@ -14,7 +14,7 @@
     <!-- //fb og -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://m.ezprice.com.tw/images/ezprice-logo.png" rel="icon" type="image/png">
-    <link rel="stylesheet" href="css/m.ezprice.css">
+    <link rel="stylesheet" href="asset/stylesheets/m.ezprice.css">
     <link rel="alternate" media="only screen and (min-width: 1024px)" href="https://ezprice.com.tw/">
     <script type="application/ld+json">
     {
@@ -40,8 +40,15 @@
         <h1 class="site-logo"><a href="/">EZprice 比價網</a></h1>
         <button class="icon icon-navicon-round nav-toggle"></button>
         <div class="input-search" id="search-box">
-          <form id="search_act" class="container">
-            <input class="input-area" placeholder="想省? 來比價吧！" id="searchDisplay"> 
+          <div class="select-area">
+            <select class="select-box">
+                <option value="all">商品</option>
+                <option value="book">找書</option>
+            </select>
+            <i class="icon icon-chevron-down"></i>
+          </div>
+          <form>
+            <input class="input-area" placeholder="輸入商品或型號" id="searchDisplay"> 
             <button class="search-submit icon icon-android-search"></button>
           </form>
         </div>
@@ -70,10 +77,17 @@
         <div class="search-head">
           <button class="icon icon-android-arrow-back back-btn"></button>
           <div class="input-search form-control" itemscope itemtype="http://schema.org/WebSite">
+            <div class="select-area">
+              <select class="select-box">
+                  <option value="all">商品</option>
+                  <option value="book">找書</option>
+              </select>
+              <i class="icon icon-chevron-down"></i>
+            </div>
             <meta itemprop="url" content="https://www.example.com/"/>
             <form id="search_act" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
               <meta itemprop="target" content="https://query.example.com/search?q={search_term_string}"/>
-              <input class="input-area" id="searchInput" placeholder="想省? 來比價吧！" autocomplete="off" itemprop="query-input" type="search" name="search_term_string" value="SONY 重低音" oninput="setCustomValidity('')" required oninvalid="this.setCustomValidity('請輸入這個欄位')"/> 
+              <input class="input-area" id="searchInput" autocomplete="off" itemprop="query-input" type="search" name="search_term_string"  oninput="setCustomValidity('')" required oninvalid="this.setCustomValidity('請輸入這個欄位')"/> 
               <span class="clear-btn">✕</span>
               <button type="submit" class="search-submit icon icon-android-search"></button>
             </form>
@@ -100,20 +114,20 @@
             <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
             <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
             <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
-            <li class="delete-all"><a href="#" title="刪除全部" alt="刪除全部">刪除全部</a></li>
+            <li class="delete-all"><button>刪除全部</button></li>
           </ul>
         </div>
         <!-- 搜尋頁-input建議字內容 -->
         <ul class="search-section collapse">
           <!-- 建議關鍵字區 -->
-          <li class="history-title">
+          <!-- <li class="history-title">
             <a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>xz</strong>
             </a>
           </li>
           <li class="history-title">
             <a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>ps4</strong>
             </a>
-          </li>
+          </li> -->
           <li class="search-insert">
             <a href="#" title="123" alt="123">
               SONY <strong>xperia</strong>
@@ -591,7 +605,7 @@
     <!-- smartbanner -->
     <div class="smartbanner">
       <button class="close-btn">✕</button>
-      <img src="img/logo_40@2x.png" alt="app-icon" class="icon-img">
+      <img src="asset/images/logo_40@2x.png" alt="app-icon" class="icon-img">
       <p>EZprice找便宜 APP<br>
         來唷～便宜攏底佳！
       </p>
@@ -599,5 +613,5 @@
     </div>
   </body>
   <!-- <script src="js/jQuery.min.js"></script> -->
-  <script src="js/mEZprice.js"></script>
+  <script src="asset/javascripts/mEZprice.js"></script>
 </html>

@@ -16,7 +16,7 @@
     <meta name="description" property="og:description" content="信用卡 怎麼選，各家信用卡比較及相關資訊，提供你挑選時作參考，EZprice比價網-讓你選的周全，比的實在，買的安心！">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://m.ezprice.com.tw/images/ezprice-logo.png" rel="icon" type="image/png">
-    <link rel="stylesheet" href="css/m.ezprice.css">
+    <link rel="stylesheet" href="asset/stylesheets/m.ezprice.css">
     <link rel="alternate" media="only screen and (min-width: 1024px)" href="https://ezprice.com.tw/">
     <script type="application/ld+json">
     {
@@ -42,7 +42,14 @@
         <h1 class="site-logo"><a href="/">信用卡首刷禮比較，EZprice 比價網 -讓你選的周全，比的實在，買的安心！</a></h1>
         <button class="icon icon-navicon-round nav-toggle" onclick="openNavigation()"></button>
         <div class="input-search" id="search-box">
-          <form id="search_act" class="container">
+          <div class="select-area">
+            <select class="select-box">
+                <option value="all">商品</option>
+                <option value="book">找書</option>
+            </select>
+            <i class="icon icon-chevron-down"></i>
+          </div>
+          <form>
             <input class="input-area" id="search-input" placeholder="想省? 來比價吧！" autocomplete="off" type="text" name="search_term_string" required/> 
             <button type="submit" class="search-submit icon icon-android-search"></button>
           </form>
@@ -83,6 +90,13 @@
           <div class="input-search form-control" itemscope itemtype="http://schema.org/WebSite">
             <meta itemprop="url" content="https://www.example.com/"/>
             <form id="search_act" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+              <div class="select-area">
+                <select class="select-box">
+                    <option value="all">商品</option>
+                    <option value="book">找書</option>
+                </select>
+                <i class="icon icon-chevron-down"></i>
+              </div>
               <meta itemprop="target" content="https://query.example.com/search?q={search_term_string}"/>
               <input class="input-area" id="testinput" placeholder="想省? 來比價吧！" autocomplete="off" itemprop="query-input" type="text" name="search_term_string" value="SONY 重低音" required/> 
               <button class="clear-btn">✕</button>
@@ -111,7 +125,7 @@
             <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
             <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
             <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
-            <li class="delete-all"><a href="#" title="刪除全部" alt="刪除全部">刪除全部</a></li>
+            <li class="delete-all"><button>刪除全部</button></li>
           </ul>
         </div>
         <!-- 搜尋頁-input建議字內容 -->
@@ -142,7 +156,7 @@
         <div class="columns is-mobile is-gapless box linkout ads">
           <a href="https://www.citibank.com.tw/credit-cards/application/index.html?CardType=2&Media=F39&ecid=afscdtwac71000" title="花旗現金回饋悠遊卡" alt="花旗現金回饋悠遊卡" target="_blank" class="columns card-columns is-mobile">
             <div class="column is-4 card-img">
-              <img src="img/c1.png" alt="花旗現金回饋悠遊卡">
+              <img src="asset/images/c1.png" alt="花旗現金回饋悠遊卡">
             </div>
             <div class="column product-info-box">
               <h3 class="card-name v2-name">
@@ -180,7 +194,7 @@
         <div class="columns is-mobile is-gapless box product-page">
           <a href="https://vbank.tcbank.com.tw/CreditCard/CreditCardIndexCard" title="大眾銀行全卡別" alt="大眾銀行全卡別" target="_blank" class="columns card-columns is-mobile">
             <div class="column is-4 card-img">
-              <img src="img/c2.png" alt="大眾銀行全卡別">
+              <img src="asset/images/c2.png" alt="大眾銀行全卡別">
             </div>
             <div class="column product-info-box">
               <h3 class="card-name">
@@ -214,7 +228,7 @@
         <div class="columns is-mobile is-gapless box product-page">
           <a href="https://www.ctbcbank.com/CTCBPortalWeb/toPage?webSite=rb&id=TW_RB_MK_creditcard_091001" title="中國信託享想生活卡_VISA_御璽卡" alt="中國信託享想生活卡_VISA_御璽卡" target="_blank" class="columns card-columns is-mobile">
             <div class="column is-4 card-img">
-              <img src="img/c3.png" alt="中國信託享想生活卡_VISA_御璽卡">
+              <img src="asset/images/c3.png" alt="中國信託享想生活卡_VISA_御璽卡">
             </div>
             <div class="column product-info-box">
               <h3 class="card-name">
@@ -253,7 +267,7 @@
         <div class="columns is-mobile is-gapless box product-page">
           <a href="https://www.taishinbank.com.tw/TS/TS06/TS0602/TS060225/index.htm" title="台新銀行@GoGo悠遊御璽卡_VISA_御璽卡" alt="台新銀行@GoGo悠遊御璽卡_VISA_御璽卡" target="_blank" class="columns card-columns is-mobile">
             <div class="column is-4 card-img">
-              <img src="img/c4.png" alt="台新銀行@GoGo悠遊御璽卡_VISA_御璽卡">
+              <img src="asset/images/c4.png" alt="台新銀行@GoGo悠遊御璽卡_VISA_御璽卡">
             </div>
             <div class="column product-info-box">
               <h3 class="card-name">
@@ -291,7 +305,7 @@
         <div class="columns is-mobile is-gapless box product-page">
           <a href="https://www.kgibank.com/T01/T0110/T0110_04.jsp" title="凱基現金回饋卡" alt="凱基現金回饋卡" target="_blank" class="columns card-columns is-mobile">
             <div class="column is-4 card-img">
-              <img src="img/c5.png" alt="凱基現金回饋卡">
+              <img src="asset/images/c5.png" alt="凱基現金回饋卡">
             </div>
             <div class="column product-info-box">
               <h3 class="card-name">
@@ -346,6 +360,6 @@
     </footer>
     <button class="icon icon-chevron-up go-top"></button>
   </body>
-  <script src="js/jQuery.min.js"></script>
-  <script src="js/mCreditCard.js"></script>
+  <script src="asset/javascripts/jQuery.min.js"></script>
+  <script src="asset/javascripts/mCreditCard.js"></script>
 </html>

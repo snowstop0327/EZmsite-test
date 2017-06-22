@@ -14,7 +14,7 @@
     <!-- //fb og -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://m.ezprice.com.tw/images/ezprice-logo.png" rel="icon" type="image/png">
-    <link rel="stylesheet" href="css/m.ezprice.css">
+    <link rel="stylesheet" href="asset/stylesheets/m.ezprice.css">
     <link rel="alternate" media="only screen and (min-width: 1024px)" href="https://ezprice.com.tw/">
     <script type="application/ld+json">
     {
@@ -40,7 +40,14 @@
         <h1 class="site-logo"><a href="/">EZprice 比價網</a></h1>
         <button class="icon icon-navicon-round nav-toggle"></button>
         <div class="input-search" id="search-box">
-          <form id="search_act" class="container">
+          <div class="select-area">
+            <select class="select-box">
+                <option value="all">商品</option>
+                <option value="book">找書</option>
+            </select>
+            <i class="icon icon-chevron-down"></i>
+          </div>
+          <form>
             <input class="input-area" id="search-input" placeholder="想省? 來比價吧！" autocomplete="off" type="text" name="search_term_string" required/> 
             <button type="submit" class="search-submit icon icon-android-search"></button>
           </form>
@@ -252,6 +259,13 @@
         <div class="search-head">
           <button class="icon icon-android-arrow-back back-btn"></button>
           <div class="input-search form-control" itemscope itemtype="http://schema.org/WebSite">
+            <div class="select-area">
+              <select class="select-box">
+                  <option value="all">商品</option>
+                  <option value="book">找書</option>
+              </select>
+              <i class="icon icon-chevron-down"></i>
+            </div>
             <meta itemprop="url" content="https://www.example.com/"/>
             <form id="search_act" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
               <meta itemprop="target" content="https://query.example.com/search?q={search_term_string}"/>
@@ -282,7 +296,7 @@
             <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
             <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
             <li><a href="#" title="可麗舒" alt="可麗舒">可麗舒</a><button class="icon icon-trash"></button></li>
-            <li class="delete-all"><a href="#" title="刪除全部" alt="刪除全部">刪除全部</a></li>
+            <li class="delete-all"><button>刪除全部</button></li>
           </ul>
         </div>
         <!-- 搜尋頁-input建議字內容 -->
