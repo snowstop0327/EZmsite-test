@@ -48,11 +48,12 @@
             <i class="icon icon-chevron-down"></i>
           </div>
           <form>
-            <input class="input-area" id="search-input" placeholder="想省? 來比價吧！" autocomplete="off" type="text" name="search_term_string" required/> 
-            <button type="submit" class="search-submit icon icon-android-search"></button>
+            <input class="input-area" placeholder="輸入商品或型號" id="searchDisplay"> 
+            <button class="search-submit icon icon-android-search"></button>
           </form>
         </div>
       </div>
+      <!-- 隱藏的Menu區 start -->
       <nav class="nav">
         <ul class="nav-menu">
           <li class="nav-items"><a href="#" title="首頁" alt="首頁">首頁</a></li>
@@ -69,6 +70,7 @@
         <div class="close-bg"></div>
       </nav>
       <div class="overlay-bg"></div>
+      <!-- 隱藏的Menu區 end -->    
       <!-- 搜尋頁 -->
       <div id="search-modal" class="search-modal collapse">
         <!-- 搜尋頁-頭部 -->
@@ -85,7 +87,7 @@
             <meta itemprop="url" content="https://www.example.com/"/>
             <form id="search_act" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
               <meta itemprop="target" content="https://query.example.com/search?q={search_term_string}"/>
-              <input class="input-area" id="testinput" autocomplete="off" itemprop="query-input" type="text" name="search_term_string" value="SONY 重低音" required/> 
+              <input class="input-area" id="searchInput" autocomplete="off" itemprop="query-input" type="search" name="search_term_string"  oninput="setCustomValidity('')" required oninvalid="this.setCustomValidity('請輸入這個欄位')"/> 
               <span class="clear-btn">✕</span>
               <button type="submit" class="search-submit icon icon-android-search"></button>
             </form>
@@ -118,21 +120,86 @@
         <!-- 搜尋頁-input建議字內容 -->
         <ul class="search-section collapse">
           <!-- 建議關鍵字區 -->
-          <li class="history-title"><a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>xz</strong></a></li>
-          <li class="history-title"><a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>ps4</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>xperia</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>xz premium</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>xa</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>xzs</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-
+          <!-- <li class="history-title">
+            <a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>xz</strong>
+            </a>
+          </li>
+          <li class="history-title">
+            <a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>ps4</strong>
+            </a>
+          </li> -->
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>xperia</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>xz premium</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>xa</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>xzs</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
         </ul>
       </div>
     </header>
@@ -143,20 +210,27 @@
             <div class="product-card clearfix">
               <div class="product-info">
                 <h1 itemprop="name">【SONY 索尼】PlayStation 4 Pro (PS4 Pro) 1TB 遊戲主機 CUH-7017BB01</h1>
-                <span class="product-rank">電玩主機 熱搜 第<i>1</i>名</span>
-                <div class="star-ranking">
+                <a href="#" alt="電玩主機 熱搜 第1名" class="product-rank">電玩主機 熱搜 第<i>1</i>名</a>
+                <div class="star-ranking" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
                   商品評分
                   <i class="icon icon-android-star-outline"></i>
                   <i class="icon icon-android-star-outline"></i>
                   <i class="icon icon-android-star-half"></i>
                   <i class="icon icon-android-star"></i>
                   <i class="icon icon-android-star-outline"></i>
-                  <span>(0)</span>
+                  <span itemprop="ratingValue" class="hide">3.5</span>
+                  <span itemprop="reviewCount" content="3">(3)</span>
                 </div>
               </div>
               <div class="product-img">
                 <img  itemprop="image" src="https://img.ezprice.com.tw/ezpd/870/59870/59870_s.jpg" alt="【SONY 索尼】PlayStation 4 Pro (PS4 Pro) 1TB 遊戲主機 CUH-7017BB01">
                 <a href="#" title="【SONY 索尼】PlayStation 4 Pro (PS4 Pro) 1TB 遊戲主機 CUH-7017BB01" alt="【SONY 索尼】PlayStation 4 Pro (PS4 Pro) 1TB 遊戲主機 CUH-7017BB01"></a>
+              </div>
+              <meta itemprop="description" content="djkfjsldfjlksdjfslkjdkljfk">
+              <div class="hide" itemprop="offers" itemscope itemtype="https://schema.org/AggregateOffer">
+                <span itemprop="lowPrice" content="15590">15,590</span>~
+                <span itemprop="highPrice" content="53000">53,000</span>
+                <meta itemprop="priceCurrency" content="TWD">
               </div>
             </div>
             <ul class="columns is-mobile is-gapless product-filter">
@@ -188,12 +262,34 @@
           <ul class="product-list">
             <li class="full-width current" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
               <a href="#" itemprop="url" class="columns is-mobile  is-gapless" title="【SONY 索尼】PlayStation 4 Pro (PS4 Pro) 1TB 遊戲主機 CUH-7017BB01" alt="【SONY 索尼】PlayStation 4 Pro (PS4 Pro) 1TB 遊戲主機 CUH-7017BB01">
-                <span class="column is-3 shop-title" itemprop="seller" itemscope itemtype="http://schema.org/Organization">
+                <span class="column is-4 shop-title" itemprop="seller" itemscope itemtype="http://schema.org/Organization">
                   <span class="shop-name" itemprop="name">新蛋全球生活網</span>
                   <span class="ad-box">贊助廣告</span>
                 </span> 
-                <span class="column is-6 product-title">
-                  <h4>SONY PS4 Pro 1TB 黑 (CUH-7017BB01) 不含直立架</h4>
+                <span class="column is-5 product-title">
+                  <meta itemprop="image" content="https://i.imgur.com/yw5tCox.jpg">
+                  <h4 itemprop="name">SONY PS4 Pro 1TB 黑 (CUH-7017BB01) 不含直立架</h4>
+                </span>
+                <span class="column is-3 product-price low-price">
+                  <strong class="price" itemprop="price" content="12000">$12,000</strong>
+                  <meta itemprop="priceCurrency" content="TWD">
+                  <time itemprop="priceValidUntil" datetime="2017-06-09"></time>
+                  <span>前往賣場 &gt;</span>
+                </span>
+              </a>
+              <span class="discount-link">優惠</span>
+              <a itemprop="url" href="yahoo.com.tw" class="discount-content">優惠內容～～～</a>
+              <link itemprop="availability" href="http://schema.org/InStock">
+            </li>
+            <li class="full-width" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+              <a href="#" itemprop="url" class="columns is-mobile  is-gapless" title="【SONY 索尼】PlayStation 4 Pro (PS4 Pro) 1TB 遊戲主機 CUH-7017BB01" alt="【SONY 索尼】PlayStation 4 Pro (PS4 Pro) 1TB 遊戲主機 CUH-7017BB01">
+                <span class="column is-4 shop-title" itemprop="seller" itemscope itemtype="http://schema.org/Organization">
+                  <span class="shop-name" itemprop="name">新蛋全球生活網</span>
+                  <span class="icon icon-thumbsup shop-rank">2.95</span>
+                </span> 
+                <span class="column is-5 product-title">
+                  <meta itemprop="image" content="https://i.imgur.com/yw5tCox.jpg">
+                  <h4 itemprop="name">SONY PS4 Pro 1TB 黑 (CUH-7017BB01) 不含直立架</h4>
                 </span>
                 <span class="column is-3 product-price low-price">
                   <strong class="price" itemprop="price" content="12000">$12,000</strong>
@@ -208,32 +304,13 @@
             </li>
             <li class="full-width" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
               <a href="#" itemprop="url" class="columns is-mobile  is-gapless" title="【SONY 索尼】PlayStation 4 Pro (PS4 Pro) 1TB 遊戲主機 CUH-7017BB01" alt="【SONY 索尼】PlayStation 4 Pro (PS4 Pro) 1TB 遊戲主機 CUH-7017BB01">
-                <span class="column is-3 shop-title" itemprop="seller" itemscope itemtype="http://schema.org/Organization">
+                <span class="column is-4 shop-title" itemprop="seller" itemscope itemtype="http://schema.org/Organization">
                   <span class="shop-name" itemprop="name">新蛋全球生活網</span>
                   <span class="icon icon-thumbsup shop-rank">2.95</span>
                 </span> 
-                <span class="column is-6 product-title">
-                  <h4>SONY PS4 Pro 1TB 黑 (CUH-7017BB01) 不含直立架</h4>
-                </span>
-                <span class="column is-3 product-price low-price">
-                  <strong class="price" itemprop="price" content="12000">$12,000</strong>
-                  <meta itemprop="priceCurrency" content="TWD">
-                  <time itemprop="priceValidUntil" datetime="2017-06-09"></time>
-                  <span>前往賣場 &gt;</span>
-                </span>
-              </a>
-              <span class="discount-link">優惠</span>
-              <a href="yahoo.com.tw" class="discount-content">優惠內容～～～</a>
-              <link itemprop="availability" href="http://schema.org/InStock">
-            </li>
-            <li class="full-width" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-              <a href="#" itemprop="url" class="columns is-mobile  is-gapless" title="【SONY 索尼】PlayStation 4 Pro (PS4 Pro) 1TB 遊戲主機 CUH-7017BB01" alt="【SONY 索尼】PlayStation 4 Pro (PS4 Pro) 1TB 遊戲主機 CUH-7017BB01">
-                <span class="column is-3 shop-title" itemprop="seller" itemscope itemtype="http://schema.org/Organization">
-                  <span class="shop-name" itemprop="name">新蛋全球生活網</span>
-                  <span class="icon icon-thumbsup shop-rank">2.95</span>
-                </span> 
-                <span class="column is-6 product-title">
-                  <h4>SONY PS4 Pro 1TB 黑 (CUH-7017BB01) 不含直立架</h4>
+                <span class="column is-5 product-title">
+                  <meta itemprop="image" content="https://i.imgur.com/yw5tCox.jpg">
+                  <h4 itemprop="name">SONY PS4 Pro 1TB 黑 (CUH-7017BB01) 不含直立架</h4>
                 </span>
                 <span class="column is-3 product-price">
                   <strong class="price" itemprop="price" content="12999">$12,999</strong>
@@ -243,7 +320,7 @@
                 </span>
               </a>
               <span class="discount-link">優惠</span>
-              <a href="yahoo.com.tw" class="discount-content">優惠內容～～～</a>
+              <a itemprop="url" href="yahoo.com.tw" class="discount-content">優惠內容～～～</a>
               <link itemprop="availability" href="http://schema.org/InStock">
             </li>
           </ul>
@@ -261,6 +338,7 @@
                   <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
                     <meta itemprop="priceCurrency" content="TWD" />
                     <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
+                    <meta itemprop="highPrice" content="53000">
                   </span>
                 </a>
               </div>
@@ -271,6 +349,7 @@
                   <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
                     <meta itemprop="priceCurrency" content="TWD" />
                     <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
+                    <meta itemprop="highPrice" content="53000">
                   </span>
                 </a>
               </div>
@@ -281,6 +360,7 @@
                   <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
                     <meta itemprop="priceCurrency" content="TWD" />
                     <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
+                    <meta itemprop="highPrice" content="53000">
                   </span>
                 </a>
               </div>
@@ -304,6 +384,9 @@
         <!-- 相關熱搜關鍵字 -->
       </div>
     </section>
+    <div class="ads-center">
+      <img src="http://static.tumblr.com/455315a1d978601d401c6a6d265ef484/m9bqtw9/dRQoa8zte/tumblr_static_pd0u55d3kusoogg0csgk8o84.jpg" alt="123">
+    </div>
     <footer class="footer">
       <ul>
         <li><a href="/contact.php" title="廠商合作" alt="廠商合作">廠商合作</a></li>
@@ -316,4 +399,5 @@
   </body>
   <script src="asset/javascripts/jQuery.min.js"></script>
   <script src="asset/javascripts/mEZprice.js"></script>
+  <script src="asset/javascripts/product.js"></script>
 </html>

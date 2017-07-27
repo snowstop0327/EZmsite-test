@@ -48,23 +48,12 @@
             <i class="icon icon-chevron-down"></i>
           </div>
           <form>
-            <input class="input-area" id="search-input" placeholder="想省? 來比價吧！" autocomplete="off" type="text" name="search_term_string" required/> 
-            <button type="submit" class="search-submit icon icon-android-search"></button>
+            <input class="input-area" placeholder="輸入商品或型號" id="searchDisplay"> 
+            <button class="search-submit icon icon-android-search"></button>
           </form>
         </div>
-        <!-- 排序選擇區 -->
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <h6 class="modal-header">想要排序的方式</h6>
-            <button class="close">✕</button>
-            <ul class="modal-body">
-              <li><a href="#" title="123" alt="123" class="fa fa-sort-amount-asc"><span>價格</span>從低到高</a></li>
-              <li><a href="#" title="123" alt="123" class="fa fa-sort-amount-desc"><span>價格</span>從高到低</a></li>
-              <li><a href="#" title="123" alt="123" class="fa fa-sort-amount-desc current"><span>相關度</span>從高到低</a></li>
-            </ul>
-          </div>
-        </div>
       </div>
+      <!-- 隱藏的Menu區 start -->
       <nav class="nav">
         <ul class="nav-menu">
           <li class="nav-items"><a href="#" title="首頁" alt="首頁">首頁</a></li>
@@ -81,178 +70,7 @@
         <div class="close-bg"></div>
       </nav>
       <div class="overlay-bg"></div>
-      <!-- 條件選擇區 -->
-      <div class="container search-filter">
-        <ul class="columns is-mobile is-gapless">
-          <li class="column is-3 tab-items">
-            <button class="icon icon-filter filter-btn">篩選</button>
-          </li>
-          <li class="column tab-items">
-            <button id="myBtn" class="icon icon-arrow-swap sorting-btn">
-              <span>相關度</span>
-              <!-- <span>價格高到低</span> -->
-              <!-- <span>價格低到高</span> -->
-              <i class="icon icon-android-arrow-dropdown"></i>
-            </button>
-          </li>
-          <li class="column tab-items">
-            <span>去除配件</span>
-            <div class="matrial-switch">
-              <input type="checkbox" id="switch-01" class="input-switch" />
-              <label for="switch-01"></label>
-            </div>
-          </li>
-        </ul>
-        <!-- 篩選頁 -->
-        <div class="collapse filter-page" id="myFilter">
-          <div class="filter-box filter-head">
-            <button class="reset active-color">重置全部</button>
-            <h4 class="filter-title">進階篩選</h4>
-            <button class="close">✕</button>
-          </div>
-          <div class="filter-box set-price">
-            <h5>價格範圍(新台幣)</h5>
-            <form id="filter-price">
-              <input type="number" name="lp" id="lp" class="low-input" value="">元 ～ 
-              <input type="number" name="hp" id="hp" class="high-input" value="">元
-            </form>
-          </div>
-          <div class="filter-box switch-card">
-            <h5>福利品/展示品排除</h5>
-            <div class="matrial-switch">
-              <input type="checkbox" id="switch-02" class="input-switch" />
-              <label for="switch-02"></label>
-            </div>
-          </div>
-          <ul class="filter-box filter-list">
-            <li id="shop-select">
-              <h5>店家 (<span>0</span>)</h5>
-              <span>請選擇店家</span>
-              <div class="modal" id="modal2">
-                <div class="modal-content">
-                  <h6 class="modal-header">店家篩選</h6>
-                  <button class="close">✕</button>
-                  <ul class="modal-body">
-                    <li class="checkbox">
-                      <input type="checkbox" value="9" id="shop-checkbox-0" class="filter-merchant">
-                      <label for="shop-checkbox-0"> 燦坤 (3) </label>
-                    </li>
-                  </ul>
-                  <div class="modal-footer">
-                    <button class="column">確認</button>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li id="class-select">
-              <h5>分類 (<span>0</span>)</h5>
-              <span>請選擇分類</span>
-              <div class="modal" id="modal3">
-                <div class="modal-content">
-                  <button class="btn-select active-color">全選</button>
-                  <button class="btn-select">清除</button>
-                  <h6 class="modal-header">選擇分類</h6>
-                  <button class="close">✕</button>
-                  <ul class="modal-body">
-                    <!-- 分類大選項1 -->
-                    <li class="panel">
-                      <button class="btn-display"></button>
-                      <div class="checkbox classify-filter">
-                        <input type="checkbox" id="class01">
-                        <label for="class01">3C電腦週邊(46)</label>
-                      </div>
-                      <ul class="classify-list collapse open">
-                        <li class="checkbox"><!-- 分類子選項 -->
-                          <input type="checkbox" id="checkbox01">
-                          <label for="checkbox01"> 藍牙週邊(18)  </label>
-                        </li>
-                        <li class="checkbox"><!-- 分類子選項 -->
-                          <input type="checkbox" id="checkbox02">
-                          <label for="checkbox02"> 喇叭(2)  </label>
-                        </li>
-                        <li class="checkbox"><!-- 分類子選項 -->
-                          <input type="checkbox" id="checkbox03">
-                          <label for="checkbox03"> 耳機(26)  </label>
-                        </li>
-                      </ul>
-                    </li>
-                    <!-- 分類大選項2 -->
-                    <li class="panel">
-                      <button class="btn-display more"></button>
-                      <div class="checkbox classify-filter collapsed">
-                        <input type="checkbox" id="class02">
-                        <label for="class02">視聽家電(12)</label>
-                      </div>
-                      <ul class="classify-list collapse">
-                        <!-- 分類子選項 -->
-                        <li class="checkbox">
-                          <input type="checkbox" id="checkbox04">
-                          <label for="checkbox04"> 藍牙週邊(18)  </label>
-                        </li>
-                        <!-- 分類子選項 -->
-                        <li class="checkbox">
-                          <input type="checkbox" id="checkbox05">
-                          <label for="checkbox05"> 喇叭(2)  </label>
-                        </li>
-                        <!-- 分類子選項 -->
-                        <li class="checkbox">
-                          <input type="checkbox" id="checkbox06">
-                          <label for="checkbox06"> 耳機(26)  </label>
-                        </li>
-                      </ul>
-                    </li>
-                    <!-- 分類大選項3 -->
-                    <li class="panel">
-                      <button class="btn-display more"></button>
-                      <div class="checkbox classify-filter collapsed">
-                        <input type="checkbox" id="class03">
-                        <label for="class03">大大分類三三(12)</label>
-                      </div>
-                      <ul class="classify-list collapse">
-                        <!-- 分類子選項 -->
-                        <li class="checkbox">
-                          <input type="checkbox" id="checkbox04">
-                          <label for="checkbox04"> 藍牙週邊(18)  </label>
-                        </li>
-                        <!-- 分類子選項 -->
-                        <li class="checkbox">
-                          <input type="checkbox" id="checkbox05">
-                          <label for="checkbox05"> 喇叭(2)  </label>
-                        </li>
-                        <!-- 分類子選項 -->
-                        <li class="checkbox">
-                          <input type="checkbox" id="checkbox06">
-                          <label for="checkbox06"> 耳機(26)  </label>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <div class="modal-footer">
-                    <button class="column">確認</button>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <h5>品牌 (<span>0</span>)</h5>
-              <span>請選擇品牌</span> 
-              <div class="modal">
-                <div class="modal-content">
-                  <h6 class="modal-header">品牌篩選</h6>
-                  <button class="close">✕</button>
-                  <ul class="modal-body">
-                    <li class="no-select"><span>沒有項目</span></li>
-                  </ul>
-                  <div class="modal-footer">
-                    <button class="column">確認</button>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <button class="btn-submit-filter" type="submit">套用篩選</button>
-        </div>
-      </div>
+      <!-- 隱藏的Menu區 end -->    
       <!-- 搜尋頁 -->
       <div id="search-modal" class="search-modal collapse">
         <!-- 搜尋頁-頭部 -->
@@ -269,8 +87,8 @@
             <meta itemprop="url" content="https://www.example.com/"/>
             <form id="search_act" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
               <meta itemprop="target" content="https://query.example.com/search?q={search_term_string}"/>
-              <input class="input-area" id="testinput" placeholder="想省? 來比價吧！" autocomplete="off" itemprop="query-input" type="text" name="search_term_string" value="SONY 重低音" required/> 
-              <button class="clear-btn">✕</button>
+              <input class="input-area" id="searchInput" autocomplete="off" itemprop="query-input" type="search" name="search_term_string"  oninput="setCustomValidity('')" required oninvalid="this.setCustomValidity('請輸入這個欄位')"/> 
+              <span class="clear-btn">✕</span>
               <button type="submit" class="search-submit icon icon-android-search"></button>
             </form>
           </div>
@@ -302,14 +120,14 @@
         <!-- 搜尋頁-input建議字內容 -->
         <ul class="search-section collapse">
           <!-- 建議關鍵字區 -->
-          <li class="history-title">
+          <!-- <li class="history-title">
             <a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>xz</strong>
             </a>
           </li>
           <li class="history-title">
             <a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>ps4</strong>
             </a>
-          </li>
+          </li> -->
           <li class="search-insert">
             <a href="#" title="123" alt="123">
               SONY <strong>xperia</strong>
@@ -382,7 +200,6 @@
             </a>
             <button class="icon icon-diagonal-arrow"></button>
           </li>
-
         </ul>
       </div>
     </header>

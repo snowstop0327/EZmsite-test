@@ -15,6 +15,10 @@ h2.credit-title{
 			margin: 0;
 		}
 	}
+	a.credit-clean:before{
+		width: 0!important;
+		height: 0!important;
+	}
 }
 .card-img{
 	img{
@@ -35,6 +39,12 @@ h2.credit-title{
 	}
 	&.v2-name{
 		color: $red;
+	}
+	.sug-text{
+		display: block;
+		font-size: 12px;
+		color: $red;
+		font-weight: normal;
 	}
 }
 .card-tabs-content{

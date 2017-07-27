@@ -9,7 +9,7 @@
 	    right: 0;
 	    width: 100vw;
 	    margin: 0 !important;
-	    z-index: 1000;
+	    z-index: 1500;
 		ul.product-filter {
 			background: rgba(black,0.7);
 			button,a {
@@ -38,6 +38,7 @@
 			@include mul-box;
 		}
 		.product-rank {
+			color: inherit;
 			i {
 				font-size: 15px;
 				color: $red;
@@ -220,7 +221,7 @@ ul.product-list {
 		}
 		span.column {
 			box-sizing: border-box;
-			border-right: 1px dashed rgba(gray,0.6);
+			border-right: 1px dotted rgba(gray,0.6);
 			color: $gray-darker;
 			text-align: center;
 			// padding: 5px;
@@ -241,14 +242,14 @@ ul.product-list {
 				color: #FFCD4F;
 				font-size: 12px;
 			}
-			h4 {
+			h3,h4 {
 				margin: -10px 5px 5px 5px;
 				font-size: $fff;
-				line-height: $line-height;
+				line-height: 16px;
 				@include mul-box;
-				height: $fff*$line-height*$lines-to-show; /* Fallback for non-webkit */
 				color: $gray;
-				font-weight: 500;
+				font-weight: 400;
+				text-align: left;
 			}
 			&.product-price {
 				border-right: none;
@@ -262,6 +263,9 @@ ul.product-list {
 			}
 			&.low-price {
 				color: $red;
+				strong.price {
+					font-weight: bold;
+				}
 			}
 		}
 		&.current {
@@ -279,7 +283,7 @@ ul.product-list {
 		}
 		.discount-link {
 			top: 56px;
-			left: 26%;
+			left: 35%;
 		}
 		a.discount-content {
 			display: none;
@@ -298,6 +302,7 @@ ul.product-list {
 }
 .related-product {
 	.carousel-stage {
+		padding: 0 5px;
 		.carousel-item {
 			width: 32%;
 			margin: 0 2px;

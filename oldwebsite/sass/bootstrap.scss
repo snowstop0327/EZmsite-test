@@ -123,7 +123,7 @@ html.sb-scroll-lock.sb-active:not(.sb-static) {
 #sb-site, .sb-site-container {
 	/* You may now use class .sb-site-container instead of #sb-site and use your own id. However please make sure you don't set any of the following styles any differently on your id. */
 	width: 100%;
-	min-height: 100vh;
+	min-height: 80vh;
 	position: relative;
 	z-index: 1; /* Site sits above Slidebars */
 }

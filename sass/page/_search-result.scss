@@ -1,7 +1,21 @@
+body {
+	background-color: $gray-light;
+}
+section.search-content {
+	padding-top: 150px;
+}
 .search-filter {
+	position: fixed;
 	text-align: center;
   font-size: 14px; 
   padding: 0;
+  width: 100%;
+  top: 100px;
+  left: 0;
+  right: 0;
+  z-index: 80;
+  transform: translateY(0);
+  transition: all 0.3s ease-out;
 
 	ul.columns {
 		@include white_shadow;
@@ -14,9 +28,10 @@
 
 			&:last-child {
 				border-right: none;
-				padding: 4px 15px 4px 0;
+				padding: 4px 10px 4px 0;
+				position: relative;
 				span {
-					margin-right: -5px;
+					// margin-right: -5px;
 				}
 			}
 
@@ -24,6 +39,7 @@
 				background: none;
 				width: 100%;
 				padding: 4px 0;
+				min-height: 28px;
 			}
 
 		}
@@ -32,18 +48,19 @@
 
 			&:before {
 				display: inline-block;
-				font-size: 1.1rem;
-			    transform: rotate(90deg);
-			    vertical-align: sub;
-			    margin-right: 5px;
+				font-size: 1.2rem;
+		    transform: rotate(90deg);
+		    vertical-align: sub;
+		    // margin-right: 5px;
 			}
-			i {
-				font-size: 1rem;
-				vertical-align: middle;
-			}
+			// i {
+			// 	font-size: 1rem;
+			// 	vertical-align: middle;
+			// }
 		}
 
 		.filter-btn {
+			margin-left: 5px;
 			&:before {
 				font-size: 1rem;
 				vertical-align: sub;
@@ -127,15 +144,8 @@ ul.active_filters {
 	flex-wrap: wrap;
   align-content: flex-start;
 
-  // a.column:before {
-  // 	content: "";
-  // 	position: absolute;
-  // 	display: block;
-  // 	top: 0;
-  // 	left: 0;
-  // 	right: 0;
-  // 	width: 100%;
-  // 	height: 100%;
+  // >a.columns:before {
+  // 	@include block-link;
   // }
 
   .product-img {
@@ -303,10 +313,10 @@ ul.active_filters {
 	background: $gray-lighter;
 	border-radius: 3px;
 	overflow: hidden;
-	margin-top: 10px;
+	margin-bottom: 10px;
 	// text-align: center;
 
-	h3 {
+	h2,h3 {
 		padding: 10px;
 		margin: 0;
 		background: $gray-lighter;
@@ -346,7 +356,8 @@ ul.active_filters {
 		display: inherit;
 		// padding-bottom: 20px;
 		margin: 0;
-		padding: 10px;
+		padding: 5px 10px;
+		// max-height: 79px;
 
 		li {
 			display: inline-flex;
@@ -497,6 +508,10 @@ ul.active_filters {
 
 .active-color {
 	color: $orange !important;
+	// &:active {
+	// 	background: $orange !important;
+	// 	color: $white !important;
+	// }
 }
 
 // new product-box
@@ -534,12 +549,14 @@ ul.active_filters {
 	    margin: 0 0;
 	    font-size: 13px;
 	    font-weight: normal;
-	    text-align: justify;
+	    // text-align: justify;
+	    word-break: break-all;
 	    @include mul-box;
+	    line-height: $line-height;
 	    height: 13px*$line-height*$lines-to-show;
 	    
 		    strong {
-		    	font-weight: bold;
+		    	// font-weight: bold;
 		    	color: $black;
 		    }
 		}
@@ -632,7 +649,7 @@ ul.active_filters {
 	left: calc(33.3333% + 8px);
 	// margin-top: 3px;
 	padding: 2px;
-	z-index: 100;
+	z-index: 70;
 	font-size: 12px;
 	border-radius: 3px;
 
@@ -679,6 +696,7 @@ ul.active_filters {
 			width: 125px;
 			margin: 0 5px;
 			text-align: center;
+			position: relative;
 
 			a {
 				color: inherit;
@@ -687,6 +705,9 @@ ul.active_filters {
 				padding: 5px;
 				width: 100%;
 				box-sizing:border-box;
+				// &:before {
+				// 	@include block-link;
+				// }
 			}
 
 			.ranking {
@@ -716,6 +737,11 @@ ul.active_filters {
 				text-overflow: ellipsis;
 				white-space: normal;
 			}
+			h3.product-name {
+				padding: 0;
+				background: none;
+				border:none;
+			}
 			.price {
 				color: $red;
 				font-size: 14px;
@@ -728,30 +754,56 @@ ul.active_filters {
 }
 .loadMore {
     width: 100%;
-    padding: 12px 10px 11px 34px;
+    // padding: 12px 10px 11px 34px;
     background: inherit;
-    color: $gray-dark;
+    // color: $gray-dark;
+    padding: 7px 10px;
     position: relative;
-    text-align: left;
+    // border-radius: 3px;
+    // @include white_shadow;
+    // margin: 0 0 10px;
+    // text-align: right;
+
+    .show-more {
+		background: $orange;
+		color: $white;
+		padding: 3px 30px 3px 5px;
+		border-radius: 2px;
+		float: right;
+
+		// margin-right: 35px;
+		&:before {
+			transform: rotate(270deg);
+			display: inline-block;
+			font-size: 24px;
+			position: absolute;
+		    right: 13px;
+		    // padding: 3px;
+		    // color: $orange;
+		}
+    }
 
 	.result-text {
-		text-align: right;
-		float: right;
+		// text-align: right;
+		float: left;
 		font-size: 14px;
 		color: $gray;
+		padding: 5px;
 		span {
 			font-weight: bold;
 		}
 	}
 
-	&:before {
-		transform: rotate(270deg);
-		display: inline-block;
-		font-size: 24px;
-		position: absolute;
-	    left: 5px;
+	// &:before {
+	// 	transform: rotate(270deg);
+	// 	display: inline-block;
+	// 	font-size: 24px;
+	// 	position: absolute;
+	//     right: 10px;
+	//     padding: 3px;
+	//     color: $orange;
 
-	}
+	// }
 }
 
 .fuzzy-title {

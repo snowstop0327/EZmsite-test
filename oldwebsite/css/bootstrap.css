@@ -10473,7 +10473,7 @@ footer .copyright {
 
 .main-content ul.otherpd-list {
   margin: 0;
-  padding: 5px;
+  padding: 0;
   list-style: none;
 }
 
@@ -11901,13 +11901,6 @@ a.back-link {
   background-color: #ff752b;
 }
 
-.index-content h1 {
-  width: 100%;
-  margin-top: -50px;
-  min-height: 45px;
-  display: inline-block;
-}
-
 .index-content .logo {
   margin: 0 auto;
   width: 160px;
@@ -12156,7 +12149,7 @@ a.back-link {
 }
 
 .click-btn-section {
-  margin: 0 0 5px;
+  margin: 5px 0;
   background-color: #fff;
 }
 
@@ -12282,6 +12275,10 @@ a.back-link {
   font-weight: 700;
 }
 
+.hotsort-section {
+  padding: 5px 2px 5px 5px;
+}
+
 .hotsort-section h3 {
   margin: 0;
   padding: 0px 0 10px 7px;
@@ -12297,34 +12294,9 @@ a.back-link {
   color: #777;
 }
 
-.hotsort-section ul.keywords-list {
-  padding: 5px;
-  list-style: none;
-}
-
-.hotsort-section ul.keywords-list li {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  padding: 5px 8px;
-  margin: 5px 0;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border: 1px solid #c1c1c1;
-  border-radius: 25px;
-  background: white;
-}
-
-.hotsort-section ul.keywords-list li a {
-  display: block;
-  color: #656c7d;
-  font-size: 13px;
-}
-
 .hotsort-section ul.hotsort-list {
   margin: 0;
-  padding: 5px;
+  padding: 0;
   list-style: none;
 }
 
@@ -12364,7 +12336,7 @@ a.back-link {
 }
 
 .bestchoice-section {
-  padding: 0;
+  padding: 5px 2px 5px 5px;
 }
 
 .bestchoice-section h3 {
@@ -12410,27 +12382,17 @@ a.back-link {
   color: #777;
 }
 
-.tab-pane .new-section-title {
-  padding: 10px 0 10px 7px;
-  margin: 0px 0 5px 0;
-  background-color: #fff;
-  font-size: 15px;
-}
-
 .other-section {
   position: relative;
   margin: 10px 0 0 0;
 }
 
-.other-section .other-title {
+.other-section h3.other-title {
   margin: 0 0 5px 0;
   padding: 10px 0 10px 7px;
-  background-color: #fff;
-}
-
-.other-section .other-title h1, .other-section .other-title h3 {
-  display: inline;
   font-size: 15px;
+  font-weight: bold;
+  background-color: #fff;
 }
 
 .other-section ul {
@@ -13991,7 +13953,7 @@ h3.mycollect-title {
 }
 
 .search-input-content {
-  z-index: 999;
+  z-index: 1000;
 }
 
 .search-input-content ul.search-section li.search-insert i {
@@ -14837,7 +14799,7 @@ html.sb-scroll-lock.sb-active:not(.sb-static) {
 #sb-site, .sb-site-container {
   /* You may now use class .sb-site-container instead of #sb-site and use your own id. However please make sure you don't set any of the following styles any differently on your id. */
   width: 100%;
-  min-height: 80vh;
+  min-height: 100vh;
   position: relative;
   z-index: 1;
   /* Site sits above Slidebars */

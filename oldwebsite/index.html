@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon" sizes="114x114" href="images/app-icon/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="144x144" href="images/app-icon/apple-icon-144x144.png">
     <!-- <link rel="stylesheet" href="stylesheets/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
     <!--     <link rel="stylesheet" href="stylesheets/slidebars.min.css">
     <link rel="stylesheet" href="stylesheets/font-awesome.min.css"> -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -72,39 +72,38 @@
             <div class="navicon-line"></div>
         </div>
         <div class="index-scroll-fix container-fluid">
+            <div class="dropdown select-filter">
+                <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">商品
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">商品</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">找書</a></li>  
+                </ul>
+            </div>
             <div class="input-search form-control">
-                <div class="select-area">
-                    <select class="select-box">
-                        <option value="all">商品</option>
-                        <option value="book">找書</option>
-                    </select>
+                <!-- <button class="select-area" data-target="#filter-modal">
+                    商品
                     <i class="fa fa-caret-down"></i>
-                </div>
+                </button> -->
+                <!-- <button type="button" class="select-area" data-toggle="modal" data-target="#filter-modal" id="filter-merchant">商品<i class="fa fa-caret-down"></i></button> -->
                 <i class="fa fa-search fa-lg"></i>
                 <input type="text" id="srhkw2" value="" class="input-area" placeholder="輸入商品或型號">
             </div>
         </div>
         <div class="index-content">
-            <a href="big-homePage" class="big-logo sprite">ezprice</a>
-            <!-- <div class="select-area">
-          <button type="button" class="tab-button" data-toggle="modal" data-target="#tab-list-modal">分類</button>
-          <button type="button" class="tab-button price-button" data-toggle="modal" data-target="#tab-list-modal2">價格範圍</button>
-          <button type="button" class="tab-button price-button" data-toggle="modal" data-target="#tab-list-modal3">品牌</button>
-        </div> -->
+          <a href="big-homePage" class="big-logo sprite">ezprice</a>
         </div>
         <div class="head-content container-fluid clearfix">
             <div class="search-scroll-fix clearfix">
-                <!-- <a href="homePage" class="logo sprite">ezprice</a> -->
+                <div class="dropdown select-filter">
+                    <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">商品
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">商品</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">找書</a></li>  
+                    </ul>
+                </div>
                 <div class="input-search form-control">
-                    <div class="select-area">
-                        <select class="select-box">
-                            <option value="all">商品</option>
-                            <option value="book">找書</option>
-                        </select>
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                    <i class="sprite-search-logo sprite"></i>
-                    <!--<img src="/images/ezprice-logo.png" alt="logo" class="ezprice-icon">-->
                     <i class="fa fa-search fa-lg" onclick="$('#search_act').submit();" aria-hidden="true"></i>
                     <form id="search_act" method="get" action="/price_list.php">
                         <input type="text" id="srhkw1" value="" name="kw" class="input-area" placeholder="輸入商品或型號" autocomplete="off">
@@ -228,7 +227,7 @@
     <!-- Main content -->
     <div id="sb-site" class="container-fluid main-content" role="main">
         <div class="row">
-            <div class="col-xs-12 outclear">
+            <!-- <div class="col-xs-12 outclear">
                 <div class="ezguide-section">
                     <div id="ezguide" class="carousel slide ezguide-carousel" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
@@ -267,17 +266,13 @@
                         <a data-slide="next" href="#ezguide" class="right carousel-control"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-12 outclear">
+            </div> -->
+            <!-- <div class="col-xs-12 outclear">
                 <div class="click-btn-section clearfix">
                     <ul class="nav nav-tabs" role="tablist" id="tablist">
                         <li role="presentation" class="active">
                             <a class="click-btn" href="#pricedown-section" aria-controls="pricedown-section" role="tab" data-toggle="tab">
-                                <span>
-                    降價
-                    <i class="fa fa-long-arrow-down"></i>
-                    30%
-                  </span>
+                                <span>熱門關鍵字</span>
                             </a>
                         </li>
                         <li role="presentation">
@@ -297,77 +292,47 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
             <div class="tab-content col-xs-12 outclear">
-                <div role="tabpanel" class="pricedown-section tab-pane active" id="pricedown-section">
-                    <ul class="otherpd-list clearfix">
-                        <li class="item">
-                            <div class="item-img">
-                                <img src="http://img.ezprice.com.tw/ezpd/061/48061/48061_s.jpg" alt="pd-img" class="pd-img">
-                                <span class="sales">5折</span>
-                            </div>
-                            <p>Apple iPhone 6S 16G 智慧型手機</p>
-                            <span>$18,900</span>
-                            <small>$22,000</small>
-                            <a href="http://testlink.com/iphone" class="link-block">more info</a>
+                <div role="tabpanel" class="hotsort-section tab-pane active" id="pricedown-section">
+                  <h3 class="new-section-title">
+                      熱門關鍵字
+                      <!-- <a href="http://testlink.com/all-list" class="more-link">
+                        所有關鍵字<i class="fa fa-chevron-circle-right"></i>
+                      </a> -->
+                    </h3>
+                    <ul class="keywords-list clearfix">
+                        <li>
+                            <a href="#" title="關鍵字標題" alt="關鍵字標題">關鍵字標題</a>
                         </li>
-                        <li class="item">
-                            <div class="item-img">
-                                <img src="http://img.ezprice.com.tw/ezpd/245/41245/41245_s.jpg" alt="pd-img" class="pd-img">
-                                <span class="sales">4.5折</span>
-                            </div>
-                            <p>Sony PS4-主機</p>
-                            <span>$12,480</span>
-                            <small>$22,000</small>
-                            <a href="http://testlink.com/ps4" class="link-block">more info</a>
+                        <li>
+                            <a href="#" title="關鍵字標題" alt="關鍵字標題">關鍵字標題</a>
                         </li>
-                        <li class="item">
-                            <div class="item-img">
-                                <img src="http://img.ezprice.com.tw/ezpd/646/1646/1646_s.jpg" alt="pd-img" class="pd-img">
-                                <span class="sales">7折</span>
-                            </div>
-                            <p>SONY RX1 全片幅F2.0大光圈類單眼相機</p>
-                            <span>$18,900</span>
-                            <small>$22,000</small>
-                            <a href="http://testlink.com/photo" class="link-block">more info</a>
+                        <li>
+                            <a href="#" title="關鍵字標題" alt="關鍵字標題">關鍵字標題</a>
                         </li>
-                        <li class="item">
-                            <div class="item-img">
-                                <img src="http://img.ezprice.com.tw/ezpd/676/50676/50676_s.jpg" alt="pd-img" class="pd-img">
-                                <span class="sales">6折</span>
-                            </div>
-                            <p>AIRMATE 艾美特 智能溫控陶瓷電暖器HP111319Rs</p>
-                            <span>$18,900</span>
-                            <small>$22,000</small>
-                            <a href="http://testlink.com/hot" class="link-block">more info</a>
+                        <li>
+                            <a href="#" title="關鍵字標題" alt="關鍵字標題">關鍵字標題</a>
                         </li>
-                        <li class="item">
-                            <div class="item-img">
-                                <img src="http://img.ezprice.com.tw/ezpd/631/50631/50631_s.jpg" alt="pd-img" class="pd-img">
-                                <span class="sales">8折</span>
-                            </div>
-                            <p>AIRMATE 艾美特 智能溫控陶瓷電暖器HP111319R</p>
-                            <span>$18,900</span>
-                            <small>$22,000</small>
-                            <a href="http://testlink.com/hot2" class="link-block">more info</a>
+                        <li>
+                            <a href="#" title="關鍵字標題" alt="關鍵字標題">關鍵字標題</a>
                         </li>
-                        <li class="item">
-                            <div class="item-img">
-                                <img src="http://img.ezprice.com.tw/ezpd/432/44432/44432_s.jpg" alt="pd-img" class="pd-img">
-                                <span class="sales">3.3折</span>
-                            </div>
-                            <p>AIRMATE 艾美特 智能溫控陶瓷電暖器HP111319R</p>
-                            <span>$18,900</span>
-                            <small>$22,000</small>
-                            <a href="http://testlink.com/hot3" class="link-block">more info</a>
+                        <li>
+                            <a href="#" title="關鍵字標題" alt="關鍵字標題">關鍵字標題</a>
+                        </li>
+                        <li>
+                            <a href="#" title="關鍵字標題" alt="關鍵字標題">關鍵字標題</a>
+                        </li>
+                        <li>
+                            <a href="#" title="關鍵字標題" alt="關鍵字標題">關鍵字標題</a>
+                        </li>
+                        <li>
+                            <a href="#" title="關鍵字標題" alt="關鍵字標題">關鍵字標題</a>
                         </li>
                     </ul>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="brand-section">
-                    <!-- <h3>
-            所有平台優惠大補帖
-            <a href="http://testlink.com" class="more-link">所有店家<i class="fa fa-chevron-circle-right"></i></a>
-            </h3> -->
+                <div role="tabpanel" class="tab-pane active" id="brand-section">
+                    <h3 class="new-section-title">熱搜品牌</h3>
                     <div class="hotsort-section">
                         <ul class="hotsort-list clearfix">
                             <li>
@@ -409,115 +374,13 @@
                         </ul>
                     </div>
                 </div>
-                <!-- <div role="tabpanel" class="discount-section tab-pane" id="discount-section">
-            <h3>
-            所有平台優惠大補帖
-            <a href="http://testlink.com" class="more-link">所有店家<i class="fa fa-chevron-circle-right"></i></a>
-            </h3>
-            <ul class="store-list clearfix">
-              <li>
-                <a href="http://testlink.com">
-                  <div class="store-content">
-                    <div class="store-img">
-                      <img src="images/shop.png" alt="shop">
-                    </div>
-                    <div class="store-acts">
-                      <span>
-                        活動
-                        <em>5</em>
-                        個
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="http://testlink.com">
-                  <div class="store-content">
-                    <div class="store-img">
-                      <img src="images/shop2.png" alt="shop">
-                    </div>
-                    <div class="store-acts">
-                      <span>
-                        活動
-                        <em>5</em>
-                        個
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="http://testlink.com">
-                  <div class="store-content">
-                    <div class="store-img">
-                      <img src="images/shop3.png" alt="shop">
-                    </div>
-                    <div class="store-acts">
-                      <span>
-                        活動
-                        <em>5</em>
-                        個
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="http://testlink.com">
-                  <div class="store-content">
-                    <div class="store-img">
-                      <img src="images/shop4.png" alt="shop">
-                    </div>
-                    <div class="store-acts">
-                      <span>
-                        活動
-                        <em>5</em>
-                        個
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="http://testlink.com">
-                  <div class="store-content">
-                    <div class="store-img">
-                      <img src="images/shop5.png" alt="shop">
-                    </div>
-                    <div class="store-acts">
-                      <span>
-                        活動
-                        <em>5</em>
-                        個
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="http://testlink.com">
-                  <div class="store-content">
-                    <div class="store-img">
-                      <img src="images/shop6.png" alt="shop">
-                    </div>
-                    <div class="store-acts">
-                      <span>
-                        活動
-                        <em>5</em>
-                        個
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div> -->
-                <div role="tabpanel" class="hotsort-section tab-pane" id="hotsort-section">
-                    <h3>
-            熱搜分類
-            <a href="http://testlink.com/all-list" class="more-link">所有分類<i class="fa fa-chevron-circle-right"></i></a>
-            </h3>
+                <div role="tabpanel" class="hotsort-section tab-pane active" id="hotsort-section">
+                    <h3 class="new-section-title">
+                      熱搜分類
+                      <a href="http://testlink.com/all-list" class="more-link">
+                        所有分類<i class="fa fa-chevron-circle-right"></i>
+                      </a>
+                    </h3>
                     <ul class="hotsort-list clearfix">
                         <li class="hotsort-box">
                             <span>筆記型電腦</span> (29,389)
@@ -557,12 +420,8 @@
                         </li>
                     </ul>
                 </div>
-                <div role="tabpanel" class="bestchoice-section tab-pane" id="bestchoice-section">
-                    <h3>
-            精選：衛生紙
-            <span>0.6元</span>
-            /抽
-            </h3>
+                <div role="tabpanel" class="bestchoice-section tab-pane active" id="bestchoice-section">
+                    <h3 class="new-section-title">精選：衛生紙<span>0.6元</span>/抽</h3>
                     <ul class="otherpd-list clearfix">
                         <li class="item">
                             <div class="item-img">
@@ -622,30 +481,11 @@
                 </div>
             </div>
             <div class="col-xs-12 outclear">
-                <div class="hotbrand-section">
-                    <h3>
-            熱搜關鍵字
-            <a href="http://testlink.com/more" class="more-link">更多<i class="fa fa-chevron-circle-right"></i></a>
-            </h3>
-                    <div class="hotsort-section">
-                        <ul class="hotsort-list clearfix">
-                            <li><a href="keyword-name">關鍵字名稱</a></li>
-                            <li><a href="keyword-name">關鍵字名稱</a></li>
-                            <li><a href="keyword-name">關鍵字名稱</a></li>
-                            <li><a href="keyword-name">關鍵字名稱</a></li>
-                            <li><a href="keyword-name">關鍵字名稱</a></li>
-                            <li><a href="keyword-name">關鍵字名稱</a></li>
-                            <li><a href="keyword-name">關鍵字名稱</a></li>
-                            <li><a href="keyword-name">關鍵字名稱</a></li>
-                            <li><a href="keyword-name">關鍵字名稱</a></li>
-                            <!-- ok -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 outclear">
                 <div class="other-section">
-                    <h3 class="other-title">其他服務</h3>
+                    <div class="other-title">
+                      <h1>EZprice 比價網</h1>
+                      <h3>其他服務</h3>
+                    </div>
                     <ul class="clearfix">
                         <li>
                             <i class="sprite sprite-01"></i>
@@ -721,327 +561,25 @@
             </ul>
         </nav>
     </div>
-    <!-- 分類tab-list-modal -->
-    <div class="modal fade" id="tab-list-modal" tabindex="-1" role="dialog" aria-labelledby="filter-modalLabel">
+    <!-- 分類找書或商品-filter-modal -->
+    <div class="modal fade" id="filter-modal" tabindex="-1" role="dialog" aria-labelledby="filter-modalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">選擇分類</h4>
-                </div>
-                <div class="tab-list-modal modal-body">
-                    <ul class="clearfix" id="accordion">
-                        <li class="panel">
-                            <a class="classify-filter" data-toggle="collapse" data-parent="#accordion" href="#classify-list" aria-expanded="true" aria-controls="classify-list">
-                                <!-- ok -->
-                                <span>3C電腦類</span>
-                            </a>
-                            <ul class="classify-list collapse in" id="classify-list" aria-expanded="true">
-                                <li class="current">
-                                    <a href="http://testlink.com/hide01">
-                                        <span>
-                        筆記型電腦
-                        <span class="count">(230)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/hide02">
-                                        <span>
-                        平板電腦
-                        <span class="count">(2)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/hide03">
-                                        <span>
-                        LCD液晶螢幕
-                        <span class="count">(23)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/hide04">
-                                        <span>
-                        滑鼠鍵盤
-                        <span class="count">(234)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
+                <ul class="clearfix" id="merchant-list">
+                        <li>
+                            <a href="#">商品</a>
                         </li>
-                        <li class="panel">
-                            <a class="classify-filter collapsed" data-toggle="collapse" data-parent="#accordion" href="#classify-list2" aria-expanded="false" aria-controls="classify-list2">
-                                <span>視聽家電</span>
-                            </a>
-                            <ul class="classify-list collapse" id="classify-list2" aria-expanded="false" style="height: 0px;">
-                                <li>
-                                    <a href="http://testlink.com/ccc">
-                                        <span>
-                        筆記型電腦
-                        <span class="count">(230)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/cc2">
-                                        <span>
-                        平板電腦
-                        <span class="count">(2)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/ccc">
-                                        <span>
-                        LCD液晶螢幕
-                        <span class="count">(23)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/ccc">
-                                        <span>
-                        滑鼠鍵盤
-                        <span class="count">(234)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="panel">
-                            <a class="classify-filter collapsed" data-toggle="collapse" data-parent="#accordion" href="#classify-list3" aria-expanded="false" aria-controls="classify-list3">
-                                <!-- ok -->
-                                <span>手機相機</span>
-                            </a>
-                            <ul class="collapse classify-list" id="classify-list3" aria-expanded="false">
-                                <li>
-                                    <a href="http://testlink.com/bbb">
-                                        <span>
-                        筆記型電腦
-                        <span class="count">(230)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/bbb">
-                                        <span>
-                        平板電腦
-                        <span class="count">(2)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/bbb">
-                                        <span>
-                        LCD液晶螢幕
-                        <span class="count">(23)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/bbb">
-                                        <span>
-                        滑鼠鍵盤
-                        <span class="count">(234)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="panel">
-                            <a class="classify-filter collapsed" data-toggle="collapse" data-parent="#accordion" href="#classify-list4" aria-expanded="false" aria-controls="classify-list4">
-                                <!-- ok -->
-                                <span>美容小家電</span>
-                            </a>
-                            <ul class="collapse classify-list" id="classify-list4" aria-expanded="false">
-                                <li>
-                                    <a href="http://testlink.com/aaa">
-                                        <span>
-                        筆記型電腦
-                        <span class="count">(230)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/aaa">
-                                        <span>
-                        平板電腦
-                        <span class="count">(2)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/aaa">
-                                        <span>
-                        LCD液晶螢幕
-                        <span class="count">(23)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/aaa">
-                                        <span>
-                        滑鼠鍵盤
-                        <span class="count">(234)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="panel">
-                            <a class="classify-filter collapsed" data-toggle="collapse" data-parent="#accordion" href="#classify-list5" aria-expanded="false" aria-controls="classify-list5">
-                                <!-- hidden-link -->
-                                <span>美妝保養</span>
-                            </a>
-                            <ul class="collapse classify-list" id="classify-list5" aria-expanded="false">
-                                <li>
-                                    <a href="http://testlink.com/qqq">
-                                        <span>
-                        筆記型電腦
-                        <span class="count">(230)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/qqq">
-                                        <span>
-                        平板電腦
-                        <span class="count">(2)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/qqq">
-                                        <span>
-                        LCD液晶螢幕
-                        <span class="count">(23)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/qqq">
-                                        <span>
-                        滑鼠鍵盤
-                        <span class="count">(234)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="panel">
-                            <a class="classify-filter collapsed" data-toggle="collapse" data-parent="#accordion" href="#classify-list6" aria-expanded="false" aria-controls="classify-list6">
-                                <span>養身保健</span>
-                            </a>
-                            <ul class="collapse classify-list" id="classify-list6" aria-expanded="false">
-                                <li>
-                                    <a href="http://testlink.com/ddd">
-                                        <span>
-                        筆記型電腦
-                        <span class="count">(230)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/ddd">
-                                        <span>
-                        平板電腦
-                        <span class="count">(2)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/ddd">
-                                        <span>
-                        LCD液晶螢幕
-                        <span class="count">(23)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://testlink.com/ddd">
-                                        <span>
-                        滑鼠鍵盤
-                        <span class="count">(234)</span>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
+                        <li>
+                            <a href="#">找書</a>   
                         </li>
                     </ul>
-                </div>
             </div>
         </div>
     </div>
-    <!-- 價格範圍tab-list-modal -->
-    <div class="modal fade" id="tab-list-modal2" tabindex="-1" role="dialog" aria-labelledby="filter-modalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">選擇價格範圍</h4>
-                </div>
-                <div class="tab-list2 tab-list-modal modal-body" style="margin: 0; display: block;">
-                    <h4>價格範圍(NT$)</h4>
-                    <ul class="clearfix">
-                        <li class="current">
-                            <a href="http://testlink.com/price"><span>~NT$ 999元</span></a>
-                        </li>
-                        <li>
-                            <a href="http://testlink.com/price"><span>NT$ 1,000~NT$ 2,999</span></a>
-                        </li>
-                        <li>
-                            <a href="http://testlink.com/price"><span>NT$ 3,000~NT$ 5,999</span></a>
-                        </li>
-                        <li>
-                            <a href="http://testlink.com/price"><span>NT$ 6,000~</span></a>
-                        </li>
-                    </ul>
-                    <div class="setprice-range">
-                        <h4>自訂價格範圍(NT$)</h4>
-                        <div class="setprice-input">
-                            <input type="number" placeholder="最低價" class="low-input" style="width: 39%;">元～
-                            <input type="number" placeholder="最高價" class="high-input" style="width: 39%;">元
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 品牌tab-list-modal3 -->
-    <div class="modal fade" id="tab-list-modal3" tabindex="-1" role="dialog" aria-labelledby="filter-modalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">選擇品牌</h4>
-                </div>
-                <div class="filter-modal-list modal-body">
-                    <ul class="clearfix">
-                        <li class="current">
-                            <a href="http://testlink.com/brand-sel"><span>Apple</span></a>
-                        </li>
-                        <li>
-                            <a href="http://testlink.com/brand-sel"><span>BenQ</span></a>
-                        </li>
-                        <li>
-                            <a href="http://testlink.com/brand-sel"><span>Canon</span></a>
-                        </li>
-                        <li>
-                            <a href="http://testlink.com/brand-sel"><span>Dell</span></a>
-                        </li>
-                        <li>
-                            <a href="http://testlink.com/brand-sel"><span>奇美</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    <form id="tmp-filter-merchant-data"></form>
     <!-- Back to top -->
     <a href="#0" class="cd-top fa fa-chevron-up"></a>
-    <script src="http://use.fontawesome.com/a20778cb0f.js"></script>
+    <script src="https://use.fontawesome.com/2eb3bfc2ec.js"></script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

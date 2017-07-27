@@ -45,14 +45,15 @@
                 <option value="all">商品</option>
                 <option value="book">找書</option>
             </select>
-            <i class="icon icon icon-chevron-down"></i>
+            <i class="icon icon-chevron-down"></i>
           </div>
           <form>
-            <input class="input-area" id="search-input" placeholder="輸入商品或型號" autocomplete="off" type="text" name="search_term_string" required/> 
-            <button type="submit" class="search-submit icon icon-android-search"></button>
+            <input class="input-area" placeholder="輸入商品或型號" id="searchDisplay"> 
+            <button class="search-submit icon icon-android-search"></button>
           </form>
         </div>
       </div>
+      <!-- 隱藏的Menu區 start -->
       <nav class="nav">
         <ul class="nav-menu">
           <li class="nav-items"><a href="#" title="首頁" alt="首頁">首頁</a></li>
@@ -69,6 +70,7 @@
         <div class="close-bg"></div>
       </nav>
       <div class="overlay-bg"></div>
+      <!-- 隱藏的Menu區 end -->    
       <!-- 搜尋頁 -->
       <div id="search-modal" class="search-modal collapse">
         <!-- 搜尋頁-頭部 -->
@@ -85,7 +87,7 @@
             <meta itemprop="url" content="https://www.example.com/"/>
             <form id="search_act" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
               <meta itemprop="target" content="https://query.example.com/search?q={search_term_string}"/>
-              <input class="input-area" id="testinput" autocomplete="off" itemprop="query-input" type="text" name="search_term_string" value="SONY 重低音" required/> 
+              <input class="input-area" id="searchInput" autocomplete="off" itemprop="query-input" type="search" name="search_term_string"  oninput="setCustomValidity('')" required oninvalid="this.setCustomValidity('請輸入這個欄位')"/> 
               <span class="clear-btn">✕</span>
               <button type="submit" class="search-submit icon icon-android-search"></button>
             </form>
@@ -118,21 +120,86 @@
         <!-- 搜尋頁-input建議字內容 -->
         <ul class="search-section collapse">
           <!-- 建議關鍵字區 -->
-          <li class="history-title"><a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>xz</strong></a></li>
-          <li class="history-title"><a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>ps4</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>xperia</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>xz premium</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>xa</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>xzs</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-          <li class="search-insert"><a href="#" title="123" alt="123">SONY <strong>z5p</strong></a></li>
-
+          <!-- <li class="history-title">
+            <a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>xz</strong>
+            </a>
+          </li>
+          <li class="history-title">
+            <a href="#" title="123" alt="123" class="icon icon-back-in-time">SONY <strong>ps4</strong>
+            </a>
+          </li> -->
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>xperia</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>xz premium</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>xa</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>xzs</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
+          <li class="search-insert">
+            <a href="#" title="123" alt="123">
+              SONY <strong>z5p</strong>
+            </a>
+            <button class="icon icon-diagonal-arrow"></button>
+          </li>
         </ul>
       </div>
     </header>
@@ -182,12 +249,13 @@
         <!-- tabs區塊 開始 -->
         <div class="tabs">
           <div class="columns is-mobile is-gapless full-width tabs-btn-list">
-            <button class="column tabs-btn active" onclick="openLink(event, 'downPrice')">降價↡ 30%</button>
-            <button class="column tabs-btn" onclick="openLink(event, 'hotBrand')">熱搜品牌</button>
-            <button class="column tabs-btn" onclick="openLink(event, 'hotClass')">熱搜分類</button>
-            <button class="column tabs-btn" onclick="openLink(event, 'toiletPaper')">精選:衛生紙</button>
+            <button class="column tabs-btn active" onclick="openLink(event, 'downPrice')">價格推薦30%</button>
+            <button class="column tabs-btn" onclick="openLink(event, 'hotBrand')">比價熱搜品牌</button>
+            <button class="column tabs-btn" onclick="openLink(event, 'hotClass')">比價熱搜分類</button>
+            <button class="column tabs-btn" onclick="openLink(event, 'toiletPaper')">ezprice精選</button>
           </div>
           <div class="columns is-mobile is-multiline tabBox collapse open" id="downPrice">
+            <h2>價格推薦30%</h2>
             <div class="columns is-mobile is-multiline tab-content-list">
               <div class="column is-4 list-item">
                 <a href="#" title="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)" alt="SAMPO聲寶迷你陶瓷式電暖器(HX-FB06P)">
@@ -270,7 +338,7 @@
             </ul>
           </div>
           <div class="columns is-mobile is-multiline tabBox collapse" id="toiletPaper">
-            <h3>精選:衛生紙</h3>
+            <h1>ezprice精選</h1>
             <div class="columns is-mobile is-multiline tab-content-list">
               <div class="column is-4 list-item">
                 <a href="#" alt="Livi優活擦手紙(200張*20包)" title="Livi優活擦手紙(200張*20包)">

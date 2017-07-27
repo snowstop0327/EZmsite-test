@@ -204,20 +204,22 @@
       </div>
     </header>
     <!-- 主要內容 -->
-    <section class="section main-content">
+    <section class="section search-content">
       <div class="container">
         <!-- 長條條件選擇bar 與隱藏的modal-->
-        <div class="full-width search-filter">
+        <div class="search-filter">
           <ul class="columns is-mobile is-gapless">
-            <li class="column is-3 tab-items">
-              <button class="jsBtn icon icon-filter filter-btn" value="FilterModal">篩選</button>
+            <li class="column tab-items">
+              <button class="jsBtn" value="FilterModal">
+              篩選條件<i class="icon icon-filter filter-btn"></i>
+              </button>
             </li>
             <li class="column tab-items">
-              <button class="jsBtn icon icon-arrow-swap sorting-btn" value="SortModal">
-                <span>相關度</span>
-                <!-- <span>價格高到低</span> -->
-                <!-- <span>價格低到高</span> -->
-                <i class="icon icon-android-arrow-dropdown"></i>
+              <button class="jsBtn" value="SortModal">
+                相關度排序<i class="icon icon-arrow-swap sorting-btn"></i>
+                <!-- 價格高到低
+                價格低到高 -->
+                <!-- <i class="icon icon-android-arrow-dropdown"></i> -->
               </button>
             </li>
             <li class="column tab-items">
@@ -228,7 +230,8 @@
               </div>
             </li>
           </ul>
-          <!-- 篩選區 整頁 modal-->
+        </div>
+        <!-- 篩選區 整頁 modal-->
           <div class="collapse filter-page" id="FilterModal">
             <div class="filter-box filter-head">
               <button class="reset active-color">重置全部</button>
@@ -255,6 +258,8 @@
                 <span>請選擇店家</span>
                 <div class="modal" id="ShopModal">
                   <div class="modal-content">
+                    <button class="btn-select active-color">全選</button>
+                    <button class="btn-select">清除</button>
                     <h6 class="modal-header">店家篩選</h6>
                     <button class="closeBtn close" value="ShopModal">✕</button>
                     <ul class="modal-body">
@@ -363,6 +368,8 @@
                 <span>請選擇品牌</span> 
                 <div class="modal" id="BrandModal">
                   <div class="modal-content">
+                    <button class="btn-select active-color">全選</button>
+                    <button class="btn-select">清除</button>
                     <h6 class="modal-header">品牌篩選</h6>
                     <button class="closeBtn close" value="BrandModal">✕</button>
                     <ul class="modal-body">
@@ -389,7 +396,6 @@
               </ul>
             </div>
           </div>
-        </div> 
         <h2><strong>sony 重低音</strong> 的價格比較結果</h2>
         <!-- 有選中的篩選項目 -->
         <ul class="active_filters">
@@ -406,19 +412,21 @@
               <img itemprop="image" src="https://img.ezprice.com.tw/ezpd/930/36930/36930_s.jpg" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽">
               <span>贊助廣告</span>
             </div>
-            <div class="icon icon-chevron-right column product-info-box">
+            <div class="icon icon-chevron-right column is-8 product-info-box">
               <h4 class="product-name" itemprop="name"><strong>SONY</strong> 索尼 XB450AP <strong>重低音</strong>頭戴式耳機麥克風 紅</h4>
+              <meta itemprop="mpn" content="123">
               <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                 <meta itemprop="priceCurrency" content="TWD" />
                 <strong class="price" itemprop="price" content="1690">$1,690</strong>
                 <span class="shipping-costs">運費$70</span>
+                <link itemprop="availability" href="http://schema.org/InStock"/>
                 <span class="shop-name" itemprop="seller" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">百利市購物中心</span></span>
                 <i class="icon icon-fasttruck fasttruck"></i>
               </span>
             </div>
           </a>
           <!-- <span class="discount-link">優惠</span> -->
-          <a href="yahoo.com.tw" class="discount-content" title="123">優惠內容～～～</a>
+          <a itemprop="url" href="yahoo.com.tw" class="discount-content" title="123">優惠內容～～～</a>
         </div>
         <!-- 商品區塊 開始 -->
         <div class="columns is-mobile is-gapless box product-page" itemscope itemtype="http://schema.org/Product">
@@ -428,13 +436,19 @@
             </div>
             <div class="column product-info-box">
               <h4 class="product-name" itemprop="name"><strong>SONY</strong> MDR-XB950BT  耳罩式耳機 <strong>重低音</strong>.藍芽</h4>
+              <meta itemprop="mpn" content="123">
+              <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="hide">
+                <span itemprop="ratingValue" class="num">3.5</span>
+                <meta itemprop="reviewCount" content="89">/5分
+              </span>
               <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                 <meta itemprop="priceCurrency" content="TWD" />
                 <strong class="price" itemprop="price" content="1690">$1,690～</strong>
-                <meta itemprop="mpn" content="123">
+                
                 <p class="product-rank">耳機 熱搜 第<i>12</i>名</p>
                 <span class="shop-info"><i>49</i>個店家</span>
-                <span href="#" class="all-price">更多比價結果</span>
+                <span class="all-price">更多比價結果</span>
+                <link itemprop="availability" href="http://schema.org/InStock"/>
               </span>
             </div>
           </a>
@@ -446,13 +460,19 @@
             </div>
             <div class="column product-info-box">
               <h4 class="product-name" itemprop="name"><strong>SONY</strong> MDR-XB950BT  耳罩式耳機 <strong>重低音</strong>.藍芽</h4>
+              <meta itemprop="mpn" content="123">
+              <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="hide">
+                <span itemprop="ratingValue">3.5</span>
+                <meta itemprop="reviewCount" content="89">/5分
+              </span>
               <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                 <meta itemprop="priceCurrency" content="TWD" />
                 <strong class="price" itemprop="price" content="1690">$1,690～</strong>
-                <meta itemprop="mpn" content="123">
+                
                 <p class="product-rank">耳機 熱搜 第<i>12</i>名</p>
                 <span class="shop-info"><i>49</i>個店家</span>
-                <span href="#" class="all-price">更多比價結果</span>
+                <span class="all-price">更多比價結果</span>
+                <link itemprop="availability" href="http://schema.org/InStock"/>
               </span>
             </div>
           </a>
@@ -466,12 +486,14 @@
               <div class="column is-4 product-img">
                 <img itemprop="image" src="https://img.ezprice.com.tw/ezpd/930/36930/36930_s.jpg" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽">
               </div>
-              <div class="icon icon-chevron-right column product-info-box">
-                <h4 class="product-name" itemprop="name"><strong>SONY</strong> 索尼 XB450AP <strong>重低音</strong>頭戴式耳機麥克風 紅</h4>
+              <div class="icon icon-chevron-right column is-8 product-info-box">
+                <h4 class="product-name" itemprop="name">MSI 微星 Nightblade/<strong>I54460</strong>/4G/1T/GTX750Ti/W81旗艦電競(福利品出清)</h4>
+                <meta itemprop="mpn" content="123">
                 <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                   <meta itemprop="priceCurrency" content="TWD" />
                   <strong class="price" itemprop="price" content="1690">$1,690</strong>
                   <span class="shipping-costs">運費$70</span>
+                  <link itemprop="availability" href="http://schema.org/InStock"/>
                   <span class="shop-name" itemprop="seller" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">百利市購物中心</span></span>
                 </span>
               </div>
@@ -482,12 +504,14 @@
               <div class="column is-4 product-img">
                 <img itemprop="image" src="https://img.ezprice.com.tw/ezpd/930/36930/36930_s.jpg" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽">
               </div>
-              <div class="icon icon-chevron-right column product-info-box">
+              <div class="icon icon-chevron-right column is-8 product-info-box">
                 <h4 class="product-name" itemprop="name"><strong>SONY</strong> 索尼 XB450AP <strong>重低音</strong>頭戴式耳機麥克風 紅</h4>
+                <meta itemprop="mpn" content="123">
                 <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                   <meta itemprop="priceCurrency" content="TWD" />
                   <strong class="price" itemprop="price" content="1690">$1,690</strong>
                   <span class="shipping-costs">運費$70</span>
+                  <link itemprop="availability" href="http://schema.org/InStock"/>
                   <span class="shop-name" itemprop="seller" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">百利市購物中心</span></span>
                   <i class="icon icon-fasttruck fasttruck"></i>
                 </span>
@@ -501,12 +525,14 @@
               <div class="column is-4 product-img">
                 <img itemprop="image" src="https://img.ezprice.com.tw/ezpd/930/36930/36930_s.jpg" alt="SONY MDR-XB950BT  耳罩式耳機 重低音.藍芽">
               </div>
-              <div class="icon icon-chevron-right column product-info-box">
+              <div class="icon icon-chevron-right column is-8 product-info-box">
                 <h4 class="product-name" itemprop="name"><strong>SONY</strong> 索尼 XB450AP <strong>重低音</strong>頭戴式耳機麥克風 紅</h4>
+                <meta itemprop="mpn" content="123">
                 <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                   <meta itemprop="priceCurrency" content="TWD" />
                   <strong class="price" itemprop="price" content="1690">$1,690</strong>
                   <span class="shipping-costs">運費$70</span>
+                  <link itemprop="availability" href="http://schema.org/InStock"/>
                   <span class="shop-name" itemprop="seller" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">百利市購物中心</span></span>
                   <!-- <i class="icon icon-fasttruck fasttruck"></i> -->
                 </span>
@@ -515,69 +541,12 @@
             <span class="discount-link">優惠</span>
             <a href="yahoo.com.tw" class="discount-content" title="123">優惠內容～～～</a>
           </div>
-          <button class="icon icon-android-arrow-back loadMore">顯示更多商品<span class="result-text">目前顯示 <span>30</span> 筆結果</span></button>
-        </div>
-        <div class="box-list">
-          <h3 class="icon icon-crown"><strong>電玩主機</strong> 熱門排行榜</h3>
-          <div class="carousel-stage-outer">
-            <div class="carousel-stage">
-              <div class="carousel-item" itemscope itemtype="http://schema.org/Product">
-                <a itemprop="url" href="#" title="123">
-                  <span class="ranking">TOP 1</span>
-                  <img itemprop="image" src="https://img.ezprice.com.tw/is/www.sanjing3c.com.tw/data/images_150/201611/NINTENDO01.jpg" alt="Nintendo 任天堂 迷你紅白機">
-                  <h4 class="product-name" itemprop="name">Nintendo 任天堂 迷你紅白機</h4>
-                  <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
-                    <meta itemprop="priceCurrency" content="TWD" />
-                    <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
-                  </span>
-                </a>
-              </div>
-              <div class="carousel-item" itemscope itemtype="http://schema.org/Product">
-                <a itemprop="url" href="#" title="123">
-                  <span class="ranking">TOP 2</span>
-                  <img itemprop="image" src="https://img.ezprice.com.tw/is/www.sanjing3c.com.tw/data/images_150/201611/NINTENDO01.jpg" alt="Nintendo 任天堂 迷你紅白機">
-                  <h4 class="product-name" itemprop="name">Nintendo 任天堂 迷你紅白機</h4>
-                  <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
-                    <meta itemprop="priceCurrency" content="TWD" />
-                    <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
-                  </span>
-                </a>
-              </div>
-              <div class="carousel-item" itemscope itemtype="http://schema.org/Product">
-                <a itemprop="url" href="#" title="123">
-                  <span class="ranking">TOP 3</span>
-                  <img itemprop="image" src="https://img.ezprice.com.tw/is/www.sanjing3c.com.tw/data/images_150/201611/NINTENDO01.jpg" alt="Nintendo 任天堂 迷你紅白機">
-                  <h4 class="product-name" itemprop="name">Nintendo 任天堂 迷你紅白機</h4>
-                  <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
-                    <meta itemprop="priceCurrency" content="TWD" />
-                    <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
-                  </span>
-                </a>
-              </div>
-              <div class="carousel-item" itemscope itemtype="http://schema.org/Product">
-                <a itemprop="url" href="#" title="123">
-                  <span class="ranking">TOP 4</span>
-                  <img itemprop="image" src="https://img.ezprice.com.tw/is/www.sanjing3c.com.tw/data/images_150/201611/NINTENDO01.jpg" alt="Nintendo 任天堂 迷你紅白機">
-                  <h4 class="product-name" itemprop="name">Nintendo 任天堂 迷你紅白機</h4>
-                  <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
-                    <meta itemprop="priceCurrency" content="TWD" />
-                    <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
-                  </span>
-                </a>
-              </div>
-              <div class="carousel-item" itemscope itemtype="http://schema.org/Product">
-                <a itemprop="url" href="#" title="123">
-                  <span class="ranking">TOP 5</span>
-                  <img itemprop="image" src="https://img.ezprice.com.tw/is/www.sanjing3c.com.tw/data/images_150/201611/NINTENDO01.jpg" alt="Nintendo 任天堂 迷你紅白機">
-                  <h4 class="product-name" itemprop="name">Nintendo 任天堂 迷你紅白機</h4>
-                  <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
-                    <meta itemprop="priceCurrency" content="TWD" />
-                    <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
+          <button class="loadMore">
+            <span class="icon icon-android-arrow-back show-more">顯示更多商品</span>
+            <span class="result-text">
+              目前顯示<span>3,000</span> 筆商品 
+            </span>
+          </button>
         </div>
         <div class="box-list">
           <h3>相關熱搜關鍵字</h3>
@@ -591,8 +560,87 @@
             <li class="column"><a href="#" title="更多熱搜..." alt="更多熱搜...">更多熱搜...</a></li>
           </ul>
         </div>
+        <div class="box-list">
+          <h3 class="icon icon-crown"><strong>電玩主機</strong> 熱門排行榜</h3>
+          <div class="carousel-stage-outer">
+            <div class="carousel-stage">
+              <div class="carousel-item" itemscope itemtype="http://schema.org/Product">
+                <a itemprop="url" href="#" title="123">
+                  <span class="ranking">TOP 1</span>
+                  <img itemprop="image" src="https://img.ezprice.com.tw/is/www.sanjing3c.com.tw/data/images_150/201611/NINTENDO01.jpg" alt="Nintendo 任天堂 迷你紅白機">
+                  <h4 class="product-name" itemprop="name">Nintendo 任天堂 迷你紅白機</h4>
+                  <meta itemprop="mpn" content="123">
+                  <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+                    <meta itemprop="priceCurrency" content="TWD" />
+                    <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
+                  </span>
+                </a>
+              </div>
+              <div class="carousel-item" itemscope itemtype="http://schema.org/Product">
+                <a itemprop="url" href="#" title="123">
+                  <span class="ranking">TOP 2</span>
+                  <img itemprop="image" src="https://img.ezprice.com.tw/is/www.sanjing3c.com.tw/data/images_150/201611/NINTENDO01.jpg" alt="Nintendo 任天堂 迷你紅白機">
+                  <h4 class="product-name" itemprop="name">Nintendo 任天堂 迷你紅白機</h4>
+                  <meta itemprop="mpn" content="123">
+                  <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+                    <meta itemprop="priceCurrency" content="TWD" />
+                    <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
+                  </span>
+                </a>
+              </div>
+              <div class="carousel-item" itemscope itemtype="http://schema.org/Product">
+                <a itemprop="url" href="#" title="123">
+                  <span class="ranking">TOP 3</span>
+                  <img itemprop="image" src="https://img.ezprice.com.tw/is/www.sanjing3c.com.tw/data/images_150/201611/NINTENDO01.jpg" alt="Nintendo 任天堂 迷你紅白機">
+                  <h4 class="product-name" itemprop="name">Nintendo 任天堂 迷你紅白機</h4>
+                  <meta itemprop="mpn" content="123">
+                  <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+                    <meta itemprop="priceCurrency" content="TWD" />
+                    <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
+                  </span>
+                </a>
+              </div>
+              <div class="carousel-item" itemscope itemtype="http://schema.org/Product">
+                <a itemprop="url" href="#" title="123">
+                  <span class="ranking">TOP 4</span>
+                  <img itemprop="image" src="https://img.ezprice.com.tw/is/www.sanjing3c.com.tw/data/images_150/201611/NINTENDO01.jpg" alt="Nintendo 任天堂 迷你紅白機">
+                  <h4 class="product-name" itemprop="name">Nintendo 任天堂 迷你紅白機</h4>
+                  <meta itemprop="mpn" content="123">
+                  <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+                    <meta itemprop="priceCurrency" content="TWD" />
+                    <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
+                  </span>
+                </a>
+              </div>
+              <div class="carousel-item" itemscope itemtype="http://schema.org/Product">
+                <a itemprop="url" href="#" title="123">
+                  <span class="ranking">TOP 5</span>
+                  <img itemprop="image" src="https://img.ezprice.com.tw/is/www.sanjing3c.com.tw/data/images_150/201611/NINTENDO01.jpg" alt="Nintendo 任天堂 迷你紅白機">
+                  <h4 class="product-name" itemprop="name">Nintendo 任天堂 迷你紅白機</h4>
+                  <meta itemprop="mpn" content="123">
+                  <span itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+                    <meta itemprop="priceCurrency" content="TWD" />
+                    <span class="price">$<span itemprop="lowPrice" content="3680">3,680</span>~</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box-list">
+          <button class="loadMore">
+            <span class="icon icon-android-arrow-back show-more">顯示更多商品</span>
+            <span class="result-text">
+              目前顯示<span>3,000</span> 筆商品 
+            </span>
+          </button>
+        </div>
       </div>
     </section>
+    <div class="ads-center">
+      <iframe src="ad-test.html" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" width="320" height="50">
+      </iframe>
+    </div>
     <footer class="footer">
       <ul>
         <li><a href="/contact.php" title="廠商合作" alt="廠商合作">廠商合作</a></li>
@@ -603,7 +651,7 @@
     </footer>
     <button class="icon icon-chevron-up go-top"></button>
     <!-- smartbanner -->
-    <div class="smartbanner">
+    <div class="smartbanner close-smartbanner">
       <button class="close-btn">✕</button>
       <img src="asset/images/logo_40@2x.png" alt="app-icon" class="icon-img">
       <p>EZprice找便宜 APP<br>
@@ -612,6 +660,6 @@
       <a href="#" class="download-btn">下載</a>
     </div>
   </body>
-  <!-- <script src="js/jQuery.min.js"></script> -->
+  <!-- <script src="asset/javascripts/jQuery.min.js"></script> -->
   <script src="asset/javascripts/mEZprice.js"></script>
 </html>

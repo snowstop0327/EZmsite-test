@@ -13,6 +13,7 @@
 		color: $white;
 		top: calc(50% - 20px);
 		padding: 0;
+		z-index: 20;
 
 		&.prev {
 			left: 0;
@@ -34,6 +35,7 @@
 		padding: 10px;
 		a {
 			display: block;
+			position: relative;
 		}
 		.news-img {
 			display: inline-block;
@@ -98,14 +100,16 @@
 		margin: 0 0 10px;
 		background: none;
 		animation: opac 0.8s;
-		h3 {
+		h1,h2,h3 {
 			margin:0;
 			padding: 0px 0 10px;
 		    font-size: 13px;
+		    font-weight: bold;
 		}
 
 		.list-item {
 			padding: 2px;
+			position: relative;
 			a {
 				display: block;
 				color: $gray-darker;
