@@ -12316,6 +12316,10 @@ a.back-link {
   background: white;
 }
 
+.hotsort-section ul.keywords-list li:last-child {
+  background: #e6f6ff;
+}
+
 .hotsort-section ul.keywords-list li a {
   display: block;
   color: #656c7d;
