@@ -46,8 +46,8 @@ $(document).ready(function() {
 
 var jPopSet = 0;
 var scr_top = $(window).scrollTop();
-var card_position = $('.ads');
-var card_ads_content = $('.ads .card-tabs-content');
+var card_position = $('.ads-first');
+var card_ads_content = $('.ads-first .card-tabs-content');
 
 $(window).scroll(function(){
   var scr_top = $(window).scrollTop();

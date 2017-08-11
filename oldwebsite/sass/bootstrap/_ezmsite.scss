@@ -411,7 +411,7 @@ body.modal-open {
 			.input-area{
 				@include search-area;
 				left: 5px;
-		    width: 70%;
+		    width: 90%;
 		    &::-webkit-input-placeholder {
 		    	color: #c1c1c1;
 		    }

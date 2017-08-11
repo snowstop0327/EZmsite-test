@@ -1704,16 +1704,17 @@ body.sticky .search-filter {
   top: 0;
 }
 
+body.sticky .search-modal {
+  margin-top: 45px;
+}
+
 body.sticky.up .header {
-  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 body.sticky.up .search-filter {
-  top: 100px;
+  top: 55px;
 }
 
 .section {
@@ -2704,6 +2705,10 @@ section.search-content {
   padding-top: 150px;
 }
 
+section.search-content .box.product-page {
+  margin-bottom: 5px;
+}
+
 .search-filter {
   position: fixed;
   text-align: center;
@@ -2849,7 +2854,7 @@ ul.active_filters > li.clear-all-btn > a:after {
 
 .box.linkout .product-img img, .box.product-page .product-img img {
   max-width: 100%;
-  max-height: 100px;
+  max-height: 95px;
   vertical-align: middle;
 }
 
@@ -2909,6 +2914,7 @@ ul.active_filters > li.clear-all-btn > a:after {
 .box.linkout.ads {
   background: #FFF7EC;
   border-radius: 3px;
+  margin-bottom: 5px;
 }
 
 .box.linkout.ads .product-img span {
@@ -3005,10 +3011,10 @@ ul.active_filters > li.clear-all-btn > a:after {
   background: #f5f5f5;
   border-radius: 3px;
   overflow: hidden;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
-.box-list h2, .box-list h3 {
+.box-list > h2, .box-list > h3 {
   padding: 10px;
   margin: 0;
   background: #f5f5f5;
@@ -3041,6 +3047,12 @@ ul.active_filters > li.clear-all-btn > a:after {
   font-size: 13px;
   padding: 0.3rem 0.5rem;
   border-radius: 25px;
+}
+
+.box-list ul.keywords-list li a > h3 {
+  font-size: inherit;
+  margin: 0;
+  font-weight: inherit;
 }
 
 .filter-page {
@@ -3295,7 +3307,6 @@ ul.active_filters > li.clear-all-btn > a:after {
   padding: 2px 5px;
   border-radius: 3px;
   font-size: 0.8em;
-  margin-top: 10px;
 }
 
 .box.linkout {
@@ -3305,7 +3316,7 @@ ul.active_filters > li.clear-all-btn > a:after {
 
 .box.linkout > a.columns {
   margin: 0;
-  height: 125px;
+  height: 105px;
 }
 
 .box.linkout > a.columns .column.product-info-box {
@@ -3347,8 +3358,8 @@ ul.active_filters > li.clear-all-btn > a:after {
   background: #ffffff;
   border: 1px solid #e53331;
   position: absolute;
-  top: 90px;
-  left: calc(33.3333% + 8px);
+  top: 77px;
+  right: 70px;
   padding: 2px;
   z-index: 70;
   font-size: 12px;
@@ -3475,38 +3486,41 @@ ul.active_filters > li.clear-all-btn > a:after {
 
 .loadMore {
   width: 100%;
-  background: inherit;
-  padding: 7px 10px;
-  position: relative;
-}
-
-.loadMore .show-more {
-  background: #ff6706;
-  color: #ffffff;
-  padding: 3px 30px 3px 5px;
+  height: 40px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
   border-radius: 2px;
-  float: right;
+  background: #ff6706;
+  text-align: center;
+  color: #ffffff;
+  margin: 10px 0;
 }
 
-.loadMore .show-more:before {
-  -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
-  display: inline-block;
-  font-size: 24px;
-  position: absolute;
-  right: 13px;
+.result-text {
+  text-align: center;
+  color: #656c7d;
 }
 
-.loadMore .result-text {
-  float: left;
-  font-size: 14px;
-  color: #7f8492;
-  padding: 5px;
+.result-text span {
+  margin-left: 5px;
 }
 
-.loadMore .result-text span {
+.result-text span:first-child em:first-child {
+  color: #ff6706;
+}
+
+.result-text span em {
+  font-style: normal;
   font-weight: bold;
+}
+
+.load-animation-img {
+  text-align: center;
+}
+
+.load-animation-img img {
+  width: 50px;
 }
 
 .fuzzy-title {
@@ -3718,6 +3732,34 @@ a.btn-checkout.btn-v2 {
 
 .card-notice li {
   margin: 5px 0 0 0;
+}
+
+a.detail-btn {
+  position: absolute;
+  top: 52px;
+  right: 10px;
+  color: #2B81DA;
+  font-size: 14px;
+  width: auto;
+  z-index: 999;
+}
+
+em.red {
+  color: #ff6706;
+  font-size: 15px;
+  font-style: normal;
+}
+
+.card-content {
+  padding: 8px;
+}
+
+.top-info {
+  background: #ffffff;
+}
+
+.top-info .card-title {
+  padding-left: 0;
 }
 
 .product-content {
@@ -3997,6 +4039,7 @@ ul.product-list li.full-width.current span.ad-box {
 ul.product-list li.full-width .discount-link {
   top: 56px;
   left: 35%;
+  right: auto;
 }
 
 ul.product-list li.full-width a.discount-content {

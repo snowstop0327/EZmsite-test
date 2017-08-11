@@ -35,20 +35,20 @@
             <div class="navicon-line"></div>
         </div>
         <div class="head-content container-fluid clearfix">
-            <div class="search-scroll-fix" style="display:block;">
+            <div class="search-scroll-fix clearfix">
+                <div class="dropdown select-filter">
+                    <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">商品
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">商品</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">找書</a></li>  
+                    </ul>
+                </div>
                 <div class="input-search form-control">
-                    <div class="select-area">
-                        <select class="select-box">
-                            <option value="all">商品</option>
-                            <option value="book">找書</option>
-                        </select>
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                    <i class="sprite-search-logo sprite"></i>
-                    <i class="fa fa-search fa-lg" onclick="$('#search_act').submit();"></i>
+                    <i class="fa fa-search fa-lg" onclick="$('#search_act').submit();" aria-hidden="true"></i>
                     <form id="search_act" method="get" action="/price_list.php">
-                        <input type="text" id="srhkw1" value="" name="kw" class="input-area" autocomplete="off">
-                        <input type="hidden" name="crossover" id="crossover" value="">
+                        <input type="text" id="srhkw1" value="" name="kw" class="input-area" placeholder="輸入商品或型號" autocomplete="off">
+                        <input type="hidden" id="crossover" name="crossover" value="">
                         <input type="submit" style="display:none">
                     </form>
                 </div>

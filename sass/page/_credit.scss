@@ -143,3 +143,28 @@ a.btn-checkout{
 		margin: 5px 0 0 0;
 	}
 }
+a.detail-btn {
+	position: absolute;
+	top: 52px;
+	right: 10px;
+	color: $blue;
+	font-size: 14px;
+	width: auto;
+	z-index: 999;
+}
+em.red {
+	color: $orange;
+	font-size: 15px;
+	font-style: normal;
+}
+.card-content {
+	padding: 8px;
+
+}
+.top-info {
+	background: $white;
+	.card-title {
+		padding-left: 0;
+	}
+}
+
