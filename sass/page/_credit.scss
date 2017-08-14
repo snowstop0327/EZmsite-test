@@ -40,12 +40,12 @@ h2.credit-title{
 	&.v2-name{
 		color: $red;
 	}
-	.sug-text{
-		display: block;
-		font-size: 12px;
-		color: $red;
-		font-weight: normal;
-	}
+}
+.sug-text{
+	display: block;
+	font-size: 12px;
+	color: $red;
+	font-weight: normal;
 }
 .card-tabs-content{
 	width: 100%;
@@ -124,15 +124,15 @@ a.btn-checkout{
 }
 .hot-tag{
 	position: absolute;
-    top: 10px;
-    right: 10px;
-    display: inline-block;
-    padding: 2px 4px;
-    background-color: $red;
-    color: $white;
-    font-size: 12px;
-    border-radius: 2px;
-    font-family: Verdana;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  padding: 2px 4px;
+  background-color: $red;
+  color: $white;
+  font-size: 12px;
+  border-radius: 2px;
+  font-family: Verdana;
 }
 .card-notice{
 	margin: 10px 0 0 0;
@@ -152,6 +152,23 @@ a.detail-btn {
 	width: auto;
 	z-index: 999;
 }
+a.block-btn {
+	display: block;
+  padding: 5px;
+  margin: 6px 0;
+  color: $white;
+  height: auto;
+  box-sizing: border-box;
+  span {
+  	position: relative;
+  	margin-left: -16px;
+  	&:before {
+			position: absolute;
+			right: -16px;
+			top: 1px;
+  	}
+  }
+}
 em.red {
 	color: $orange;
 	font-size: 15px;
@@ -159,12 +176,55 @@ em.red {
 }
 .card-content {
 	padding: 8px;
-
+	margin-bottom: 20px !important;
+}
+.center-text {
+	text-align: center !important;
 }
 .top-info {
 	background: $white;
+	transition: 0.5s all ease-in;
 	.card-title {
 		padding-left: 0;
+	}
+	&.sticky {
+		width: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 999;
+		@include white-shadow;
+	}
+}
+.text-body {
+	h3 {
+		font-size: 21px;
+		margin: 10px auto 0;
+	}
+	.block-text {
+		display: block;
+	}
+	h4 {
+		display: inline-block;
+		margin: 0 0 10px;
+	}
+	.orange-color {
+		color: $orange;
+	}
+	.strong-text {
+		font-size: 20px;
+		margin-top: 10px;
+	}
+	em {
+		color: $orange;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	ul {
+		margin: 10px 0;
+		padding: 0;
+	}
+	img {
+		max-width: 100%;
 	}
 }
 

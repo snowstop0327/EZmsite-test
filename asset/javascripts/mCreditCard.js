@@ -74,3 +74,22 @@ $(window).scroll(function(){
     }
   }
 });
+
+//sticky creditcard-card-detail
+$(function() {
+  var $window = $(window),
+      $stickyheader = $('.top-info'),
+      headerOffsetTop = $stickyheader.offset().top;
+  $window.on('scroll', function() {
+      if ($window.scrollTop() > headerOffsetTop) {
+          $('.top-info').addClass('sticky')
+          $('.card-content').css('margin-top', '130px');
+
+      } else {
+          $('.top-info').removeClass('sticky');
+          $('.card-content').css('margin-top', '0');
+      }
+
+  });
+    
+});
