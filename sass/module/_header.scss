@@ -16,9 +16,10 @@
     	text-indent: -10000px;
     	overflow: hidden;
     	width: 125px;
-    	height: 34px;
+    	height: 44px;
     	margin: 0 auto;
     	padding: 5px 0;
+    	box-sizing: border-box;
     	a {
     		display: block;
     	}

@@ -1,0 +1,140 @@
+$cateListHeight: 84px;
+$cateLineHeight: 18px;
+$cateFontSize: 18px;
+
+h1.block {
+	display: block;
+	margin: 0;
+	@include white_shadow
+}
+
+.cate {
+  position: relative;
+  height: $cateListHeight;
+  &:before {
+  	content: "";
+		position: absolute;
+		z-index: 1;
+		background-image:url("../images/cate-title-img.png");
+		bottom: 0;
+		left: 0;
+    width: 140px;
+    height: $cateListHeight;
+    background-size: 140px;
+  }
+  a {
+  	width: 100%;
+  	height: 100%;
+  	display: block;
+  	position: absolute;
+  	z-index: 3;
+  }
+  h2 {
+  	position: absolute;
+    right: 10px;
+    bottom: calc(50% - #{$cateLineHeight}/2);
+    margin: 0;
+    font-size: $cateFontSize;
+    color: $white;
+    line-height: $cateLineHeight;
+    &:before {
+    	float: right;
+    }
+  }
+}
+.cate-01 {
+	&:before {
+		background-position: 0px 0px;
+	}
+	background-color: #4A90E2;
+}
+.cate-02 {
+	&:before {
+		background-position: 0px -#{$cateListHeight};
+	}
+	background-color: #777777;
+}
+.cate-03 {
+	&:before {
+		background-position: 0px -#{$cateListHeight*2};
+	}
+	background-color: #F5A623;
+}
+.cate-04 {
+	&:before {
+		background-position: 0px -#{$cateListHeight*3};
+	}
+	background-color: #0F66C0;
+}
+.cate-05 {
+	&:before {
+		background-position: 0px -#{$cateListHeight*4};
+	}
+	background-color: #CBAC79;
+}
+.cate-06 {
+	&:before {
+		background-position: 0px -#{$cateListHeight*5};
+	}
+	background-color: #F682CB;
+}
+.cate-07 {
+	&:before {
+		background-position: 0px -#{$cateListHeight*6};
+	}
+	background-color: #7ED321;
+}
+.cate-08 {
+	&:before {
+		background-position: 0px -#{$cateListHeight*7};
+	}
+	background-color: #FF7F00;
+}
+.cate-09 {
+	&:before {
+		background-position: 0px -#{$cateListHeight*8};
+	}
+	background-color: #A0DE60;
+}
+.cate-10 {
+	&:before {
+		background-position: 0px -#{$cateListHeight*9};
+	}
+	background-color: #50E3C2;
+}
+.cate-11 {
+	&:before {
+		background-position: 0px -#{$cateListHeight*10};
+	}
+	background-color: #F682CB;
+}
+.cate-12 {
+	&:before {
+		background-position: 0px -#{$cateListHeight*11};
+	}
+	background-color: #F5A623;
+}
+.cate-13 {
+	&:before {
+		background-position: 0px -#{$cateListHeight*12};
+	}
+	background-color: #9B9B9B;
+}
+.cate-14 {
+	&:before {
+		background-position: 0px -#{$cateListHeight*13};
+	}
+	background-color: #F9AA63;
+}
+.cate-15 {
+	&:before {
+		background-position: 0px -#{$cateListHeight*14};
+	}
+	background-color: #4A90E2;
+}
+.cate-16 {
+	&:before {
+		background-position: bottom;
+	}
+	background-color: #8B572A;
+}

@@ -103,8 +103,8 @@
 		h1,h2,h3 {
 			margin:0;
 			padding: 0px 0 10px;
-		    font-size: 13px;
-		    font-weight: bold;
+	    font-size: 13px;
+	    font-weight: bold;
 		}
 
 		.list-item {
@@ -114,7 +114,7 @@
 				display: block;
 				color: $gray-darker;
 				@include white-shadow;
-				padding: 2px;
+				padding: 5px;
 				font-size: 12px;
 			}
 			img {
@@ -124,10 +124,8 @@
 			}
 			h5 {
 				margin: 0 0 3px;
-				height: 30px;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				font-weight: normal;
+				// height: 30px;
+				@include mul-box
 			}
 			small {
 				font-size: 11px;
@@ -150,6 +148,25 @@
 			margin: 0;
 		}
 	}
+	.new-product {
+		margin: 2px 1px;
+		padding: 10px;
+		border-radius: 2px 2px 0 0;
+		@include white_shadow
+	}
+	.all-proudct-btn {
+		display: block;
+		color: $blue;
+		font-size: 15px;
+		margin: 2px 1px;
+		padding: 10px;
+		border-radius: 0 0 2px 2px;
+		text-align: center;
+		@include white_shadow
+		i {
+			vertical-align: middle;
+		}
+	}
 }
 .hotsort-list {
 	position: relative;
@@ -164,8 +181,8 @@
 				box-sizing: border-box;
 				height: 65px;
 				display: flex;
-			    align-items: center;
-			    justify-content: center;
+		    align-items: center;
+		    justify-content: center;
 
 			}
 		}
@@ -230,12 +247,27 @@
 //tabs animation
 //
 @keyframes opac {
-    from {
-        opacity: 0
-    }
+  from {
+      opacity: 0
+  }
 
-    to {
-        opacity: 1
-    }
+  to {
+      opacity: 1
+  }
+}
+
+.title-text {
+	// @include white_shadow
+	font-weight: normal;
+	padding: 10px;
+	font-size: 15px;
+	color: $gray-darker;
+	border-bottom: 1px solid $gray-light;
+	h1,h2 {
+		display: inline;
+		margin: 0;
+		font-size: inherit;
+		font-weight: normal;
+	}
 }
 
