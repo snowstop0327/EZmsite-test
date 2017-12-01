@@ -242,15 +242,6 @@ ul.product-list {
 				color: #FFCD4F;
 				font-size: 12px;
 			}
-			h3,h4 {
-				margin: -10px 5px 5px 5px;
-				font-size: $fff;
-				line-height: 16px;
-				@include mul-box;
-				color: $gray;
-				font-weight: 400;
-				text-align: left;
-			}
 			&.product-price {
 				border-right: none;
 				.price {
@@ -299,6 +290,17 @@ ul.product-list {
 		    overflow: hidden;
 		    margin: 0 0 -3px;
 		}
+	}
+}
+.product-title {
+	.pd-title {
+		margin: -10px 5px 5px 5px;
+		font-size: $fff;
+		line-height: 16px;
+		@include mul-box;
+		color: $gray;
+		font-weight: 400;
+		text-align: left;
 	}
 }
 .related-product {

@@ -54,15 +54,19 @@
 
 		}
 		.news-info {
-			display: inline-block;
-			float: left;
-			width: 50%;
+			// display: inline-block;
+			// float: left;
+   //    width: 50%;
+			width: calc(100% - 80px);
+      margin: 0 auto;
+      display: block;
 			text-align: justify;
 			color: $gray-darker;
 			h5 {
 				margin: 3px 0;
 				height: 60px;
 				overflow: hidden;
+        font-size: 1rem;
 			}
 			small {
 				display: block;
@@ -117,14 +121,23 @@
 				padding: 5px;
 				font-size: 12px;
 			}
+			.product-img {
+				display: flex;
+				height: 100px;
+				overflow: hidden;
+				text-align: center;
+				@include flex-center
+			}
 			img {
+				max-width: 100%;
 				max-height: 100%;
 				// max-width: 95px;
-
 			}
-			h5 {
+			.product-name {
 				margin: 0 0 3px;
-				// height: 30px;
+				font-size: 12px;
+				line-height: 16px;
+				height: 32px;
 				@include mul-box
 			}
 			small {
@@ -136,12 +149,6 @@
 			}
 			strong {
 				font-weight: normal;
-			}
-			.product-img {
-				display: block;
-				height: 100px;
-				overflow: hidden;
-				text-align: center;
 			}
 		}
 		.tab-content-list {
@@ -234,7 +241,7 @@
 		    padding: 3px;
 		    @include white-shadow;
 		    &:before {
-	    	    text-align: center;
+    	    text-align: center;
 			    margin: 2px auto;
 			    display: block;
 			    font-size: 18px;
@@ -246,15 +253,15 @@
 
 //tabs animation
 //
-@keyframes opac {
-  from {
-      opacity: 0
-  }
+// @keyframes opac {
+//   from {
+//       opacity: 0
+//   }
 
-  to {
-      opacity: 1
-  }
-}
+//   to {
+//       opacity: 1
+//   }
+// }
 
 .title-text {
 	// @include white_shadow
@@ -269,5 +276,30 @@
 		font-size: inherit;
 		font-weight: normal;
 	}
+}
+.keyword-group {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  ul.columns {
+    padding: 8px;
+    margin-bottom: 5px;
+  }
+  li {
+    padding: 5px;
+    margin: 5px 0;
+    .box {
+      padding: 5px;
+      display: flex;
+      min-height: 100%;
+      @include flex-center;
+      a {
+        color: $gray;
+        font-weight: normal;
+        font-size: 0.8rem;
+        text-align: center;
+        @include mul-box;
+      }
+    }
+  }
 }
 

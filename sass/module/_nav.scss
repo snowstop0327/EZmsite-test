@@ -4,51 +4,54 @@
 		height: 100vh;
 		position: fixed;
 		z-index: 1300;
-		left:0;
-		top:0;
+		top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 		transform: translateX(-100%);
 		transition: 0.5s all ease-in-out;
-		
+    overflow: hidden;
+    a {
+      display: block;
+      padding: 0.9rem 1rem;
+      color: $white;
+      border-bottom: 1px solid $gray-darker;
+    }
 		.nav-menu {	
 			width: 265px;
 			height:100vh;
 			background: $black;
-
-			.nav-items {
-
-				a {
-					display: block;
-					padding: 0.9rem 1rem;
-					color: $white;
-					border-bottom: 1px solid $gray-darker;
-				}
-			}
+      overflow-y: scroll;
 
 			.nav-buttons {
-
+        // margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $gray-darker;
 				a {
 					display: block;
-				    padding: 0.6rem 2rem;
-				    border: 1px solid $gray;
-				    background: $black;
-				    margin: 1rem 0.25rem 0 1.15rem;
-				    border-radius: 5px;
-				    color: $white;
-				    float: left;
+			    padding: 0.6rem 2rem;
+			    border: 1px solid $gray;
+			    background: $black;
+			    margin: 1rem 0.25rem 0 1.15rem;
+			    border-radius: 5px;
+			    color: $white;
+			    float: left;
 				}
-
 			}
+      >.nav-items {
+        &:last-child {
+          margin-bottom: 100px;
+        }
+      }
 
 			.active {
 				box-sizing:border-box;
 				border-left: 4px solid $orange;
 			}
 		}
+
 	}
 	.nav.open {
-		top: 0;
-		left: 0;
-		right: 0;
 		transform: translateX(0px);
 		background: rgba(0, 0, 0, 0.6);
 		.nav-menu {
@@ -91,4 +94,36 @@
 	top: 0;
 	right: 0;
 	
+}
+.nav-dropdown-items {
+  display: none;
+}
+.nav-dropdown {
+  position: relative;
+  i.icon-chevron-down {
+    display: inline-block;
+    width: 20px;
+    margin: 0 0.5rem 0 0;
+    float: right;
+    transition: 0.2s all ease-out;
+  }
+  &.open {
+    background: darken($black,5%);
+    .nav-link {
+      i {
+        transform: rotate(180deg);
+      }
+    }
+    .nav-dropdown-items {
+      display: block;
+      a {
+        padding-left: 15px !important;
+      }
+    }
+  }
+}
+.body-fixed {
+  position: fixed;
+  height: 100vh;
+  overflow: hidden;
 }

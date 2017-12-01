@@ -59,6 +59,17 @@ $box-bottom: 5px;
 
 }
 
+@mixin flex-center {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
+
 $radio-border-color: rgba(0, 0, 0, 0.54);
 $radio-size: 20px;
 $radio-checked-size: 10px; 

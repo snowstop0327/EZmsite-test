@@ -111,11 +111,13 @@ function actSuggest(e){
 function dropNavigation(){
     document.querySelector('nav').classList.remove('open');
     document.querySelector('.overlay-bg').classList.remove('open');
+    document.querySelector('body').classList.remove('body-fixed');
 }
 
 function popNavigation(){
     document.querySelector('nav').classList.add('open');
     document.querySelector('.overlay-bg').classList.add('open');
+    document.querySelector('body').classList.add('body-fixed');
 }
 
 function clearSearch(){
